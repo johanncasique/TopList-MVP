@@ -1,0 +1,6 @@
+framework module Pods_TopListStore {
+  umbrella header "Pods-TopListStore-umbrella.h"
+
+  export *
+  module * { export * }
+}

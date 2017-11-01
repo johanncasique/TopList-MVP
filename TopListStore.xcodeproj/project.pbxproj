@@ -1,0 +1,655 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3715A604EBDAC1B4D1283CEC /* Pods_TopListStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 879B5E14045CF5893F38A422 /* Pods_TopListStore.framework */; };
+		8782FC0A1FAA4D4100344BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782FC091FAA4D4100344BC4 /* AppDelegate.swift */; };
+		8782FC0C1FAA4D4100344BC4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782FC0B1FAA4D4100344BC4 /* ViewController.swift */; };
+		8782FC0F1FAA4D4100344BC4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8782FC0D1FAA4D4100344BC4 /* Main.storyboard */; };
+		8782FC121FAA4D4100344BC4 /* TopListStore.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8782FC101FAA4D4100344BC4 /* TopListStore.xcdatamodeld */; };
+		8782FC141FAA4D4100344BC4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8782FC131FAA4D4100344BC4 /* Assets.xcassets */; };
+		8782FC171FAA4D4100344BC4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8782FC151FAA4D4100344BC4 /* LaunchScreen.storyboard */; };
+		8782FC221FAA4D4100344BC4 /* TopListStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782FC211FAA4D4100344BC4 /* TopListStoreTests.swift */; };
+		8782FC2D1FAA4D4100344BC4 /* TopListStoreUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8782FC2C1FAA4D4100344BC4 /* TopListStoreUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8782FC1E1FAA4D4100344BC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8782FBFE1FAA4D4100344BC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8782FC051FAA4D4100344BC4;
+			remoteInfo = TopListStore;
+		};
+		8782FC291FAA4D4100344BC4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8782FBFE1FAA4D4100344BC4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8782FC051FAA4D4100344BC4;
+			remoteInfo = TopListStore;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2455EF72D8BB96A42AC6D4BB /* Pods_TopListStoreTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopListStoreTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4DA355404180BEE0BB26C2DA /* Pods-TopListStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopListStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TopListStore/Pods-TopListStore.release.xcconfig"; sourceTree = "<group>"; };
+		8322258A6A5D78DAA4FCF452 /* Pods-TopListStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopListStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TopListStore/Pods-TopListStore.debug.xcconfig"; sourceTree = "<group>"; };
+		8782FC061FAA4D4100344BC4 /* TopListStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopListStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8782FC091FAA4D4100344BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8782FC0B1FAA4D4100344BC4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8782FC0E1FAA4D4100344BC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8782FC111FAA4D4100344BC4 /* TopListStore.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TopListStore.xcdatamodel; sourceTree = "<group>"; };
+		8782FC131FAA4D4100344BC4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8782FC161FAA4D4100344BC4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8782FC181FAA4D4100344BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8782FC1D1FAA4D4100344BC4 /* TopListStoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopListStoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8782FC211FAA4D4100344BC4 /* TopListStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListStoreTests.swift; sourceTree = "<group>"; };
+		8782FC231FAA4D4100344BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8782FC281FAA4D4100344BC4 /* TopListStoreUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopListStoreUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8782FC2C1FAA4D4100344BC4 /* TopListStoreUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopListStoreUITests.swift; sourceTree = "<group>"; };
+		8782FC2E1FAA4D4100344BC4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		879B5E14045CF5893F38A422 /* Pods_TopListStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopListStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBF1ADDBE9B11B8EE84A456F /* Pods_TopListStoreUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopListStoreUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8782FC031FAA4D4100344BC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3715A604EBDAC1B4D1283CEC /* Pods_TopListStore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8782FC1A1FAA4D4100344BC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8782FC251FAA4D4100344BC4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		314EA0CEEC43E837A7D7B452 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				879B5E14045CF5893F38A422 /* Pods_TopListStore.framework */,
+				2455EF72D8BB96A42AC6D4BB /* Pods_TopListStoreTests.framework */,
+				CBF1ADDBE9B11B8EE84A456F /* Pods_TopListStoreUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		766A7704A44A0E2025CF6FBE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8322258A6A5D78DAA4FCF452 /* Pods-TopListStore.debug.xcconfig */,
+				4DA355404180BEE0BB26C2DA /* Pods-TopListStore.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		8782FBFD1FAA4D4100344BC4 = {
+			isa = PBXGroup;
+			children = (
+				8782FC081FAA4D4100344BC4 /* TopListStore */,
+				8782FC201FAA4D4100344BC4 /* TopListStoreTests */,
+				8782FC2B1FAA4D4100344BC4 /* TopListStoreUITests */,
+				8782FC071FAA4D4100344BC4 /* Products */,
+				766A7704A44A0E2025CF6FBE /* Pods */,
+				314EA0CEEC43E837A7D7B452 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8782FC071FAA4D4100344BC4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8782FC061FAA4D4100344BC4 /* TopListStore.app */,
+				8782FC1D1FAA4D4100344BC4 /* TopListStoreTests.xctest */,
+				8782FC281FAA4D4100344BC4 /* TopListStoreUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8782FC081FAA4D4100344BC4 /* TopListStore */ = {
+			isa = PBXGroup;
+			children = (
+				8782FC091FAA4D4100344BC4 /* AppDelegate.swift */,
+				8782FC0B1FAA4D4100344BC4 /* ViewController.swift */,
+				8782FC0D1FAA4D4100344BC4 /* Main.storyboard */,
+				8782FC131FAA4D4100344BC4 /* Assets.xcassets */,
+				8782FC151FAA4D4100344BC4 /* LaunchScreen.storyboard */,
+				8782FC181FAA4D4100344BC4 /* Info.plist */,
+				8782FC101FAA4D4100344BC4 /* TopListStore.xcdatamodeld */,
+			);
+			path = TopListStore;
+			sourceTree = "<group>";
+		};
+		8782FC201FAA4D4100344BC4 /* TopListStoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				8782FC211FAA4D4100344BC4 /* TopListStoreTests.swift */,
+				8782FC231FAA4D4100344BC4 /* Info.plist */,
+			);
+			path = TopListStoreTests;
+			sourceTree = "<group>";
+		};
+		8782FC2B1FAA4D4100344BC4 /* TopListStoreUITests */ = {
+			isa = PBXGroup;
+			children = (
+				8782FC2C1FAA4D4100344BC4 /* TopListStoreUITests.swift */,
+				8782FC2E1FAA4D4100344BC4 /* Info.plist */,
+			);
+			path = TopListStoreUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8782FC051FAA4D4100344BC4 /* TopListStore */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8782FC311FAA4D4100344BC4 /* Build configuration list for PBXNativeTarget "TopListStore" */;
+			buildPhases = (
+				1108F0A199F939D326941684 /* [CP] Check Pods Manifest.lock */,
+				8782FC021FAA4D4100344BC4 /* Sources */,
+				8782FC031FAA4D4100344BC4 /* Frameworks */,
+				8782FC041FAA4D4100344BC4 /* Resources */,
+				D2E44D8B14D819D5A6045053 /* [CP] Embed Pods Frameworks */,
+				E0AD41BE929BC01629313508 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TopListStore;
+			productName = TopListStore;
+			productReference = 8782FC061FAA4D4100344BC4 /* TopListStore.app */;
+			productType = "com.apple.product-type.application";
+		};
+		8782FC1C1FAA4D4100344BC4 /* TopListStoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8782FC341FAA4D4100344BC4 /* Build configuration list for PBXNativeTarget "TopListStoreTests" */;
+			buildPhases = (
+				8782FC191FAA4D4100344BC4 /* Sources */,
+				8782FC1A1FAA4D4100344BC4 /* Frameworks */,
+				8782FC1B1FAA4D4100344BC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8782FC1F1FAA4D4100344BC4 /* PBXTargetDependency */,
+			);
+			name = TopListStoreTests;
+			productName = TopListStoreTests;
+			productReference = 8782FC1D1FAA4D4100344BC4 /* TopListStoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		8782FC271FAA4D4100344BC4 /* TopListStoreUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8782FC371FAA4D4100344BC4 /* Build configuration list for PBXNativeTarget "TopListStoreUITests" */;
+			buildPhases = (
+				8782FC241FAA4D4100344BC4 /* Sources */,
+				8782FC251FAA4D4100344BC4 /* Frameworks */,
+				8782FC261FAA4D4100344BC4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8782FC2A1FAA4D4100344BC4 /* PBXTargetDependency */,
+			);
+			name = TopListStoreUITests;
+			productName = TopListStoreUITests;
+			productReference = 8782FC281FAA4D4100344BC4 /* TopListStoreUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8782FBFE1FAA4D4100344BC4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "johann casique";
+				TargetAttributes = {
+					8782FC051FAA4D4100344BC4 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+					};
+					8782FC1C1FAA4D4100344BC4 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8782FC051FAA4D4100344BC4;
+					};
+					8782FC271FAA4D4100344BC4 = {
+						CreatedOnToolsVersion = 9.0.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 8782FC051FAA4D4100344BC4;
+					};
+				};
+			};
+			buildConfigurationList = 8782FC011FAA4D4100344BC4 /* Build configuration list for PBXProject "TopListStore" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8782FBFD1FAA4D4100344BC4;
+			productRefGroup = 8782FC071FAA4D4100344BC4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8782FC051FAA4D4100344BC4 /* TopListStore */,
+				8782FC1C1FAA4D4100344BC4 /* TopListStoreTests */,
+				8782FC271FAA4D4100344BC4 /* TopListStoreUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8782FC041FAA4D4100344BC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8782FC171FAA4D4100344BC4 /* LaunchScreen.storyboard in Resources */,
+				8782FC141FAA4D4100344BC4 /* Assets.xcassets in Resources */,
+				8782FC0F1FAA4D4100344BC4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8782FC1B1FAA4D4100344BC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8782FC261FAA4D4100344BC4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1108F0A199F939D326941684 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D2E44D8B14D819D5A6045053 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TopListStore/Pods-TopListStore-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0AD41BE929BC01629313508 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TopListStore/Pods-TopListStore-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8782FC021FAA4D4100344BC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8782FC121FAA4D4100344BC4 /* TopListStore.xcdatamodeld in Sources */,
+				8782FC0C1FAA4D4100344BC4 /* ViewController.swift in Sources */,
+				8782FC0A1FAA4D4100344BC4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8782FC191FAA4D4100344BC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8782FC221FAA4D4100344BC4 /* TopListStoreTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8782FC241FAA4D4100344BC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8782FC2D1FAA4D4100344BC4 /* TopListStoreUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8782FC1F1FAA4D4100344BC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8782FC051FAA4D4100344BC4 /* TopListStore */;
+			targetProxy = 8782FC1E1FAA4D4100344BC4 /* PBXContainerItemProxy */;
+		};
+		8782FC2A1FAA4D4100344BC4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8782FC051FAA4D4100344BC4 /* TopListStore */;
+			targetProxy = 8782FC291FAA4D4100344BC4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8782FC0D1FAA4D4100344BC4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8782FC0E1FAA4D4100344BC4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8782FC151FAA4D4100344BC4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8782FC161FAA4D4100344BC4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8782FC2F1FAA4D4100344BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8782FC301FAA4D4100344BC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8782FC321FAA4D4100344BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8322258A6A5D78DAA4FCF452 /* Pods-TopListStore.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TopListStore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jCasique.TopListStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8782FC331FAA4D4100344BC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DA355404180BEE0BB26C2DA /* Pods-TopListStore.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TopListStore/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jCasique.TopListStore;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		8782FC351FAA4D4100344BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TopListStoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jCasique.TopListStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopListStore.app/TopListStore";
+			};
+			name = Debug;
+		};
+		8782FC361FAA4D4100344BC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TopListStoreTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jCasique.TopListStoreTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TopListStore.app/TopListStore";
+			};
+			name = Release;
+		};
+		8782FC381FAA4D4100344BC4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TopListStoreUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jCasique.TopListStoreUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TopListStore;
+			};
+			name = Debug;
+		};
+		8782FC391FAA4D4100344BC4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TopListStoreUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = jCasique.TopListStoreUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TopListStore;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8782FC011FAA4D4100344BC4 /* Build configuration list for PBXProject "TopListStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8782FC2F1FAA4D4100344BC4 /* Debug */,
+				8782FC301FAA4D4100344BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8782FC311FAA4D4100344BC4 /* Build configuration list for PBXNativeTarget "TopListStore" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8782FC321FAA4D4100344BC4 /* Debug */,
+				8782FC331FAA4D4100344BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8782FC341FAA4D4100344BC4 /* Build configuration list for PBXNativeTarget "TopListStoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8782FC351FAA4D4100344BC4 /* Debug */,
+				8782FC361FAA4D4100344BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8782FC371FAA4D4100344BC4 /* Build configuration list for PBXNativeTarget "TopListStoreUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8782FC381FAA4D4100344BC4 /* Debug */,
+				8782FC391FAA4D4100344BC4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8782FC101FAA4D4100344BC4 /* TopListStore.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8782FC111FAA4D4100344BC4 /* TopListStore.xcdatamodel */,
+			);
+			currentVersion = 8782FC111FAA4D4100344BC4 /* TopListStore.xcdatamodel */;
+			path = TopListStore.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8782FBFE1FAA4D4100344BC4 /* Project object */;
+}
