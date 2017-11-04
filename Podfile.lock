@@ -1,12 +1,25 @@
 PODS:
-  - Alamofire (4.5.1)
+  - Alamofire (4.5.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - Gloss (2.0.0-beta.1)
+  - ModelMapper (6.0.0)
+  - SideMenuController (0.2.4)
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - AlamofireImage (~> 3.1)
+  - Gloss (= 2.0.0-beta.1)
+  - ModelMapper
+  - SideMenuController
 
 SPEC CHECKSUMS:
-  Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  Gloss: 3224f4d6e345138475216855a32e880d9e03e6d2
+  ModelMapper: 3596a82f26c43491f6a8d3a00bcdba6ba0e62a93
+  SideMenuController: b463d2b3aa58e2afe57f57a07938fa9a647894ca
 
-PODFILE CHECKSUM: ced5e4d84c8120c0782ad23e9b1ce6d6a8aaa19b
+PODFILE CHECKSUM: 94177bb4dbb40be15ea9a2ec1de510a1a61cb013
 
 COCOAPODS: 1.1.1
