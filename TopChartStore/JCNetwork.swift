@@ -9,12 +9,6 @@
 import Foundation
 import Alamofire
 
-enum Result<T>{
-    case Success(T)
-    case Error(Error)
-}
-
-
 class JCNetwork: NSObject {
     
     public func getData(with endpoint: String, method:HTTPMethod, headers: HTTPHeaders? = ["":""], completionHandler: @escaping (Result<AnyObject>) -> Void){
@@ -27,11 +21,11 @@ class JCNetwork: NSObject {
                     switch errorResult{
                     case .Success:
                         if let JSON = response.result.value {
-                            completionHandler(.Success(JSON as AnyObject))
+                           // completionHandler(.Success(JSON as AnyObject))
                         }
                         break
                     case .ErrorMessage:
-                        completionHandler(.Error(response.result.error!))
+                        //completionHandler(.Error(response.result.error!))
                         break
                     }
                 })

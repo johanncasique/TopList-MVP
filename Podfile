@@ -8,7 +8,6 @@ target 'TopChartStore' do
   # Pods for TopChartStore
   pod 'Alamofire', '~> 4.5'
   pod 'ModelMapper'
-  pod 'SideMenuController'
   pod 'AlamofireImage', '~> 3.1'
   pod 'Gloss', '2.0.0-beta.1'
 end

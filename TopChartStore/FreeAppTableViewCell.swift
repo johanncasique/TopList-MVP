@@ -40,15 +40,15 @@ class FreeAppTableViewCell: UITableViewCell{
         
         
         
-        if let urlImage = appModel.iconImage{
-            appImage.af_setImage(withURL: urlImage, placeholderImage: #imageLiteral(resourceName: "placeHolderIconApp"), imageTransition: .crossDissolve(0.2))
-        }
+//        if let urlImage = appModel.iconImage{
+//            appImage.af_setImage(withURL: urlImage, placeholderImage: #imageLiteral(resourceName: "placeHolderIconApp"), imageTransition: .crossDissolve(0.2))
+//        }
         appImage.layer.cornerRadius = 15
         appImage.layer.borderColor = UIColor.gray.cgColor
         appImage.layer.borderWidth = 0.3
         appImage.clipsToBounds = true
         appTitleLabel.text = appModel.name
-        appCompanyLabel.text = appModel.company
+        //appCompanyLabel.text = appModel.company
         ratingNumberLabel.text = "4.5"
         getButton.setTitle("GET", for: .normal)
         getButton.layer.cornerRadius = 10

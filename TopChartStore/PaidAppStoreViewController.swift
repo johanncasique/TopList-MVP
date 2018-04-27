@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Gloss
+
 
 let PaidCellIdentifier = "PaidCell"
 
@@ -27,7 +27,6 @@ class PaidAppsViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupViews()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,64 +35,12 @@ class PaidAppsViewController: UIViewController{
         if let countrySaved = defaults.value(forKey: Keys.defaults.countryISO),
             let country = countrySaved as? Country,
             let countryName = defaults.value(forKey: Keys.defaults.countryName) as? String {
-            getPaidApp(country: country)
+            
             countryNameLabel.text = countryName
         }
         
     }
     
-    //MARK:
-    //MARK:SetupViews
-    func setupViews(){
-        getPaidApp()
-    }
-    
-    
-    private func getPaidApp(country: Country?=nil){
-        
-        guard let countryCode = Keys.locale.countryCode else { print("Country locale is nil")
-            return
-        }
-        
-        activity.startAnimating()
-        activity.isHidden = false
-        paidTable.backgroundView?.alpha = 0
-        
-        JCQueryNetwork().getApps(.paidApp, country: country ?? countryCode) { (paidResponse) in
-            
-            switch paidResponse {
-            case .Error(let error):
-                print(error)
-                break
-            case .Success(let data):
-                
-                guard let dictionary = data as? JSON else {print("dic is nil")
-                    return
-                }
-                guard let topApps = TopApps(json: dictionary), let apps = topApps.feed?.results else { print("app is nil")
-                    return
-                }
-                
-                self.activity.stopAnimating()
-                self.activity.isHidden = true
-                self.paidTable.backgroundView?.alpha = 1
-                self.paidArr = apps
-                self.paidTable.reloadData()
-                
-                break
-            }
-            
-        }
-        
-    }
-    
-    //MARK:
-    //MARK:Open Country List
-    @IBAction func openCountryListAction(_ sender: UITapGestureRecognizer){
-        
-        let countryListVC: CountryListViewController = UIStoryboard.storyboard(storyboard: .CountryListViewController).instantiateViewController()
-        present(countryListVC, animated: true, completion: nil)
-    }
 }
 
 extension PaidAppsViewController: UITableViewDataSource {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Gloss
 
 let GrossingCellIdentifier = "GrossingCell"
 
@@ -67,24 +66,20 @@ class GrossingAppViewController: UIViewController{
                 break
             case .Success(let data):
                 
-                guard let dictionary = data as? JSON else {print("dic is nil")
-                    return
-                }
-                guard let topApps = TopApps(json: dictionary), let apps = topApps.feed?.results else { print("app is nil")
+                //guard let dictionary = data as? JSON else {print("dic is nil")
+                  //  return
+                //}
+                //guard let topApps = TopApps(json: dictionary), let apps = topApps.feed?.results else { print("app is nil")
                     return
                 }
                 
                 self.activity.stopAnimating()
                 self.activity.isHidden = true
                 self.grossingTable.backgroundView?.alpha = 1
-                self.grossingArr = apps
                 self.grossingTable.reloadData()
-                
-                break
             }
-            
         }
-    }
+    
     
     //MARK:
     //MARK:Open Country List
@@ -95,6 +90,7 @@ class GrossingAppViewController: UIViewController{
     }
     
 }
+
 
 extension GrossingAppViewController: UITableViewDataSource {
     

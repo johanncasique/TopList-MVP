@@ -7,40 +7,33 @@
 //
 
 import Foundation
-import Gloss
 
-typealias Decodable = Gloss.Decodable
-
-public struct TopApps: Decodable {
-    public let feed: Feed?
-    
-    public init?(json: JSON){
-        self.feed = "feed" <~~ json
-    }
+struct TopApps: Codable {
+    let feed: Feed?
 }
 
-public struct Feed: Decodable {
-    public let results: [App]?
-    
-    public init?(json: JSON){
-        self.results = "results" <~~ json
-    }
+struct Feed: Codable {
+    let results: [App]?
 }
 
-public struct App: Decodable {
-    
-    public let name: String?
-    public let idApp: String?
-    public let company: String?
-    public let iconImage: URL?
-    
-    public init?(json: JSON){
-        self.name = "name" <~~ json
-        self.idApp = "id" <~~ json
-        self.company = "artistName" <~~ json
-        self.iconImage = "artworkUrl100" <~~ json
-    }
-    
-    
-    
+struct App: Codable {
+    let artistName: String?
+    let id: String?
+    let releaseDate: String?
+    let name: String?
+    let kind: URL?
+    let copyright: String?
+    let artistId: String?
+    let artistUrl: String?
+    let artworkUrl100: String?
+    let genres: [Genres]?
+    let url: String?
 }
+
+struct Genres: Codable {
+    let genreId: String?
+    let name: String?
+    let url: String?
+}
+
+

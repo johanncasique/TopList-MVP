@@ -17,8 +17,6 @@
 		8771D8041FADE7AC0082D14F /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8771D8031FADE7AC0082D14F /* Keys.swift */; };
 		8771D8071FADF7260082D14F /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8771D8061FADF7260082D14F /* Styles.swift */; };
 		8771D8091FADFAAA0082D14F /* UIColor+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8771D8081FADFAAA0082D14F /* UIColor+Hex.swift */; };
-		87722A551F2CCF930050808D /* MasterSideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A541F2CCF930050808D /* MasterSideViewController.swift */; };
-		87722A571F2CCFB80050808D /* MasterSideViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87722A561F2CCFB80050808D /* MasterSideViewController.storyboard */; };
 		87722A5B1F2CD0EE0050808D /* JCStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A5A1F2CD0EE0050808D /* JCStoryboard.swift */; };
 		87722A5E1F2CD1310050808D /* JCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A5D1F2CD1310050808D /* JCViewController.swift */; };
 		87722A611F2CD1C80050808D /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A601F2CD1C80050808D /* SideMenuViewController.swift */; };
@@ -38,6 +36,17 @@
 		87BFE0CD1FAD036900AED0FA /* TopApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BFE0CC1FAD036900AED0FA /* TopApps.swift */; };
 		87E8BFE51F48B3E8007ED07D /* SwiftyStarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8BFE41F48B3E8007ED07D /* SwiftyStarRatingView.swift */; };
 		87E8BFE71F48BA1D007ED07D /* JCCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8BFE61F48BA1D007ED07D /* JCCALayer.swift */; };
+		87F07B3D208A5710003B3EA5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B3C208A5710003B3EA5 /* Result.swift */; };
+		87F07B3F208A59CF003B3EA5 /* TopFreeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B3E208A59CF003B3EA5 /* TopFreeUseCase.swift */; };
+		87F07B44208B2197003B3EA5 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B43208B2197003B3EA5 /* ApiClient.swift */; };
+		87F07B46208B2404003B3EA5 /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B45208B2404003B3EA5 /* ApiResponse.swift */; };
+		87F07B49208B3042003B3EA5 /* ApiAppsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B48208B3042003B3EA5 /* ApiAppsGateway.swift */; };
+		87F07B4B208B3196003B3EA5 /* AppApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B4A208B3196003B3EA5 /* AppApiRequest.swift */; };
+		87F07B4D208B52CE003B3EA5 /* ApiApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B4C208B52CE003B3EA5 /* ApiApps.swift */; };
+		87F07B5A208CAE8A003B3EA5 /* FreeAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B59208CAE8A003B3EA5 /* FreeAppConfigurator.swift */; };
+		87F07B5D208CB246003B3EA5 /* AppsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B5C208CB246003B3EA5 /* AppsGateway.swift */; };
+		87F07B5F208CBF2B003B3EA5 /* TopFreeAppsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B5E208CBF2B003B3EA5 /* TopFreeAppsRouter.swift */; };
+		87F07B61208CC071003B3EA5 /* FreeAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B60208CC071003B3EA5 /* FreeAppPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +63,6 @@
 		8771D8031FADE7AC0082D14F /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		8771D8061FADF7260082D14F /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		8771D8081FADFAAA0082D14F /* UIColor+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Hex.swift"; sourceTree = "<group>"; };
-		87722A541F2CCF930050808D /* MasterSideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterSideViewController.swift; sourceTree = "<group>"; };
-		87722A561F2CCFB80050808D /* MasterSideViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MasterSideViewController.storyboard; sourceTree = "<group>"; };
 		87722A5A1F2CD0EE0050808D /* JCStoryboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCStoryboard.swift; sourceTree = "<group>"; };
 		87722A5D1F2CD1310050808D /* JCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCViewController.swift; sourceTree = "<group>"; };
 		87722A601F2CD1C80050808D /* SideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +82,17 @@
 		87BFE0CC1FAD036900AED0FA /* TopApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopApps.swift; sourceTree = "<group>"; };
 		87E8BFE41F48B3E8007ED07D /* SwiftyStarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyStarRatingView.swift; sourceTree = "<group>"; };
 		87E8BFE61F48BA1D007ED07D /* JCCALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCCALayer.swift; sourceTree = "<group>"; };
+		87F07B3C208A5710003B3EA5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		87F07B3E208A59CF003B3EA5 /* TopFreeUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFreeUseCase.swift; sourceTree = "<group>"; };
+		87F07B43208B2197003B3EA5 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		87F07B45208B2404003B3EA5 /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		87F07B48208B3042003B3EA5 /* ApiAppsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiAppsGateway.swift; sourceTree = "<group>"; };
+		87F07B4A208B3196003B3EA5 /* AppApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppApiRequest.swift; sourceTree = "<group>"; };
+		87F07B4C208B52CE003B3EA5 /* ApiApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiApps.swift; sourceTree = "<group>"; };
+		87F07B59208CAE8A003B3EA5 /* FreeAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAppConfigurator.swift; sourceTree = "<group>"; };
+		87F07B5C208CB246003B3EA5 /* AppsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGateway.swift; sourceTree = "<group>"; };
+		87F07B5E208CBF2B003B3EA5 /* TopFreeAppsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFreeAppsRouter.swift; sourceTree = "<group>"; };
+		87F07B60208CC071003B3EA5 /* FreeAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAppPresenter.swift; sourceTree = "<group>"; };
 		FBC7E77EA4DB6F8A737F7A83 /* Pods_TopChartStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopChartStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -119,6 +137,8 @@
 		874867301F1429140001EB96 /* TopChartStore */ = {
 			isa = PBXGroup;
 			children = (
+				87F07B40208A5C91003B3EA5 /* EntityGateway */,
+				87F07B39208A55DD003B3EA5 /* Core */,
 				8771D8051FADF70C0082D14F /* Views */,
 				874867461F14297B0001EB96 /* JCClasses */,
 				874867451F1429700001EB96 /* Model */,
@@ -137,6 +157,9 @@
 			children = (
 				874867331F1429140001EB96 /* FreeAppViewController.swift */,
 				874867351F1429140001EB96 /* FreeAppViewController.storyboard */,
+				87F07B59208CAE8A003B3EA5 /* FreeAppConfigurator.swift */,
+				87F07B5E208CBF2B003B3EA5 /* TopFreeAppsRouter.swift */,
+				87F07B60208CC071003B3EA5 /* FreeAppPresenter.swift */,
 			);
 			name = FreeAppsStore;
 			sourceTree = "<group>";
@@ -150,7 +173,6 @@
 				874867431F14295B0001EB96 /* FreeAppsStore */,
 				87722A641F2CDC180050808D /* TabBar */,
 				87722A5F1F2CD1A90050808D /* SideMenu */,
-				87722A531F2CCF750050808D /* MasterSideViewController */,
 				879B8B491F157BBB008505E9 /* Cell */,
 			);
 			name = Controllers;
@@ -159,7 +181,6 @@
 		874867451F1429700001EB96 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				87BFE0CC1FAD036900AED0FA /* TopApps.swift */,
 				8771D8031FADE7AC0082D14F /* Keys.swift */,
 			);
 			name = Model;
@@ -182,15 +203,6 @@
 				8771D8081FADFAAA0082D14F /* UIColor+Hex.swift */,
 			);
 			name = Views;
-			sourceTree = "<group>";
-		};
-		87722A531F2CCF750050808D /* MasterSideViewController */ = {
-			isa = PBXGroup;
-			children = (
-				87722A541F2CCF930050808D /* MasterSideViewController.swift */,
-				87722A561F2CCFB80050808D /* MasterSideViewController.storyboard */,
-			);
-			name = MasterSideViewController;
 			sourceTree = "<group>";
 		};
 		87722A581F2CD0A10050808D /* Extensions */ = {
@@ -314,6 +326,85 @@
 			name = FreeAppCell;
 			sourceTree = "<group>";
 		};
+		87F07B39208A55DD003B3EA5 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				87F07B5B208CB1AC003B3EA5 /* Gateway */,
+				87F07B3A208A5621003B3EA5 /* Entities */,
+				87F07B3B208A5635003B3EA5 /* UseCases */,
+				87F07B3C208A5710003B3EA5 /* Result.swift */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		87F07B3A208A5621003B3EA5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				87BFE0CC1FAD036900AED0FA /* TopApps.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		87F07B3B208A5635003B3EA5 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				87F07B3E208A59CF003B3EA5 /* TopFreeUseCase.swift */,
+			);
+			name = UseCases;
+			sourceTree = "<group>";
+		};
+		87F07B40208A5C91003B3EA5 /* EntityGateway */ = {
+			isa = PBXGroup;
+			children = (
+				87F07B41208A5CF2003B3EA5 /* API */,
+				87F07B43208B2197003B3EA5 /* ApiClient.swift */,
+				87F07B45208B2404003B3EA5 /* ApiResponse.swift */,
+				87F07B58208CADEB003B3EA5 /* Request */,
+			);
+			name = EntityGateway;
+			sourceTree = "<group>";
+		};
+		87F07B41208A5CF2003B3EA5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				87F07B47208B301F003B3EA5 /* Gateways */,
+				87F07B42208A5CFF003B3EA5 /* Entities */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		87F07B42208A5CFF003B3EA5 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				87F07B4C208B52CE003B3EA5 /* ApiApps.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		87F07B47208B301F003B3EA5 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				87F07B48208B3042003B3EA5 /* ApiAppsGateway.swift */,
+			);
+			name = Gateways;
+			sourceTree = "<group>";
+		};
+		87F07B58208CADEB003B3EA5 /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				87F07B4A208B3196003B3EA5 /* AppApiRequest.swift */,
+			);
+			name = Request;
+			sourceTree = "<group>";
+		};
+		87F07B5B208CB1AC003B3EA5 /* Gateway */ = {
+			isa = PBXGroup;
+			children = (
+				87F07B5C208CB246003B3EA5 /* AppsGateway.swift */,
+			);
+			name = Gateway;
+			sourceTree = "<group>";
+		};
 		A3BECC5A48531108B4ADEE5B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,7 +426,6 @@
 				8748672B1F1429140001EB96 /* Frameworks */,
 				8748672C1F1429140001EB96 /* Resources */,
 				5BC09FF0F810E6D2635874C6 /* [CP] Embed Pods Frameworks */,
-				AC0F6FE10AFBA741391E0749 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -390,7 +480,6 @@
 				87722A7B1F2D24C80050808D /* FlagKit.xcassets in Resources */,
 				87722A761F2D1AAB0050808D /* CountryListViewController.storyboard in Resources */,
 				874867391F1429140001EB96 /* Assets.xcassets in Resources */,
-				87722A571F2CCFB80050808D /* MasterSideViewController.storyboard in Resources */,
 				874867371F1429140001EB96 /* FreeAppViewController.storyboard in Resources */,
 				87722A6B1F2CE2A10050808D /* PaidAppsViewController.storyboard in Resources */,
 				87722A711F2CEB720050808D /* GrossingAppViewController.storyboard in Resources */,
@@ -406,9 +495,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-TopChartStore/Pods-TopChartStore-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
+				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -421,28 +519,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TopChartStore-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		AC0F6FE10AFBA741391E0749 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TopChartStore/Pods-TopChartStore-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -454,14 +540,24 @@
 			files = (
 				8771D8091FADFAAA0082D14F /* UIColor+Hex.swift in Sources */,
 				87722A691F2CE26B0050808D /* PaidAppStoreViewController.swift in Sources */,
+				87F07B5F208CBF2B003B3EA5 /* TopFreeAppsRouter.swift in Sources */,
 				87BFE0CD1FAD036900AED0FA /* TopApps.swift in Sources */,
 				879B8B451F156CFF008505E9 /* JCNetworkError.swift in Sources */,
 				874867341F1429140001EB96 /* FreeAppViewController.swift in Sources */,
+				87F07B5A208CAE8A003B3EA5 /* FreeAppConfigurator.swift in Sources */,
 				87722A5E1F2CD1310050808D /* JCViewController.swift in Sources */,
 				87E8BFE51F48B3E8007ED07D /* SwiftyStarRatingView.swift in Sources */,
+				87F07B3F208A59CF003B3EA5 /* TopFreeUseCase.swift in Sources */,
+				87F07B4B208B3196003B3EA5 /* AppApiRequest.swift in Sources */,
 				8771D8041FADE7AC0082D14F /* Keys.swift in Sources */,
+				87F07B61208CC071003B3EA5 /* FreeAppPresenter.swift in Sources */,
 				87722A6F1F2CEB440050808D /* GrossingAppViewController.swift in Sources */,
 				874867321F1429140001EB96 /* AppDelegate.swift in Sources */,
+				87F07B44208B2197003B3EA5 /* ApiClient.swift in Sources */,
+				87F07B3D208A5710003B3EA5 /* Result.swift in Sources */,
+				87F07B4D208B52CE003B3EA5 /* ApiApps.swift in Sources */,
+				87F07B5D208CB246003B3EA5 /* AppsGateway.swift in Sources */,
+				87F07B46208B2404003B3EA5 /* ApiResponse.swift in Sources */,
 				87722A5B1F2CD0EE0050808D /* JCStoryboard.swift in Sources */,
 				87E8BFE71F48BA1D007ED07D /* JCCALayer.swift in Sources */,
 				8771D8071FADF7260082D14F /* Styles.swift in Sources */,
@@ -469,10 +565,10 @@
 				87722A791F2D1E9A0050808D /* CountryTableViewCell.swift in Sources */,
 				87722A741F2D179C0050808D /* CountryListViewController.swift in Sources */,
 				879B8B4C1F157BD6008505E9 /* FreeAppTableViewCell.swift in Sources */,
+				87F07B49208B3042003B3EA5 /* ApiAppsGateway.swift in Sources */,
 				8703335F1F2F857C00484AD7 /* JCQueryNetwork.swift in Sources */,
 				87722A611F2CD1C80050808D /* SideMenuViewController.swift in Sources */,
 				87722A661F2CDC360050808D /* TabBarOptionViewController.swift in Sources */,
-				87722A551F2CCF930050808D /* MasterSideViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
