@@ -8,8 +8,10 @@
 
 import Foundation
 
-protocol ApiAppsGateway: TopFreeUseCase {
-    
+typealias TopAppsGatewayCompletionHandler = (_ apps: Result<ApiApps>) -> Void
+
+protocol ApiAppsGateway {
+    func getApps(withRequest request: ApiRequest, completionHanlder: @escaping TopAppsGatewayCompletionHandler)
 }
 
 class ApiAppsGatewayImplemantation: ApiAppsGateway {
@@ -20,10 +22,9 @@ class ApiAppsGatewayImplemantation: ApiAppsGateway {
         self.apiClient = apiClient
     }
     
-    func getApps(completionHandler completionHanlder: @escaping TopFreeAppsGatewayCompletionHandler) {
-        let appsApiRequest = AppsApiRequest()
+    func getApps(withRequest request: ApiRequest, completionHanlder: @escaping TopAppsGatewayCompletionHandler) {
         
-        apiClient.execute(request: appsApiRequest) { (result: Result<ApiResponse<ApiApps>>) in
+        apiClient.execute(request: request) { (result: Result<ApiResponse<ApiApps>>) in
             switch result {
             case let .success(response):
                 print(response)

@@ -58,26 +58,26 @@ class GrossingAppViewController: UIViewController{
         activity.isHidden = false
         grossingTable.backgroundView?.alpha = 0
         
-        JCQueryNetwork().getApps(.grossingApp, country: country ?? countryCode) { (paidResponse) in
-            
-            switch paidResponse {
-            case .Error(let error):
-                print(error)
-                break
-            case .Success(let data):
-                
-                //guard let dictionary = data as? JSON else {print("dic is nil")
-                  //  return
-                //}
-                //guard let topApps = TopApps(json: dictionary), let apps = topApps.feed?.results else { print("app is nil")
-                    return
-                }
-                
-                self.activity.stopAnimating()
-                self.activity.isHidden = true
-                self.grossingTable.backgroundView?.alpha = 1
-                self.grossingTable.reloadData()
-            }
+//        JCQueryNetwork().getApps(.grossingApp, country: country ?? countryCode) { (paidResponse) in
+//            
+//            switch paidResponse {
+//            case .Error(let error):
+//                print(error)
+//                break
+//            case .Success(let data):
+//                
+//                //guard let dictionary = data as? JSON else {print("dic is nil")
+//                  //  return
+//                //}
+//                //guard let topApps = TopApps(json: dictionary), let apps = topApps.feed?.results else { print("app is nil")
+//                    return
+//                }
+//                
+//                self.activity.stopAnimating()
+//                self.activity.isHidden = true
+//                self.grossingTable.backgroundView?.alpha = 1
+//                self.grossingTable.reloadData()
+//            }
         }
     
     

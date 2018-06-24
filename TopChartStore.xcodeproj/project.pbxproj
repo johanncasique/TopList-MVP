@@ -33,6 +33,14 @@
 		879B8B421F156C04008505E9 /* JCNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879B8B411F156C04008505E9 /* JCNetwork.swift */; };
 		879B8B451F156CFF008505E9 /* JCNetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879B8B441F156CFF008505E9 /* JCNetworkError.swift */; };
 		879B8B4C1F157BD6008505E9 /* FreeAppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879B8B4B1F157BD6008505E9 /* FreeAppTableViewCell.swift */; };
+		87BF354120D585370034F1B5 /* PaidAppStorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BF354020D585370034F1B5 /* PaidAppStorePresenter.swift */; };
+		87BF354320D593130034F1B5 /* PaidAppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BF354220D593130034F1B5 /* PaidAppUseCase.swift */; };
+		87BF354520D5B0CB0034F1B5 /* PadApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BF354420D5B0CB0034F1B5 /* PadApiRequest.swift */; };
+		87BF354720D67D2D0034F1B5 /* PaidAppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BF354620D67D2D0034F1B5 /* PaidAppRouter.swift */; };
+		87BF354920D67F890034F1B5 /* PaidAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BF354820D67F890034F1B5 /* PaidAppConfigurator.swift */; };
+		87BF354B20D6A95F0034F1B5 /* GrossingAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BF354A20D6A95F0034F1B5 /* GrossingAppPresenter.swift */; };
+		87BF354D20D6AAE90034F1B5 /* GrossingAppUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BF354C20D6AAE90034F1B5 /* GrossingAppUseCase.swift */; };
+		87BF354F20D6AB850034F1B5 /* GrossingApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BF354E20D6AB850034F1B5 /* GrossingApiRequest.swift */; };
 		87BFE0CD1FAD036900AED0FA /* TopApps.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87BFE0CC1FAD036900AED0FA /* TopApps.swift */; };
 		87E8BFE51F48B3E8007ED07D /* SwiftyStarRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8BFE41F48B3E8007ED07D /* SwiftyStarRatingView.swift */; };
 		87E8BFE71F48BA1D007ED07D /* JCCALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87E8BFE61F48BA1D007ED07D /* JCCALayer.swift */; };
@@ -79,6 +87,14 @@
 		879B8B411F156C04008505E9 /* JCNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCNetwork.swift; sourceTree = "<group>"; };
 		879B8B441F156CFF008505E9 /* JCNetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCNetworkError.swift; sourceTree = "<group>"; };
 		879B8B4B1F157BD6008505E9 /* FreeAppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAppTableViewCell.swift; sourceTree = "<group>"; };
+		87BF354020D585370034F1B5 /* PaidAppStorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidAppStorePresenter.swift; sourceTree = "<group>"; };
+		87BF354220D593130034F1B5 /* PaidAppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidAppUseCase.swift; sourceTree = "<group>"; };
+		87BF354420D5B0CB0034F1B5 /* PadApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadApiRequest.swift; sourceTree = "<group>"; };
+		87BF354620D67D2D0034F1B5 /* PaidAppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidAppRouter.swift; sourceTree = "<group>"; };
+		87BF354820D67F890034F1B5 /* PaidAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaidAppConfigurator.swift; sourceTree = "<group>"; };
+		87BF354A20D6A95F0034F1B5 /* GrossingAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrossingAppPresenter.swift; sourceTree = "<group>"; };
+		87BF354C20D6AAE90034F1B5 /* GrossingAppUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrossingAppUseCase.swift; sourceTree = "<group>"; };
+		87BF354E20D6AB850034F1B5 /* GrossingApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrossingApiRequest.swift; sourceTree = "<group>"; };
 		87BFE0CC1FAD036900AED0FA /* TopApps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopApps.swift; sourceTree = "<group>"; };
 		87E8BFE41F48B3E8007ED07D /* SwiftyStarRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyStarRatingView.swift; sourceTree = "<group>"; };
 		87E8BFE61F48BA1D007ED07D /* JCCALayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCCALayer.swift; sourceTree = "<group>"; };
@@ -253,6 +269,9 @@
 			children = (
 				87722A681F2CE26B0050808D /* PaidAppStoreViewController.swift */,
 				87722A6A1F2CE2A10050808D /* PaidAppsViewController.storyboard */,
+				87BF354020D585370034F1B5 /* PaidAppStorePresenter.swift */,
+				87BF354620D67D2D0034F1B5 /* PaidAppRouter.swift */,
+				87BF354820D67F890034F1B5 /* PaidAppConfigurator.swift */,
 			);
 			name = PaidAppsStore;
 			sourceTree = "<group>";
@@ -262,6 +281,7 @@
 			children = (
 				87722A6E1F2CEB440050808D /* GrossingAppViewController.swift */,
 				87722A701F2CEB720050808D /* GrossingAppViewController.storyboard */,
+				87BF354A20D6A95F0034F1B5 /* GrossingAppPresenter.swift */,
 			);
 			name = GrossingAppStore;
 			sourceTree = "<group>";
@@ -349,6 +369,8 @@
 			isa = PBXGroup;
 			children = (
 				87F07B3E208A59CF003B3EA5 /* TopFreeUseCase.swift */,
+				87BF354220D593130034F1B5 /* PaidAppUseCase.swift */,
+				87BF354C20D6AAE90034F1B5 /* GrossingAppUseCase.swift */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -393,6 +415,8 @@
 			isa = PBXGroup;
 			children = (
 				87F07B4A208B3196003B3EA5 /* AppApiRequest.swift */,
+				87BF354420D5B0CB0034F1B5 /* PadApiRequest.swift */,
+				87BF354E20D6AB850034F1B5 /* GrossingApiRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -553,17 +577,25 @@
 				87F07B61208CC071003B3EA5 /* FreeAppPresenter.swift in Sources */,
 				87722A6F1F2CEB440050808D /* GrossingAppViewController.swift in Sources */,
 				874867321F1429140001EB96 /* AppDelegate.swift in Sources */,
+				87BF354D20D6AAE90034F1B5 /* GrossingAppUseCase.swift in Sources */,
 				87F07B44208B2197003B3EA5 /* ApiClient.swift in Sources */,
+				87BF354B20D6A95F0034F1B5 /* GrossingAppPresenter.swift in Sources */,
+				87BF354F20D6AB850034F1B5 /* GrossingApiRequest.swift in Sources */,
+				87BF354520D5B0CB0034F1B5 /* PadApiRequest.swift in Sources */,
 				87F07B3D208A5710003B3EA5 /* Result.swift in Sources */,
+				87BF354320D593130034F1B5 /* PaidAppUseCase.swift in Sources */,
 				87F07B4D208B52CE003B3EA5 /* ApiApps.swift in Sources */,
 				87F07B5D208CB246003B3EA5 /* AppsGateway.swift in Sources */,
 				87F07B46208B2404003B3EA5 /* ApiResponse.swift in Sources */,
+				87BF354920D67F890034F1B5 /* PaidAppConfigurator.swift in Sources */,
+				87BF354720D67D2D0034F1B5 /* PaidAppRouter.swift in Sources */,
 				87722A5B1F2CD0EE0050808D /* JCStoryboard.swift in Sources */,
 				87E8BFE71F48BA1D007ED07D /* JCCALayer.swift in Sources */,
 				8771D8071FADF7260082D14F /* Styles.swift in Sources */,
 				879B8B421F156C04008505E9 /* JCNetwork.swift in Sources */,
 				87722A791F2D1E9A0050808D /* CountryTableViewCell.swift in Sources */,
 				87722A741F2D179C0050808D /* CountryListViewController.swift in Sources */,
+				87BF354120D585370034F1B5 /* PaidAppStorePresenter.swift in Sources */,
 				879B8B4C1F157BD6008505E9 /* FreeAppTableViewCell.swift in Sources */,
 				87F07B49208B3042003B3EA5 /* ApiAppsGateway.swift in Sources */,
 				8703335F1F2F857C00484AD7 /* JCQueryNetwork.swift in Sources */,

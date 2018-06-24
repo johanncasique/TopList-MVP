@@ -12,12 +12,11 @@ import Alamofire
 //let AppleURL = "https://itunes.apple.com/"
 let AppleURL = "https://rss.itunes.apple.com/api/v1/"
 
-enum Query: String {
+enum Query {
     //case FreeApp = "/rss/topfreeapplications/limit=100/json"
     static let FreeApp = "ios-apps/top-free/all/200/explicit.json"
-    case paidApp = "/ios-apps/top-paid/all/200/explicit.json"
-    case grossingApp = "/ios-apps/top-grossing/all/200/explicit.json"
-    
+    static let paidApp = "/ios-apps/top-paid/all/200/explicit.json"
+    static let grossingApp = "/ios-apps/top-grossing/all/200/explicit.json"
 }
 
 class JCQueryNetwork {
@@ -29,7 +28,7 @@ class JCQueryNetwork {
     
     public func getApps(_ store: Query,  country: String, completionHandler: @escaping (Result<AnyObject>) -> Void){
         
-        let endpoint = "\(AppleURL)\(country)\(store.rawValue)"
+        let endpoint = "\(AppleURL)\(country)\(store)"
         
         JCNetwork().getData(with: endpoint, method: .get) { (freeAppResponse) in
             

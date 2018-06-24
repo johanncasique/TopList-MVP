@@ -8,10 +8,8 @@
 
 import Foundation
 
-typealias TopFreeAppsGatewayCompletionHandler = (_ apps: Result<ApiApps>) -> Void
-
 protocol TopFreeUseCase {
-    func getApps(completionHandler: @escaping TopFreeAppsGatewayCompletionHandler)
+    func getApps(completionHandler: @escaping TopAppsGatewayCompletionHandler)
 }
 
 class TopFreeAppsUseCaseImplementation: TopFreeUseCase {
@@ -22,8 +20,8 @@ class TopFreeAppsUseCaseImplementation: TopFreeUseCase {
         self.appsGateway = appsGateway
     }
     
-    func getApps(completionHandler: @escaping TopFreeAppsGatewayCompletionHandler) {
-        self.appsGateway.getApps { (apps) in
+    func getApps(completionHandler: @escaping TopAppsGatewayCompletionHandler) {
+        self.appsGateway.getApps(withRequest: AppsApiRequest()) { (apps) in
             completionHandler(apps)
         }
     }

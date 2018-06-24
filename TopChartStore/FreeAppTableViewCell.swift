@@ -24,25 +24,20 @@ class FreeAppTableViewCell: UITableViewCell{
     
    override func awakeFromNib() {
         super.awakeFromNib()
-        
-        //backView.layer.cornerRadius = 20
     }
     
     //MARK:
     //MARK:Configure Cell
     public func configureFreeCell(with appModel: App){
         
-        
         backView.layer.cornerRadius = 10
         backView.layer.borderWidth = 0.1
         backView.layer.borderColor = UIColor.lightGray.cgColor
         backView.layer.shadowAlpha(with: 0.5, radius: 2, positionX: 0.3, positionY: 2.5, color: .lightGray)
         
-        
-        
-//        if let urlImage = appModel.iconImage{
-//            appImage.af_setImage(withURL: urlImage, placeholderImage: #imageLiteral(resourceName: "placeHolderIconApp"), imageTransition: .crossDissolve(0.2))
-//        }
+        if let stringImage = appModel.artworkUrl100, let urlImage = URL(string: stringImage) {
+            appImage.af_setImage(withURL: urlImage, placeholderImage: #imageLiteral(resourceName: "placeHolderIconApp"), imageTransition: .crossDissolve(0.2))
+        }
         appImage.layer.cornerRadius = 15
         appImage.layer.borderColor = UIColor.gray.cgColor
         appImage.layer.borderWidth = 0.3

@@ -7,3 +7,20 @@
 //
 
 import Foundation
+
+class GrossingAppUseCaseImplementation: TopFreeUseCase {
+    
+    var gateway: ApiAppsGateway
+    
+    init(apiAppsGateway: ApiAppsGateway) {
+        self.gateway = apiAppsGateway
+    }
+    
+    func getApps(completionHandler: @escaping TopAppsGatewayCompletionHandler) {
+        gateway.getApps(withRequest: <#T##ApiRequest#>, completionHanlder: <#T##TopAppsGatewayCompletionHandler##TopAppsGatewayCompletionHandler##(Result<ApiApps>) -> Void#>)
+    }
+    
+    
+}
+    
+

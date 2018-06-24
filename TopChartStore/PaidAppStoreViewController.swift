@@ -11,7 +11,7 @@ import UIKit
 
 let PaidCellIdentifier = "PaidCell"
 
-class PaidAppsViewController: UIViewController{
+class PaidAppsViewController: UIViewController, PaidAppView {
     
     //MARK:
     //MARK:Variables and Iboutlets
@@ -19,14 +19,23 @@ class PaidAppsViewController: UIViewController{
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
-    private var paidArr: [App] = []
+    var presenter: PaidAppPresenter?
+    var configurator =  PaidAppConfiguratorImplementation()
     private let defaults = UserDefaults.standard
     
     //MARK:
     //MARK:Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        activity.startAnimating()
+        configurator.configure(paidAppViewController: self)
+        presenter?.viewDidLoad()
+    }
+    
+    func refreshView() {
+        paidTable.reloadData()
+        activity.stopAnimating()
+        activity.hidesWhenStopped = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -52,14 +61,13 @@ extension PaidAppsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return paidArr.count
+        return presenter?.numberOfApps ?? 0
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: FreeAppTableViewCell = tableView.dequeueReusableCell(withIdentifier: PaidCellIdentifier, for: indexPath) as! FreeAppTableViewCell
-        cell.configureFreeCell(with: paidArr[indexPath.row])
-        
+        presenter?.configure(cell: cell, forRow: indexPath.row)
         
         return cell
         

@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+protocol PaidAppRouter {
+    func goToDetail(for app: App)
+}
+
+class PaidAppRouterImplementation: PaidAppRouter {
+
+    fileprivate weak var paidAppViewController: PaidAppsViewController?
+    fileprivate var app: App?
+    
+    
+    init(paidAppViewController: PaidAppsViewController) {
+        self.paidAppViewController = paidAppViewController
+    }
+
+    func goToDetail(for app: App) {
+        self.app = app
+    }
+}

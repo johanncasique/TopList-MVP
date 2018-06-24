@@ -8,21 +8,19 @@
 
 import Foundation
 
-typealias PaidAppGatewayCompletion = (_ apps: Result<ApiApps>) -> Void
-
-protocol PadiAppUseCase {
-    func getApps(completion: @escaping PaidAppGatewayCompletion)
+protocol PaidAppUseCase {
+    func getApps(completion: @escaping TopAppsGatewayCompletionHandler)
 }
 
-class PaidAppUseCaseImplementation: PadiAppUseCase {
+class PaidAppUseCaseImplementation: PaidAppUseCase {
     let appsGateway: ApiAppsGateway
     
     init(appsGateway: ApiAppsGateway) {
         self.appsGateway = appsGateway
     }
     
-    func getApps(completion: @escaping PaidAppGatewayCompletion) {
-        self.appsGateway.getApps { apps in
+    func getApps(completion: @escaping TopAppsGatewayCompletionHandler) {
+        self.appsGateway.getApps(withRequest: PadApiRequest()) { apps in
             completion(apps)
         }
     }
