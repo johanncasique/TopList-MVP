@@ -14,31 +14,40 @@ protocol GrossingAppView: class {
 
 protocol GrossingAppPresenter {
     var numberOfApps: Int { get }
-    var router: PaidAppRouter { get }
+    var router: GrossingRouter { get }
     func viewDidLoad()
     func configure(cell: FreeAppTableViewCell, forRow row: Int)
     func didSelected(atRow row: Int)
 }
 
 class GrossingAppPresenterImplementation: GrossingAppPresenter {
-
     
     var apps = [App]()
-    var router: PaidAppRouter
     fileprivate weak var view: GrossingAppView?
+    fileprivate let displayUseCase: TopFreeUseCase
+    internal let router: GrossingRouter
     
     var numberOfApps: Int {
         return apps.count
     }
     
-    
-    init(<#parameters#>) {
-        <#statements#>
+    init(view: GrossingAppView, useCase: TopFreeUseCase, router: GrossingRouter) {
+        self.view = view
+        self.displayUseCase = useCase
+        self.router = router
     }
     
     
     func viewDidLoad() {
-        
+        displayUseCase.getApps {apps in
+            
+            switch apps {
+            case .success(let apps):
+                self.handleApps(apps)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     func configure(cell: FreeAppTableViewCell, forRow row: Int) {
@@ -49,5 +58,14 @@ class GrossingAppPresenterImplementation: GrossingAppPresenter {
         
     }
     
+    
+    //=================================
+    // MARK: - Privates
+    //=================================
+    private func handleApps(_ apps: ApiApps) {
+        guard let app = apps.result else { return }
+        self.apps = app
+        view?.refreshView()
+    }
     
 }

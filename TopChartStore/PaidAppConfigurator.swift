@@ -10,15 +10,15 @@ import Foundation
 import Alamofire
 
 protocol PaidAppConfigurator {
-    func configure(paidAppViewController: PaidAppsViewController)
+    func configure(paidAppViewController: PaidAppsViewController, country: String)
 }
 
 class PaidAppConfiguratorImplementation: PaidAppConfigurator {
-
-    func configure(paidAppViewController: PaidAppsViewController) {
+    
+    func configure(paidAppViewController: PaidAppsViewController, country: String) {
         let apiClient = ApiClientImplementation(session: SessionManager())
         let apiAppGateway = ApiAppsGatewayImplemantation(apiClient: apiClient)
-        let useCase = PaidAppUseCaseImplementation(appsGateway: apiAppGateway)
+        let useCase = PaidAppUseCaseImplementation(appsGateway: apiAppGateway, country: country)
         let router = PaidAppRouterImplementation(paidAppViewController: paidAppViewController)
         
         let presenter = PaidAppPresenterImplementation(view: paidAppViewController,
@@ -26,6 +26,4 @@ class PaidAppConfiguratorImplementation: PaidAppConfigurator {
                                                        router: router)
         paidAppViewController.presenter = presenter
     }
-    
-    
 }

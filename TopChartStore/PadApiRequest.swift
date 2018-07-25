@@ -10,8 +10,11 @@ import Foundation
 import Alamofire
 
 struct PadApiRequest: ApiRequest {
+    
+    let country: String
+    
     var url: String {
-        return "\(AppleURL)ve/\(Query.paidApp)"
+        return "\(AppleURL)\(country)/\(Query.paidApp)"
     }
     
     var method: HTTPMethod {

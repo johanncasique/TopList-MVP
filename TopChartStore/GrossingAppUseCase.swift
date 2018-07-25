@@ -11,13 +11,17 @@ import Foundation
 class GrossingAppUseCaseImplementation: TopFreeUseCase {
     
     var gateway: ApiAppsGateway
+    let country: String
     
-    init(apiAppsGateway: ApiAppsGateway) {
+    init(apiAppsGateway: ApiAppsGateway, country: String) {
         self.gateway = apiAppsGateway
+        self.country = country
     }
     
     func getApps(completionHandler: @escaping TopAppsGatewayCompletionHandler) {
-        gateway.getApps(withRequest: <#T##ApiRequest#>, completionHanlder: <#T##TopAppsGatewayCompletionHandler##TopAppsGatewayCompletionHandler##(Result<ApiApps>) -> Void#>)
+        gateway.getApps(withRequest: GrossingApiRequest(country: country), completionHanlder: { apps in
+            completionHandler(apps)
+        })
     }
     
     

@@ -28,7 +28,7 @@ class PaidAppsViewController: UIViewController, PaidAppView {
     override func viewDidLoad() {
         super.viewDidLoad()
         activity.startAnimating()
-        configurator.configure(paidAppViewController: self)
+        configurator.configure(paidAppViewController: self, country: "ve")
         presenter?.viewDidLoad()
     }
     

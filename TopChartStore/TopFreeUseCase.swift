@@ -15,13 +15,15 @@ protocol TopFreeUseCase {
 class TopFreeAppsUseCaseImplementation: TopFreeUseCase {
     
     let appsGateway: ApiAppsGateway
+    let country: String
     
-    init(appsGateway: ApiAppsGateway) {
+    init(appsGateway: ApiAppsGateway, country: String) {
         self.appsGateway = appsGateway
+        self.country = country
     }
     
     func getApps(completionHandler: @escaping TopAppsGatewayCompletionHandler) {
-        self.appsGateway.getApps(withRequest: AppsApiRequest()) { (apps) in
+        self.appsGateway.getApps(withRequest: AppsApiRequest(country: country)) { (apps) in
             completionHandler(apps)
         }
     }

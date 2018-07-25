@@ -10,15 +10,15 @@ import Foundation
 import Alamofire
 
 protocol FreeAppConfigurator {
-    func configure(freeAppViewController: FreeAppViewController)
+    func configure(freeAppViewController: FreeAppViewController, country: String)
 }
 
 class FreeAppConfiguratorConfigurator: FreeAppConfigurator {
     
-    func configure(freeAppViewController: FreeAppViewController) {
+    func configure(freeAppViewController: FreeAppViewController, country: String) {
         let apiClient =  ApiClientImplementation(session: SessionManager())
         let apiAppsGateway = ApiAppsGatewayImplemantation(apiClient: apiClient)
-        let displayAppsUseCase = TopFreeAppsUseCaseImplementation(appsGateway: apiAppsGateway)
+        let displayAppsUseCase = TopFreeAppsUseCaseImplementation(appsGateway: apiAppsGateway, country: country)
         let router = TopFreeAppsRouterImplementation(freeAppViewController: freeAppViewController)
         
         let presenter = FreeAppPresenterImplementation(view: freeAppViewController,

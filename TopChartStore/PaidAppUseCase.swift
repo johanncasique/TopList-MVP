@@ -14,13 +14,15 @@ protocol PaidAppUseCase {
 
 class PaidAppUseCaseImplementation: PaidAppUseCase {
     let appsGateway: ApiAppsGateway
+    let country: String
     
-    init(appsGateway: ApiAppsGateway) {
+    init(appsGateway: ApiAppsGateway, country: String) {
         self.appsGateway = appsGateway
+        self.country = country
     }
     
     func getApps(completion: @escaping TopAppsGatewayCompletionHandler) {
-        self.appsGateway.getApps(withRequest: PadApiRequest()) { apps in
+        self.appsGateway.getApps(withRequest: PadApiRequest(country: country)) { apps in
             completion(apps)
         }
     }

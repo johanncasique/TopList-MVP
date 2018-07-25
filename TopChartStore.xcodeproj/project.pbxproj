@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0AC4C62109129200D6D210 /* GrossingAppImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0AC4C52109129200D6D210 /* GrossingAppImplementation.swift */; };
+		1E0AC4C8210917F200D6D210 /* GrossingAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0AC4C7210917F200D6D210 /* GrossingAppConfigurator.swift */; };
 		60DCC228FC1D8988850B157F /* Pods_TopChartStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC7E77EA4DB6F8A737F7A83 /* Pods_TopChartStore.framework */; };
 		8703335F1F2F857C00484AD7 /* JCQueryNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8703335E1F2F857C00484AD7 /* JCQueryNetwork.swift */; };
 		874867321F1429140001EB96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874867311F1429140001EB96 /* AppDelegate.swift */; };
@@ -25,7 +27,6 @@
 		87722A691F2CE26B0050808D /* PaidAppStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A681F2CE26B0050808D /* PaidAppStoreViewController.swift */; };
 		87722A6B1F2CE2A10050808D /* PaidAppsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87722A6A1F2CE2A10050808D /* PaidAppsViewController.storyboard */; };
 		87722A6F1F2CEB440050808D /* GrossingAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A6E1F2CEB440050808D /* GrossingAppViewController.swift */; };
-		87722A711F2CEB720050808D /* GrossingAppViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87722A701F2CEB720050808D /* GrossingAppViewController.storyboard */; };
 		87722A741F2D179C0050808D /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A731F2D179C0050808D /* CountryListViewController.swift */; };
 		87722A761F2D1AAB0050808D /* CountryListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87722A751F2D1AAB0050808D /* CountryListViewController.storyboard */; };
 		87722A791F2D1E9A0050808D /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A781F2D1E9A0050808D /* CountryTableViewCell.swift */; };
@@ -59,6 +60,8 @@
 
 /* Begin PBXFileReference section */
 		06733EB5F4730C4634579C3C /* Pods-TopChartStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopChartStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TopChartStore/Pods-TopChartStore.release.xcconfig"; sourceTree = "<group>"; };
+		1E0AC4C52109129200D6D210 /* GrossingAppImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrossingAppImplementation.swift; sourceTree = "<group>"; };
+		1E0AC4C7210917F200D6D210 /* GrossingAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrossingAppConfigurator.swift; sourceTree = "<group>"; };
 		80D1CC23E99EAD2F2301668F /* Pods-TopChartStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopChartStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TopChartStore/Pods-TopChartStore.debug.xcconfig"; sourceTree = "<group>"; };
 		8703335E1F2F857C00484AD7 /* JCQueryNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JCQueryNetwork.swift; sourceTree = "<group>"; };
 		8748672E1F1429140001EB96 /* TopChartStore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopChartStore.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,7 +82,6 @@
 		87722A681F2CE26B0050808D /* PaidAppStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaidAppStoreViewController.swift; sourceTree = "<group>"; };
 		87722A6A1F2CE2A10050808D /* PaidAppsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PaidAppsViewController.storyboard; sourceTree = "<group>"; };
 		87722A6E1F2CEB440050808D /* GrossingAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrossingAppViewController.swift; sourceTree = "<group>"; };
-		87722A701F2CEB720050808D /* GrossingAppViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GrossingAppViewController.storyboard; sourceTree = "<group>"; };
 		87722A731F2D179C0050808D /* CountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		87722A751F2D1AAB0050808D /* CountryListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CountryListViewController.storyboard; sourceTree = "<group>"; };
 		87722A781F2D1E9A0050808D /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
@@ -280,8 +282,9 @@
 			isa = PBXGroup;
 			children = (
 				87722A6E1F2CEB440050808D /* GrossingAppViewController.swift */,
-				87722A701F2CEB720050808D /* GrossingAppViewController.storyboard */,
 				87BF354A20D6A95F0034F1B5 /* GrossingAppPresenter.swift */,
+				1E0AC4C52109129200D6D210 /* GrossingAppImplementation.swift */,
+				1E0AC4C7210917F200D6D210 /* GrossingAppConfigurator.swift */,
 			);
 			name = GrossingAppStore;
 			sourceTree = "<group>";
@@ -506,7 +509,6 @@
 				874867391F1429140001EB96 /* Assets.xcassets in Resources */,
 				874867371F1429140001EB96 /* FreeAppViewController.storyboard in Resources */,
 				87722A6B1F2CE2A10050808D /* PaidAppsViewController.storyboard in Resources */,
-				87722A711F2CEB720050808D /* GrossingAppViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +585,7 @@
 				87BF354F20D6AB850034F1B5 /* GrossingApiRequest.swift in Sources */,
 				87BF354520D5B0CB0034F1B5 /* PadApiRequest.swift in Sources */,
 				87F07B3D208A5710003B3EA5 /* Result.swift in Sources */,
+				1E0AC4C62109129200D6D210 /* GrossingAppImplementation.swift in Sources */,
 				87BF354320D593130034F1B5 /* PaidAppUseCase.swift in Sources */,
 				87F07B4D208B52CE003B3EA5 /* ApiApps.swift in Sources */,
 				87F07B5D208CB246003B3EA5 /* AppsGateway.swift in Sources */,
@@ -594,6 +597,7 @@
 				8771D8071FADF7260082D14F /* Styles.swift in Sources */,
 				879B8B421F156C04008505E9 /* JCNetwork.swift in Sources */,
 				87722A791F2D1E9A0050808D /* CountryTableViewCell.swift in Sources */,
+				1E0AC4C8210917F200D6D210 /* GrossingAppConfigurator.swift in Sources */,
 				87722A741F2D179C0050808D /* CountryListViewController.swift in Sources */,
 				87BF354120D585370034F1B5 /* PaidAppStorePresenter.swift in Sources */,
 				879B8B4C1F157BD6008505E9 /* FreeAppTableViewCell.swift in Sources */,

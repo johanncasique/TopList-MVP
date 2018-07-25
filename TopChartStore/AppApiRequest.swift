@@ -10,8 +10,11 @@ import Foundation
 import Alamofire
 
 struct AppsApiRequest: ApiRequest {
+    
+    let country: String
+    
     var url: String {
-        return "\(AppleURL)ve/\(Query.FreeApp)"
+        return "\(AppleURL)\(country)/\(Query.FreeApp)"
     }
     
     var method: HTTPMethod {

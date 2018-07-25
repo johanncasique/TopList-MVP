@@ -36,7 +36,7 @@ class FreeAppViewController: UIViewController, FreeAppView {
         super.viewDidLoad()
         
         activity.startAnimating()
-        configurator.configure(freeAppViewController: self)
+        configurator.configure(freeAppViewController: self, country: "ve")
         presenter.viewDidLoad()
     }
     

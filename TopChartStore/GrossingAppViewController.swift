@@ -10,16 +10,18 @@ import UIKit
 
 let GrossingCellIdentifier = "GrossingCell"
 
-class GrossingAppViewController: UIViewController{
-    
+class GrossingAppViewController: UIViewController, GrossingAppView {
+
     //MARK:
     //MARK:Variables and Iboutlets
     @IBOutlet weak var grossingTable: UITableView!
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
-    private var grossingArr: [App] = []
+    
     private let defaults = UserDefaults.standard
+    var presenter: GrossingAppPresenter?
+    var configurator = GrossingAppConfiguratorImplementation()
     
     //MARK:
     //MARK:Life Cycle
@@ -27,19 +29,24 @@ class GrossingAppViewController: UIViewController{
         super.viewDidLoad()
         
         setupViews()
+        configurator.configure(view: self, country: "es")
+        presenter?.viewDidLoad()
+        
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        if let countrySaved = defaults.value(forKey: Keys.defaults.countryISO),
-            let country = countrySaved as? Country,
-            let countryName = defaults.value(forKey: Keys.defaults.countryName) as? String {
-            getTGApp(country: country)
-            countryNameLabel.text = countryName
-        }
-        
-    }
+    
+    
+//    override func viewDidAppear(_ animated: Bool) {
+//        super.viewDidAppear(animated)
+//
+//        if let countrySaved = defaults.value(forKey: Keys.defaults.countryISO),
+//            let country = countrySaved as? Country,
+//            let countryName = defaults.value(forKey: Keys.defaults.countryName) as? String {
+//            getTGApp(country: country)
+//            countryNameLabel.text = countryName
+//        }
+//
+//    }
     
     //MARK:
     //MARK:SetupViews
@@ -57,28 +64,7 @@ class GrossingAppViewController: UIViewController{
         activity.startAnimating()
         activity.isHidden = false
         grossingTable.backgroundView?.alpha = 0
-        
-//        JCQueryNetwork().getApps(.grossingApp, country: country ?? countryCode) { (paidResponse) in
-//            
-//            switch paidResponse {
-//            case .Error(let error):
-//                print(error)
-//                break
-//            case .Success(let data):
-//                
-//                //guard let dictionary = data as? JSON else {print("dic is nil")
-//                  //  return
-//                //}
-//                //guard let topApps = TopApps(json: dictionary), let apps = topApps.feed?.results else { print("app is nil")
-//                    return
-//                }
-//                
-//                self.activity.stopAnimating()
-//                self.activity.isHidden = true
-//                self.grossingTable.backgroundView?.alpha = 1
-//                self.grossingTable.reloadData()
-//            }
-        }
+    }
     
     
     //MARK:
@@ -87,6 +73,12 @@ class GrossingAppViewController: UIViewController{
         
         let countryListVC: CountryListViewController = UIStoryboard.storyboard(storyboard: .CountryListViewController).instantiateViewController()
         present(countryListVC, animated: true, completion: nil)
+    }
+    
+    func refreshView() {
+        activity.stopAnimating()
+        activity.hidesWhenStopped = true
+        grossingTable.reloadData()
     }
     
 }
@@ -101,13 +93,13 @@ extension GrossingAppViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return grossingArr.count
+        return presenter?.numberOfApps ?? 0
     }
     
     internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell: FreeAppTableViewCell = tableView.dequeueReusableCell(withIdentifier: GrossingCellIdentifier, for: indexPath) as! FreeAppTableViewCell
-        cell.configureFreeCell(with: grossingArr[indexPath.row])
+        presenter?.configure(cell: cell, forRow: indexPath.row)
         
         return cell
         
