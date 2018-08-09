@@ -8,8 +8,8 @@
 
 import Foundation
 
-typealias FetchAppsEntityGatewayCompletionHandler = (_ books: Result<[App]>) -> Void
+typealias FetchAppsEntityGatewayCompletionHandler<T> = (_ books: Result<[T]>) -> Void
 
 protocol AppsGateway {
-    func fetchApps(completionHandler: @escaping FetchAppsEntityGatewayCompletionHandler)
+    func fetchApps<T>(completionHandler: @escaping FetchAppsEntityGatewayCompletionHandler<T>)
 }

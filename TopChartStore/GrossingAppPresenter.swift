@@ -24,14 +24,14 @@ class GrossingAppPresenterImplementation: GrossingAppPresenter {
     
     var apps = [App]()
     fileprivate weak var view: GrossingAppView?
-    fileprivate let displayUseCase: TopFreeUseCase
+    fileprivate let displayUseCase: TopAppsUseCaseProtocol
     internal let router: GrossingRouter
     
     var numberOfApps: Int {
         return apps.count
     }
     
-    init(view: GrossingAppView, useCase: TopFreeUseCase, router: GrossingRouter) {
+    init(view: GrossingAppView, useCase: TopAppsUseCaseProtocol, router: GrossingRouter) {
         self.view = view
         self.displayUseCase = useCase
         self.router = router

@@ -23,7 +23,7 @@ protocol PaidAppPresenter {
 class PaidAppPresenterImplementation: PaidAppPresenter {
     
     fileprivate weak var view: PaidAppView?
-    fileprivate let displayAppUseCase: PaidAppUseCase
+    fileprivate let displayAppUseCase: TopAppsUseCaseProtocol
     internal let router: PaidAppRouter
     
     var apps = [App]()
@@ -31,7 +31,7 @@ class PaidAppPresenterImplementation: PaidAppPresenter {
         return apps.count
     }
     
-    init(view: PaidAppView, useCase: PaidAppUseCase, router: PaidAppRouter) {
+    init(view: PaidAppView, useCase: TopAppsUseCaseProtocol, router: PaidAppRouter) {
         self.view = view
         self.displayAppUseCase = useCase
         self.router = router

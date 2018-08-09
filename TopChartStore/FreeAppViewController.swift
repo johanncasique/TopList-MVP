@@ -11,7 +11,7 @@ import UIKit
 typealias Country = String
 
 class FreeAppViewController: UIViewController, FreeAppView {
-   
+    
     //MARK:Variables and Iboutlets
     @IBOutlet weak var freeTable:UITableView!
     @IBOutlet weak var countryNameLabel: UILabel!
@@ -20,11 +20,19 @@ class FreeAppViewController: UIViewController, FreeAppView {
     var presenter: FreeAppPresenter!
     var configurator = FreeAppConfiguratorConfigurator()
     private let defaults = UserDefaults.standard
+    var dataSource: DataSource<FreeAppTableViewCell>? {
+        didSet {
+            freeTable.dataSource = dataSource
+            freeTable.reloadData()
+            activity.stopAnimating()
+            activity.hidesWhenStopped = true
+        }
+    }
     
     func refreshAppView() {
-        freeTable.reloadData()
-        activity.stopAnimating()
-        activity.hidesWhenStopped = true
+//        freeTable.reloadData()
+//        activity.stopAnimating()
+//        activity.hidesWhenStopped = true
     }
     
     func displayBooksRetrievalError(title: String, message: String) {
@@ -50,22 +58,22 @@ class FreeAppViewController: UIViewController, FreeAppView {
     }
 }
 
-extension FreeAppViewController: UITableViewDataSource {
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return presenter.numberOfApps
-    }
-    
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell: FreeAppTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FreeAppTableViewCell
-        presenter.configure(cell: cell, forRow: indexPath.row)
-        return cell
-    }
-}
+//extension FreeAppViewController: UITableViewDataSource {
+//
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//
+//        return 1
+//    }
+//
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//
+//        return presenter.numberOfApps
+//    }
+//
+//    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//
+//        let cell: FreeAppTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FreeAppTableViewCell
+//        presenter.configure(cell: cell, forRow: indexPath.row)
+//        return cell
+//    }
+//}

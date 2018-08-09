@@ -9,6 +9,7 @@
 import Foundation
 
 protocol FreeAppView: class {
+    var dataSource: DataSource<FreeAppTableViewCell>? { get set }
     func refreshAppView()
     func displayBooksRetrievalError(title: String, message: String)
 }
@@ -23,7 +24,7 @@ protocol FreeAppPresenter {
 
 class FreeAppPresenterImplementation: FreeAppPresenter {
     fileprivate weak var view: FreeAppView?
-    fileprivate let displayAppUseCase: TopFreeUseCase
+    fileprivate let displayAppUseCase: TopAppsUseCaseProtocol
     internal let router: TopFreeAppsRouter
     
     var apps = [App]()
@@ -32,7 +33,7 @@ class FreeAppPresenterImplementation: FreeAppPresenter {
         return apps.count
     }
     
-    init(view: FreeAppView, displayAppUseCase: TopFreeUseCase, router: TopFreeAppsRouter) {
+    init(view: FreeAppView, displayAppUseCase: TopAppsUseCaseProtocol, router: TopFreeAppsRouter) {
         self.view = view
         self.displayAppUseCase = displayAppUseCase
         self.router = router
@@ -65,7 +66,10 @@ class FreeAppPresenterImplementation: FreeAppPresenter {
     fileprivate func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
         self.apps = app
-        view?.refreshAppView()
+        let data = DataSource<FreeAppTableViewCell>()
+        data.items = app
+        view?.dataSource = data
+        //view?.refreshAppView()
     }
     
     fileprivate func handleAppsError(_ error: Error) {

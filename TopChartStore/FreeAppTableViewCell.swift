@@ -10,7 +10,7 @@ import UIKit
 import AlamofireImage
 import Alamofire
 
-class FreeAppTableViewCell: UITableViewCell{
+class FreeAppTableViewCell: UITableViewCell, ConfigureCellProtocol {
     
     //MARK:
     //MARK:Variables and Iboutlets

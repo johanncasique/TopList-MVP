@@ -8,12 +8,13 @@
 
 import Foundation
 
+
 struct TopApps: Codable {
-    let feed: Feed?
+    var feed: Feed?
 }
 
 struct Feed: Codable {
-    let results: [App]?
+    var results: [App]?
 }
 
 struct App: Codable {

@@ -8,11 +8,7 @@
 
 import Foundation
 
-protocol PaidAppUseCase {
-    func getApps(completion: @escaping TopAppsGatewayCompletionHandler)
-}
-
-class PaidAppUseCaseImplementation: PaidAppUseCase {
+class PaidAppUseCaseImplementation: TopAppsUseCaseImplementationProtocol {
     let appsGateway: ApiAppsGateway
     let country: String
     
@@ -21,8 +17,8 @@ class PaidAppUseCaseImplementation: PaidAppUseCase {
         self.country = country
     }
     
-    func getApps(completion: @escaping TopAppsGatewayCompletionHandler) {
-        self.appsGateway.getApps(withRequest: PadApiRequest(country: country)) { apps in
+    func getApps(completionHandler completion: @escaping TopAppsGatewayCompletionHandler) {
+        appsGateway.getApps(withRequest: PadApiRequest(country: country)) { apps in
             completion(apps)
         }
     }

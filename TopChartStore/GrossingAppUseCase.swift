@@ -8,23 +8,20 @@
 
 import Foundation
 
-class GrossingAppUseCaseImplementation: TopFreeUseCase {
-    
-    var gateway: ApiAppsGateway
-    let country: String
+class GrossingAppUseCaseImplementation: TopAppsUseCaseImplementationProtocol {
+    var appsGateway: ApiAppsGateway
+    var country: String
     
     init(apiAppsGateway: ApiAppsGateway, country: String) {
-        self.gateway = apiAppsGateway
+        self.appsGateway = apiAppsGateway
         self.country = country
     }
     
     func getApps(completionHandler: @escaping TopAppsGatewayCompletionHandler) {
-        gateway.getApps(withRequest: GrossingApiRequest(country: country), completionHanlder: { apps in
+        appsGateway.getApps(withRequest: GrossingApiRequest(country: country), completionHanlder: { apps in
             completionHandler(apps)
         })
     }
-    
-    
 }
     
 

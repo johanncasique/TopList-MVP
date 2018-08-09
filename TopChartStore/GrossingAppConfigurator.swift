@@ -20,7 +20,7 @@ class GrossingAppConfiguratorImplementation: GrossingAppConfigurator {
         let apiGateway = ApiAppsGatewayImplemantation(apiClient: apiClient)
         let useCase = GrossingAppUseCaseImplementation(apiAppsGateway: apiGateway, country: country)
         let router = GrossingAppRouterImplementation(grossingViewController: view)
-        let presenter = GrossingAppPresenterImplementation(view: view,
+        let presenter =  GrossingAppPresenterImplementation(view: view,
                                                            useCase: useCase,
                                                            router: router)
         view.presenter = presenter

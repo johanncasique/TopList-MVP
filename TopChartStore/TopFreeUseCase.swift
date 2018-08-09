@@ -8,14 +8,10 @@
 
 import Foundation
 
-protocol TopFreeUseCase {
-    func getApps(completionHandler: @escaping TopAppsGatewayCompletionHandler)
-}
-
-class TopFreeAppsUseCaseImplementation: TopFreeUseCase {
+class TopFreeAppsUseCaseImplementation: TopAppsUseCaseImplementationProtocol {
     
-    let appsGateway: ApiAppsGateway
-    let country: String
+    var appsGateway: ApiAppsGateway
+    var country: String
     
     init(appsGateway: ApiAppsGateway, country: String) {
         self.appsGateway = appsGateway
