@@ -20,8 +20,17 @@ class PaidAppsViewController: UIViewController, PaidAppView {
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
     var presenter: PaidAppPresenter?
-    var configurator =  PaidAppConfiguratorImplementation()
+    var configurator = PaidAppConfiguratorImplementation()
+    
     private let defaults = UserDefaults.standard
+    var dataSource: DataSource<FreeAppTableViewCell, PaidAppPresenterImplementation>? {
+        didSet {
+            paidTable.dataSource = dataSource
+            paidTable.reloadData()
+            activity.stopAnimating()
+            activity.hidesWhenStopped = true
+        }
+    }
     
     //MARK:
     //MARK:Life Cycle
@@ -30,12 +39,6 @@ class PaidAppsViewController: UIViewController, PaidAppView {
         activity.startAnimating()
         configurator.configure(paidAppViewController: self, country: "ve")
         presenter?.viewDidLoad()
-    }
-    
-    func refreshView() {
-        paidTable.reloadData()
-        activity.stopAnimating()
-        activity.hidesWhenStopped = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,29 +50,6 @@ class PaidAppsViewController: UIViewController, PaidAppView {
             
             countryNameLabel.text = countryName
         }
-        
-    }
-    
-}
-
-extension PaidAppsViewController: UITableViewDataSource {
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return presenter?.numberOfApps ?? 0
-    }
-    
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell: FreeAppTableViewCell = tableView.dequeueReusableCell(withIdentifier: PaidCellIdentifier, for: indexPath) as! FreeAppTableViewCell
-        presenter?.configure(cell: cell, forRow: indexPath.row)
-        
-        return cell
         
     }
 }

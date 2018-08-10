@@ -20,19 +20,13 @@ class FreeAppViewController: UIViewController, FreeAppView {
     var presenter: FreeAppPresenter!
     var configurator = FreeAppConfiguratorConfigurator()
     private let defaults = UserDefaults.standard
-    var dataSource: DataSource<FreeAppTableViewCell>? {
+    var dataSource: DataSource<FreeAppTableViewCell, FreeAppPresenterImplementation>? {
         didSet {
             freeTable.dataSource = dataSource
             freeTable.reloadData()
             activity.stopAnimating()
             activity.hidesWhenStopped = true
         }
-    }
-    
-    func refreshAppView() {
-//        freeTable.reloadData()
-//        activity.stopAnimating()
-//        activity.hidesWhenStopped = true
     }
     
     func displayBooksRetrievalError(title: String, message: String) {
@@ -57,23 +51,3 @@ class FreeAppViewController: UIViewController, FreeAppView {
         view.backgroundColor = Styles.Colors.background.color
     }
 }
-
-//extension FreeAppViewController: UITableViewDataSource {
-//
-//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//
-//        return 1
-//    }
-//
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//
-//        return presenter.numberOfApps
-//    }
-//
-//    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//
-//        let cell: FreeAppTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! FreeAppTableViewCell
-//        presenter.configure(cell: cell, forRow: indexPath.row)
-//        return cell
-//    }
-//}

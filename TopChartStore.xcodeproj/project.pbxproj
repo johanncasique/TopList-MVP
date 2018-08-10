@@ -56,6 +56,9 @@
 		87F07B5D208CB246003B3EA5 /* AppsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B5C208CB246003B3EA5 /* AppsGateway.swift */; };
 		87F07B5F208CBF2B003B3EA5 /* TopFreeAppsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B5E208CBF2B003B3EA5 /* TopFreeAppsRouter.swift */; };
 		87F07B61208CC071003B3EA5 /* FreeAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B60208CC071003B3EA5 /* FreeAppPresenter.swift */; };
+		A82F430C211D9F0900BAC7FD /* FreeAppTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82F430B211D9F0900BAC7FD /* FreeAppTableViewCell.xib */; };
+		A82F4310211DA65B00BAC7FD /* ArrayDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82F430F211DA65B00BAC7FD /* ArrayDataProvider.swift */; };
+		A82F4312211DA8FA00BAC7FD /* TableArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82F4311211DA8F900BAC7FD /* TableArrayDataSource.swift */; };
 		A8ACBE75211C8BA400F4AE72 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */; };
 		A8ACBE78211C8D4500F4AE72 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE77211C8D4500F4AE72 /* DataSource.swift */; };
 /* End PBXBuildFile section */
@@ -113,6 +116,9 @@
 		87F07B5C208CB246003B3EA5 /* AppsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGateway.swift; sourceTree = "<group>"; };
 		87F07B5E208CBF2B003B3EA5 /* TopFreeAppsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFreeAppsRouter.swift; sourceTree = "<group>"; };
 		87F07B60208CC071003B3EA5 /* FreeAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAppPresenter.swift; sourceTree = "<group>"; };
+		A82F430B211D9F0900BAC7FD /* FreeAppTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreeAppTableViewCell.xib; sourceTree = "<group>"; };
+		A82F430F211DA65B00BAC7FD /* ArrayDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDataProvider.swift; sourceTree = "<group>"; };
+		A82F4311211DA8F900BAC7FD /* TableArrayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableArrayDataSource.swift; sourceTree = "<group>"; };
 		A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
 		A8ACBE77211C8D4500F4AE72 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		FBC7E77EA4DB6F8A737F7A83 /* Pods_TopChartStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopChartStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,10 +184,10 @@
 			isa = PBXGroup;
 			children = (
 				874867331F1429140001EB96 /* FreeAppViewController.swift */,
+				87F07B60208CC071003B3EA5 /* FreeAppPresenter.swift */,
 				874867351F1429140001EB96 /* FreeAppViewController.storyboard */,
 				87F07B59208CAE8A003B3EA5 /* FreeAppConfigurator.swift */,
 				87F07B5E208CBF2B003B3EA5 /* TopFreeAppsRouter.swift */,
-				87F07B60208CC071003B3EA5 /* FreeAppPresenter.swift */,
 			);
 			name = FreeAppsStore;
 			sourceTree = "<group>";
@@ -275,8 +281,8 @@
 			isa = PBXGroup;
 			children = (
 				87722A681F2CE26B0050808D /* PaidAppStoreViewController.swift */,
-				87722A6A1F2CE2A10050808D /* PaidAppsViewController.storyboard */,
 				87BF354020D585370034F1B5 /* PaidAppStorePresenter.swift */,
+				87722A6A1F2CE2A10050808D /* PaidAppsViewController.storyboard */,
 				87BF354620D67D2D0034F1B5 /* PaidAppRouter.swift */,
 				87BF354820D67F890034F1B5 /* PaidAppConfigurator.swift */,
 			);
@@ -350,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				879B8B4B1F157BD6008505E9 /* FreeAppTableViewCell.swift */,
+				A82F430B211D9F0900BAC7FD /* FreeAppTableViewCell.xib */,
 			);
 			name = FreeAppCell;
 			sourceTree = "<group>";
@@ -451,6 +458,8 @@
 			isa = PBXGroup;
 			children = (
 				A8ACBE77211C8D4500F4AE72 /* DataSource.swift */,
+				A82F430F211DA65B00BAC7FD /* ArrayDataProvider.swift */,
+				A82F4311211DA8F900BAC7FD /* TableArrayDataSource.swift */,
 			);
 			name = DataSource;
 			sourceTree = "<group>";
@@ -523,6 +532,7 @@
 				874867391F1429140001EB96 /* Assets.xcassets in Resources */,
 				874867371F1429140001EB96 /* FreeAppViewController.storyboard in Resources */,
 				87722A6B1F2CE2A10050808D /* PaidAppsViewController.storyboard in Resources */,
+				A82F430C211D9F0900BAC7FD /* FreeAppTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +593,7 @@
 				87F07B5F208CBF2B003B3EA5 /* TopFreeAppsRouter.swift in Sources */,
 				87BFE0CD1FAD036900AED0FA /* TopApps.swift in Sources */,
 				879B8B451F156CFF008505E9 /* JCNetworkError.swift in Sources */,
+				A82F4312211DA8FA00BAC7FD /* TableArrayDataSource.swift in Sources */,
 				874867341F1429140001EB96 /* FreeAppViewController.swift in Sources */,
 				87F07B5A208CAE8A003B3EA5 /* FreeAppConfigurator.swift in Sources */,
 				87722A5E1F2CD1310050808D /* JCViewController.swift in Sources */,
@@ -620,6 +631,7 @@
 				87F07B49208B3042003B3EA5 /* ApiAppsGateway.swift in Sources */,
 				8703335F1F2F857C00484AD7 /* JCQueryNetwork.swift in Sources */,
 				87722A611F2CD1C80050808D /* SideMenuViewController.swift in Sources */,
+				A82F4310211DA65B00BAC7FD /* ArrayDataProvider.swift in Sources */,
 				87722A661F2CDC360050808D /* TabBarOptionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

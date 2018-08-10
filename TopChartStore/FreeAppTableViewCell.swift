@@ -28,7 +28,7 @@ class FreeAppTableViewCell: UITableViewCell, ConfigureCellProtocol {
     
     //MARK:
     //MARK:Configure Cell
-    public func configureFreeCell(with appModel: App){
+    func configureFreeCell(with appModel: App){
         
         backView.layer.cornerRadius = 10
         backView.layer.borderWidth = 0.1
@@ -48,6 +48,5 @@ class FreeAppTableViewCell: UITableViewCell, ConfigureCellProtocol {
         getButton.setTitle("GET", for: .normal)
         getButton.layer.cornerRadius = 10
         inAppPurchaseLabel.text = "Offers In-App\n Purchases"
-        
     }
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -59,7 +59,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="España" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y7T-Be-scI">
-                                            <rect key="frame" x="20" y="8" width="149" height="45"/>
+                                            <rect key="frame" x="12" y="8" width="149" height="45"/>
                                             <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="149" id="Xim-pT-dkN"/>
@@ -73,7 +73,7 @@
                                             </connections>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, 5 June" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bjY-ft-hlT">
-                                            <rect key="frame" x="20" y="55" width="107" height="21"/>
+                                            <rect key="frame" x="12" y="55" width="107" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="IvO-Jg-djm"/>
                                                 <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="107" id="TxG-28-iYg"/>
@@ -109,7 +109,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="apu-7M-Z5S">
-                                                    <rect key="frame" x="8" y="8" width="359" height="142"/>
+                                                    <rect key="frame" x="15" y="11" width="345" height="136"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qSq-eR-9Th">
                                                             <rect key="frame" x="15" y="8" width="80" height="80"/>
@@ -119,13 +119,13 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WhatsApp Messenger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OrK-fA-Hpw">
-                                                            <rect key="frame" x="117" y="5" width="234" height="30"/>
+                                                            <rect key="frame" x="117" y="5" width="220" height="30"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jii-KT-0W7">
-                                                            <rect key="frame" x="15" y="103.5" width="80" height="30"/>
+                                                            <rect key="frame" x="15" y="97.5" width="80" height="30"/>
                                                             <color key="backgroundColor" red="0.94097524880000005" green="0.94063901900000002" blue="0.97369641070000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="80" id="F48-AN-Frj"/>
@@ -135,7 +135,7 @@
                                                             <state key="normal" title="GET"/>
                                                         </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dG-gW-chO">
-                                                            <rect key="frame" x="117" y="40" width="234" height="21"/>
+                                                            <rect key="frame" x="117" y="40" width="220" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                             <color key="textColor" red="0.56464678049999995" green="0.56020027400000005" blue="0.59328728909999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -170,7 +170,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </view>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Offers in-App" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5E-Dp-7JJ">
-                                                            <rect key="frame" x="117" y="111.5" width="57" height="15"/>
+                                                            <rect key="frame" x="117" y="105.5" width="57" height="15"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="57" id="PAc-oq-5qh"/>
                                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="YDE-nv-bPF"/>

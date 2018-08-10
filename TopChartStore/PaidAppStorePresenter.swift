@@ -9,24 +9,24 @@
 import Foundation
 
 protocol PaidAppView: class {
-    func refreshView()
+    var dataSource: DataSource<FreeAppTableViewCell, PaidAppPresenterImplementation>? { get set }
 }
 
 protocol PaidAppPresenter {
     var numberOfApps: Int { get }
     var router: PaidAppRouter { get }
     func viewDidLoad()
-    func configure(cell: FreeAppTableViewCell, forRow row: Int)
     func didSelected(atRow row: Int)
 }
 
-class PaidAppPresenterImplementation: PaidAppPresenter {
-    
+class PaidAppPresenterImplementation: PaidAppPresenter, ModelProtocol {
+    typealias T = App
     fileprivate weak var view: PaidAppView?
     fileprivate let displayAppUseCase: TopAppsUseCaseProtocol
     internal let router: PaidAppRouter
     
     var apps = [App]()
+    var items: [App]?
     var numberOfApps: Int {
         return apps.count
     }
@@ -47,22 +47,19 @@ class PaidAppPresenterImplementation: PaidAppPresenter {
             }
         }
     }
-    
-    func configure(cell: FreeAppTableViewCell, forRow row: Int) {
-        cell.configureFreeCell(with: apps[row])
-    }
-    
+
     func didSelected(atRow row: Int) {
         
     }
     
-    //=================================
+    
     // MARK: - Privates
-    //=================================
     private func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
         self.apps = app
-        view?.refreshView()
+        self.items = app
+        let dataSource = DataSource<FreeAppTableViewCell, PaidAppPresenterImplementation>()
+        dataSource.provider = self
+        view?.dataSource = dataSource
     }
-    
 }
