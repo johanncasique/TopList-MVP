@@ -6,4 +6,26 @@
 //  Copyright © 2018 Johann Casique. All rights reserved.
 //
 
-import Foundation
+import UIKit
+
+protocol DetailAppViewProtocol: class {
+    //var dataSource: DataSource<FreeAppTableViewCell, DetailAppPresenter> { set get }
+    
+}
+
+class DetailViewController: UIViewController, DetailAppViewProtocol {
+    
+    var presenter: DetailAppPresenterProtocol?
+    var configurator: DetailAppConfigProtocol?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        configurator?.configure(detailViewController: self)
+        presenter?.viewDidLoad()
+        
+    }
+    
+    
+    
+}

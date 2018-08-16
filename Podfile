@@ -6,8 +6,8 @@ target 'TopChartStore' do
   use_frameworks!
 
   # Pods for TopChartStore
-  pod 'Alamofire', '~> 4.5'
-  pod 'ModelMapper'
+  #pod 'Alamofire', '~> 4.5'
+  #pod 'ModelMapper'
   pod 'AlamofireImage', '~> 3.1'
-  pod 'Gloss', '2.0.0-beta.1'
+  #pod 'Gloss', '2.0.0-beta.1'
 end

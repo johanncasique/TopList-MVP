@@ -17,7 +17,7 @@ struct AppsApiRequest: ApiRequest {
         return "\(AppleURL)\(country)/\(Query.FreeApp)"
     }
     
-    var method: HTTPMethod {
+    var method: ApiHTTPMethod {
         return .get
     }
     

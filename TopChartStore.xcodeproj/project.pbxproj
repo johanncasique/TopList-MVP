@@ -25,7 +25,6 @@
 		87722A631F2CD6BC0050808D /* SideMenuViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87722A621F2CD6BC0050808D /* SideMenuViewController.storyboard */; };
 		87722A661F2CDC360050808D /* TabBarOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A651F2CDC360050808D /* TabBarOptionViewController.swift */; };
 		87722A691F2CE26B0050808D /* PaidAppStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A681F2CE26B0050808D /* PaidAppStoreViewController.swift */; };
-		87722A6B1F2CE2A10050808D /* PaidAppsViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87722A6A1F2CE2A10050808D /* PaidAppsViewController.storyboard */; };
 		87722A6F1F2CEB440050808D /* GrossingAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A6E1F2CEB440050808D /* GrossingAppViewController.swift */; };
 		87722A741F2D179C0050808D /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87722A731F2D179C0050808D /* CountryListViewController.swift */; };
 		87722A761F2D1AAB0050808D /* CountryListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87722A751F2D1AAB0050808D /* CountryListViewController.storyboard */; };
@@ -56,9 +55,16 @@
 		87F07B5D208CB246003B3EA5 /* AppsGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B5C208CB246003B3EA5 /* AppsGateway.swift */; };
 		87F07B5F208CBF2B003B3EA5 /* TopFreeAppsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B5E208CBF2B003B3EA5 /* TopFreeAppsRouter.swift */; };
 		87F07B61208CC071003B3EA5 /* FreeAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87F07B60208CC071003B3EA5 /* FreeAppPresenter.swift */; };
+		A82982682122F8AC00156F17 /* PaidApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82982672122F8AC00156F17 /* PaidApp.storyboard */; };
+		A829826A2123002700156F17 /* GrossingApp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A82982692123002700156F17 /* GrossingApp.storyboard */; };
+		A829826E21259DDA00156F17 /* ApiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A829826D21259DDA00156F17 /* ApiSession.swift */; };
 		A82F430C211D9F0900BAC7FD /* FreeAppTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82F430B211D9F0900BAC7FD /* FreeAppTableViewCell.xib */; };
 		A82F4310211DA65B00BAC7FD /* ArrayDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82F430F211DA65B00BAC7FD /* ArrayDataProvider.swift */; };
 		A82F4312211DA8FA00BAC7FD /* TableArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82F4311211DA8F900BAC7FD /* TableArrayDataSource.swift */; };
+		A834602A21217F1C009D91B4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834602921217F1C009D91B4 /* DetailViewController.swift */; };
+		A834602C21217FA4009D91B4 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A834602B21217FA4009D91B4 /* DetailViewController.storyboard */; };
+		A834602E21219905009D91B4 /* DetailAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834602D21219905009D91B4 /* DetailAppPresenter.swift */; };
+		A834603021219921009D91B4 /* DetailAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834602F21219921009D91B4 /* DetailAppConfigurator.swift */; };
 		A8ACBE75211C8BA400F4AE72 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */; };
 		A8ACBE78211C8D4500F4AE72 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE77211C8D4500F4AE72 /* DataSource.swift */; };
 /* End PBXBuildFile section */
@@ -85,7 +91,6 @@
 		87722A621F2CD6BC0050808D /* SideMenuViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SideMenuViewController.storyboard; sourceTree = "<group>"; };
 		87722A651F2CDC360050808D /* TabBarOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarOptionViewController.swift; sourceTree = "<group>"; };
 		87722A681F2CE26B0050808D /* PaidAppStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaidAppStoreViewController.swift; sourceTree = "<group>"; };
-		87722A6A1F2CE2A10050808D /* PaidAppsViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PaidAppsViewController.storyboard; sourceTree = "<group>"; };
 		87722A6E1F2CEB440050808D /* GrossingAppViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrossingAppViewController.swift; sourceTree = "<group>"; };
 		87722A731F2D179C0050808D /* CountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		87722A751F2D1AAB0050808D /* CountryListViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CountryListViewController.storyboard; sourceTree = "<group>"; };
@@ -116,9 +121,16 @@
 		87F07B5C208CB246003B3EA5 /* AppsGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppsGateway.swift; sourceTree = "<group>"; };
 		87F07B5E208CBF2B003B3EA5 /* TopFreeAppsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopFreeAppsRouter.swift; sourceTree = "<group>"; };
 		87F07B60208CC071003B3EA5 /* FreeAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAppPresenter.swift; sourceTree = "<group>"; };
+		A82982672122F8AC00156F17 /* PaidApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PaidApp.storyboard; sourceTree = "<group>"; };
+		A82982692123002700156F17 /* GrossingApp.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GrossingApp.storyboard; sourceTree = "<group>"; };
+		A829826D21259DDA00156F17 /* ApiSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSession.swift; sourceTree = "<group>"; };
 		A82F430B211D9F0900BAC7FD /* FreeAppTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreeAppTableViewCell.xib; sourceTree = "<group>"; };
 		A82F430F211DA65B00BAC7FD /* ArrayDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDataProvider.swift; sourceTree = "<group>"; };
 		A82F4311211DA8F900BAC7FD /* TableArrayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableArrayDataSource.swift; sourceTree = "<group>"; };
+		A834602921217F1C009D91B4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A834602B21217FA4009D91B4 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
+		A834602D21219905009D91B4 /* DetailAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppPresenter.swift; sourceTree = "<group>"; };
+		A834602F21219921009D91B4 /* DetailAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppConfigurator.swift; sourceTree = "<group>"; };
 		A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
 		A8ACBE77211C8D4500F4AE72 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		FBC7E77EA4DB6F8A737F7A83 /* Pods_TopChartStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopChartStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -195,6 +207,7 @@
 		874867441F1429680001EB96 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A834602821217EE9009D91B4 /* Detail */,
 				A8ACBE76211C8D2200F4AE72 /* DataSource */,
 				87722A721F2D17600050808D /* CountryList */,
 				87722A6D1F2CEAF50050808D /* GrossingAppStore */,
@@ -280,9 +293,9 @@
 		87722A671F2CE23A0050808D /* PaidAppsStore */ = {
 			isa = PBXGroup;
 			children = (
+				A82982672122F8AC00156F17 /* PaidApp.storyboard */,
 				87722A681F2CE26B0050808D /* PaidAppStoreViewController.swift */,
 				87BF354020D585370034F1B5 /* PaidAppStorePresenter.swift */,
-				87722A6A1F2CE2A10050808D /* PaidAppsViewController.storyboard */,
 				87BF354620D67D2D0034F1B5 /* PaidAppRouter.swift */,
 				87BF354820D67F890034F1B5 /* PaidAppConfigurator.swift */,
 			);
@@ -292,6 +305,7 @@
 		87722A6D1F2CEAF50050808D /* GrossingAppStore */ = {
 			isa = PBXGroup;
 			children = (
+				A82982692123002700156F17 /* GrossingApp.storyboard */,
 				87722A6E1F2CEB440050808D /* GrossingAppViewController.swift */,
 				87BF354A20D6A95F0034F1B5 /* GrossingAppPresenter.swift */,
 				1E0AC4C52109129200D6D210 /* GrossingAppImplementation.swift */,
@@ -395,6 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				87F07B41208A5CF2003B3EA5 /* API */,
+				A829826D21259DDA00156F17 /* ApiSession.swift */,
 				87F07B43208B2197003B3EA5 /* ApiClient.swift */,
 				87F07B45208B2404003B3EA5 /* ApiResponse.swift */,
 				87F07B58208CADEB003B3EA5 /* Request */,
@@ -452,6 +467,17 @@
 				06733EB5F4730C4634579C3C /* Pods-TopChartStore.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		A834602821217EE9009D91B4 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				A834602921217F1C009D91B4 /* DetailViewController.swift */,
+				A834602B21217FA4009D91B4 /* DetailViewController.storyboard */,
+				A834602D21219905009D91B4 /* DetailAppPresenter.swift */,
+				A834602F21219921009D91B4 /* DetailAppConfigurator.swift */,
+			);
+			name = Detail;
 			sourceTree = "<group>";
 		};
 		A8ACBE76211C8D2200F4AE72 /* DataSource */ = {
@@ -527,11 +553,13 @@
 			files = (
 				87722A631F2CD6BC0050808D /* SideMenuViewController.storyboard in Resources */,
 				8748673C1F1429140001EB96 /* LaunchScreen.storyboard in Resources */,
+				A82982682122F8AC00156F17 /* PaidApp.storyboard in Resources */,
 				87722A7B1F2D24C80050808D /* FlagKit.xcassets in Resources */,
 				87722A761F2D1AAB0050808D /* CountryListViewController.storyboard in Resources */,
 				874867391F1429140001EB96 /* Assets.xcassets in Resources */,
 				874867371F1429140001EB96 /* FreeAppViewController.storyboard in Resources */,
-				87722A6B1F2CE2A10050808D /* PaidAppsViewController.storyboard in Resources */,
+				A834602C21217FA4009D91B4 /* DetailViewController.storyboard in Resources */,
+				A829826A2123002700156F17 /* GrossingApp.storyboard in Resources */,
 				A82F430C211D9F0900BAC7FD /* FreeAppTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,11 +638,15 @@
 				87BF354F20D6AB850034F1B5 /* GrossingApiRequest.swift in Sources */,
 				87BF354520D5B0CB0034F1B5 /* PadApiRequest.swift in Sources */,
 				87F07B3D208A5710003B3EA5 /* Result.swift in Sources */,
+				A834602E21219905009D91B4 /* DetailAppPresenter.swift in Sources */,
 				1E0AC4C62109129200D6D210 /* GrossingAppImplementation.swift in Sources */,
+				A829826E21259DDA00156F17 /* ApiSession.swift in Sources */,
 				87BF354320D593130034F1B5 /* PaidAppUseCase.swift in Sources */,
 				87F07B4D208B52CE003B3EA5 /* ApiApps.swift in Sources */,
+				A834602A21217F1C009D91B4 /* DetailViewController.swift in Sources */,
 				87F07B5D208CB246003B3EA5 /* AppsGateway.swift in Sources */,
 				87F07B46208B2404003B3EA5 /* ApiResponse.swift in Sources */,
+				A834603021219921009D91B4 /* DetailAppConfigurator.swift in Sources */,
 				87BF354920D67F890034F1B5 /* PaidAppConfigurator.swift in Sources */,
 				87BF354720D67D2D0034F1B5 /* PaidAppRouter.swift in Sources */,
 				87722A5B1F2CD0EE0050808D /* JCStoryboard.swift in Sources */,

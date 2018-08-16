@@ -17,7 +17,7 @@ struct PadApiRequest: ApiRequest {
         return "\(AppleURL)\(country)/\(Query.paidApp)"
     }
     
-    var method: HTTPMethod {
+    var method: ApiHTTPMethod {
         return .get
     }
     

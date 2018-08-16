@@ -18,14 +18,20 @@ class FreeAppViewController: UIViewController, FreeAppView {
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
     var presenter: FreeAppPresenter!
-    var configurator = FreeAppConfiguratorConfigurator()
+    lazy var configurator: FreeAppConfiguratorConfigurator = {
+        return FreeAppConfiguratorConfigurator()
+    }()
     private let defaults = UserDefaults.standard
     var dataSource: DataSource<FreeAppTableViewCell, FreeAppPresenterImplementation>? {
         didSet {
-            freeTable.dataSource = dataSource
-            freeTable.reloadData()
-            activity.stopAnimating()
-            activity.hidesWhenStopped = true
+            DispatchQueue.main.async { [weak self] in 
+                guard let strongSelf = self else { return }
+                strongSelf.freeTable.dataSource = strongSelf.dataSource
+                strongSelf.freeTable.delegate = strongSelf.dataSource
+                strongSelf.freeTable.reloadData()
+                strongSelf.activity.stopAnimating()
+                strongSelf.activity.hidesWhenStopped = true
+            }
         }
     }
     
@@ -49,5 +55,11 @@ class FreeAppViewController: UIViewController, FreeAppView {
         countryNameLabel.font = Styles.Fonts.country
         countryNameLabel.textColor = Styles.Colors.white
         view.backgroundColor = Styles.Colors.background.color
+    }
+}
+
+extension FreeAppViewController: DataSourceDelegate {
+    func rowDidSelected(at index: Int) {
+        presenter.didSelect(row: index)
     }
 }

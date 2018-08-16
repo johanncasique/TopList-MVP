@@ -18,7 +18,7 @@ struct GrossingApiRequest: ApiRequest {
         return "\(AppleURL)\(country)/\(Query.grossingApp)"
     }
     
-    var method: HTTPMethod {
+    var method: ApiHTTPMethod {
         return .get
     }
     

@@ -23,25 +23,34 @@ protocol ModelProtocol {
 }
 
 
-class DataSource<Cell: UITableViewCell, Provider: ModelProtocol>: NSObject, UITableViewDataSource where Cell : ConfigureCellProtocol, Provider.T == Cell.T {
+class DataSource<Cell: UITableViewCell, Provider: ModelProtocol>: NSObject, UITableViewDataSource, UITableViewDelegate where Cell : ConfigureCellProtocol, Provider.T == Cell.T {
     
-    var provider: Provider?
+    var provider: Provider
     weak var delegate: DataSourceDelegate?
     
+    init(provider: Provider, delegate: DataSourceDelegate? = nil) {
+        self.provider = provider
+        self.delegate = delegate
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return provider?.items?.count ?? 0
+        return provider.items?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell: Cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? Cell,
-            let items = provider?.items else {
+            let items = provider.items else {
             fatalError()
         }
         
         cell.configureFreeCell(with: items[indexPath.row])
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.rowDidSelected(at: indexPath.row)
     }
 }
 
@@ -72,7 +81,7 @@ protocol TableDataProvider {
 
 class TableDataSource<Provider: TableDataProvider, Cell: UITableViewCell>: NSObject, UITableViewDataSource, UITableViewDelegate where Cell: ConfigurableCell, Provider.T == Cell.T {
     
-    //where here it means that Cell has to conform ConfigurableCell protocol and T has to equal for Providar and also Cell
+    //"where" here it means that Cell has to conform ConfigurableCell protocol and T has to equal for Providar and also Cell
     
     // MARK: - private properties
     let provider: Provider

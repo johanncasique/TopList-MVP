@@ -13,10 +13,10 @@ protocol FreeAppConfigurator {
     func configure(freeAppViewController: FreeAppViewController, country: String)
 }
 
-class FreeAppConfiguratorConfigurator: FreeAppConfigurator {
+class FreeAppConfiguratorConfigurator: FreeAppConfigurator, ApiSession {
     
     func configure(freeAppViewController: FreeAppViewController, country: String) {
-        let apiClient =  ApiClientImplementation(session: SessionManager())
+        let apiClient =  ApiClientImplementation(session: defaultSession)
         let apiAppsGateway = ApiAppsGatewayImplemantation(apiClient: apiClient)
         let displayAppsUseCase = TopFreeAppsUseCaseImplementation(appsGateway: apiAppsGateway, country: country)
         let router = TopFreeAppsRouterImplementation(freeAppViewController: freeAppViewController)
@@ -28,4 +28,3 @@ class FreeAppConfiguratorConfigurator: FreeAppConfigurator {
         
     }
 }
-

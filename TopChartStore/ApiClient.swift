@@ -7,14 +7,19 @@
 //
 
 import Foundation
-import Alamofire
+
+
+enum ApiHTTPMethod: String {
+    case get = "GET"
+    case post = "POST"
+}
 
 protocol ApiRequest {
     var url: String { get }
-    var method: HTTPMethod { get }
-    var parameters: Parameters? { get }
-    var encoding: ParameterEncoding { get }
-    var headers: HTTPHeaders? { get }
+    var method: ApiHTTPMethod { get }
+    //var parameters: Parameters? { get }
+    //var encoding: ParameterEncoding { get }
+    //var headers: HTTPHeaders? { get }
 }
 
 protocol ApiClient {
@@ -24,33 +29,45 @@ protocol ApiClient {
 
 class ApiClientImplementation: ApiClient {
 
-    let session: SessionManager
+    let session: URLSession
     
-    init(session: SessionManager) {
+    init(session: URLSession) {
         self.session = session
     }
     
     func execute<T>(request: ApiRequest, completionHandler: @escaping (Result<ApiResponse<T>>) -> Void) where T : InitializableWithData {
         
-        session.request(request.url, method: request.method, parameters: request.parameters, encoding: request.encoding, headers: request.headers).responseData { (data) in
+        guard let urlRequest = URL(string: request.url) else {
+            completionHandler(.failure(NetworkRequestError(error: nil)))
+            return
+        }
+        
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             
-            guard let httpUrlResponse = data.response else {
-                completionHandler(.failure(NetworkRequestError(error: data.error)))
-                return
-            }
-            
-            let successRange = 200...299
-            
-            if successRange.contains(httpUrlResponse.statusCode) {
-                do {
-                    let response = try ApiResponse<T>(data: data.data, httpUrlResponse: httpUrlResponse)
-                    completionHandler(.success(response))
-                } catch {
-                    completionHandler(.failure(error))
+            guard let strongSelf = self else { return }
+            let task = strongSelf.session.dataTask(with: urlRequest) { data, response, error in
+                
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    completionHandler(.failure(NetworkRequestError(error: error)))
+                    return
                 }
-            } else {
-                completionHandler(.failure(ApiError(data: data.data, httpUrlResponse: httpUrlResponse)))
+                
+                let succesRange = 200...299
+                
+                if succesRange.contains(httpResponse.statusCode) {
+                    do {
+                        let response = try ApiResponse<T>(data: data, httpUrlResponse: httpResponse)
+                        completionHandler(.success(response))
+                    } catch {
+                        completionHandler(.failure(error))
+                    }
+                } else {
+                    completionHandler(.failure(ApiError(data: data, httpUrlResponse: httpResponse)))
+                }
             }
+            
+            task.resume()
+            
         }
     }
 }

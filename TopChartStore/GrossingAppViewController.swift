@@ -11,7 +11,7 @@ import UIKit
 let GrossingCellIdentifier = "GrossingCell"
 
 class GrossingAppViewController: UIViewController, GrossingAppView {
-
+    
     //MARK:
     //MARK:Variables and Iboutlets
     @IBOutlet weak var grossingTable: UITableView!
@@ -22,6 +22,15 @@ class GrossingAppViewController: UIViewController, GrossingAppView {
     private let defaults = UserDefaults.standard
     var presenter: GrossingAppPresenter?
     var configurator = GrossingAppConfiguratorImplementation()
+    var dataSource: DataSource<FreeAppTableViewCell, GrossingAppPresenterImplementation>? {
+        didSet {
+            grossingTable.dataSource = dataSource
+            grossingTable.delegate = dataSource
+            activity.stopAnimating()
+            activity.hidesWhenStopped = true
+            grossingTable.reloadData()
+        }
+    }
     
     //MARK:
     //MARK:Life Cycle
@@ -29,7 +38,7 @@ class GrossingAppViewController: UIViewController, GrossingAppView {
         super.viewDidLoad()
         
         setupViews()
-        configurator.configure(view: self, country: "es")
+        configurator.configure(view: self, country: "ve")
         presenter?.viewDidLoad()
         
     }
@@ -69,40 +78,21 @@ class GrossingAppViewController: UIViewController, GrossingAppView {
     
     //MARK:
     //MARK:Open Country List
+    static var name: String {
+        return "GrossingAppViewController"
+    }
     @IBAction func openCountryListAction(_ sender: UITapGestureRecognizer){
         
         let countryListVC: CountryListViewController = UIStoryboard.storyboard(storyboard: .CountryListViewController).instantiateViewController()
         present(countryListVC, animated: true, completion: nil)
     }
-    
-    func refreshView() {
-        activity.stopAnimating()
-        activity.hidesWhenStopped = true
-        grossingTable.reloadData()
-    }
-    
 }
 
 
-extension GrossingAppViewController: UITableViewDataSource {
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return presenter?.numberOfApps ?? 0
-    }
-    
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell: FreeAppTableViewCell = tableView.dequeueReusableCell(withIdentifier: GrossingCellIdentifier, for: indexPath) as! FreeAppTableViewCell
-        presenter?.configure(cell: cell, forRow: indexPath.row)
-        
-        return cell
-        
-    }
-    
-}
+
+
+
+
+
+
+

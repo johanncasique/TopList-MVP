@@ -13,23 +13,18 @@ protocol PaidAppView: class {
 }
 
 protocol PaidAppPresenter {
-    var numberOfApps: Int { get }
     var router: PaidAppRouter { get }
     func viewDidLoad()
     func didSelected(atRow row: Int)
 }
 
 class PaidAppPresenterImplementation: PaidAppPresenter, ModelProtocol {
-    typealias T = App
+    
     fileprivate weak var view: PaidAppView?
     fileprivate let displayAppUseCase: TopAppsUseCaseProtocol
     internal let router: PaidAppRouter
     
-    var apps = [App]()
     var items: [App]?
-    var numberOfApps: Int {
-        return apps.count
-    }
     
     init(view: PaidAppView, useCase: TopAppsUseCaseProtocol, router: PaidAppRouter) {
         self.view = view
@@ -56,10 +51,7 @@ class PaidAppPresenterImplementation: PaidAppPresenter, ModelProtocol {
     // MARK: - Privates
     private func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
-        self.apps = app
         self.items = app
-        let dataSource = DataSource<FreeAppTableViewCell, PaidAppPresenterImplementation>()
-        dataSource.provider = self
-        view?.dataSource = dataSource
+        view?.dataSource = DataSource<FreeAppTableViewCell, PaidAppPresenterImplementation>(provider: self)
     }
 }

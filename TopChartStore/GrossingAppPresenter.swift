@@ -9,26 +9,24 @@
 import Foundation
 
 protocol GrossingAppView: class {
-    func refreshView()
+    var dataSource: DataSource<FreeAppTableViewCell, GrossingAppPresenterImplementation>? { get set }
 }
 
 protocol GrossingAppPresenter {
     var numberOfApps: Int { get }
     var router: GrossingRouter { get }
     func viewDidLoad()
-    func configure(cell: FreeAppTableViewCell, forRow row: Int)
-    func didSelected(atRow row: Int)
 }
 
-class GrossingAppPresenterImplementation: GrossingAppPresenter {
+class GrossingAppPresenterImplementation: GrossingAppPresenter, ModelProtocol, DataSourceDelegate {
     
-    var apps = [App]()
+    var items: [App]?
     fileprivate weak var view: GrossingAppView?
     fileprivate let displayUseCase: TopAppsUseCaseProtocol
     internal let router: GrossingRouter
     
     var numberOfApps: Int {
-        return apps.count
+        return items?.count ?? 0
     }
     
     init(view: GrossingAppView, useCase: TopAppsUseCaseProtocol, router: GrossingRouter) {
@@ -40,7 +38,6 @@ class GrossingAppPresenterImplementation: GrossingAppPresenter {
     
     func viewDidLoad() {
         displayUseCase.getApps {apps in
-            
             switch apps {
             case .success(let apps):
                 self.handleApps(apps)
@@ -50,12 +47,9 @@ class GrossingAppPresenterImplementation: GrossingAppPresenter {
         }
     }
     
-    func configure(cell: FreeAppTableViewCell, forRow row: Int) {
-        cell.configureFreeCell(with: apps[row])
-    }
-    
-    func didSelected(atRow row: Int) {
-        
+    func rowDidSelected(at index: Int) {
+        guard let items = items else { return }
+        router.goToDetail(app: items[index])
     }
     
     
@@ -64,8 +58,10 @@ class GrossingAppPresenterImplementation: GrossingAppPresenter {
     //=================================
     private func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
-        self.apps = app
-        view?.refreshView()
+        self.items = app
+        let dataSource = DataSource<FreeAppTableViewCell, GrossingAppPresenterImplementation>(provider: self)
+        //dataSource.delegate = self
+        view?.dataSource = dataSource
     }
     
 }

@@ -14,23 +14,17 @@ protocol FreeAppView: class {
 }
 
 protocol FreeAppPresenter {
-    var numberOfApps: Int { get }
     var router: TopFreeAppsRouter { get }
     func viewDidLoad()
     func didSelect(row: Int)
 }
 
-class FreeAppPresenterImplementation: FreeAppPresenter, ModelProtocol {
+class FreeAppPresenterImplementation: FreeAppPresenter, ModelProtocol, DataSourceDelegate {
     fileprivate weak var view: FreeAppView?
     fileprivate let displayAppUseCase: TopAppsUseCaseProtocol
     internal let router: TopFreeAppsRouter
     
-    var apps = [App]()
     var items: [App]?
-    
-    var numberOfApps: Int {
-        return apps.count
-    }
     
     init(view: FreeAppView, displayAppUseCase: TopAppsUseCaseProtocol, router: TopFreeAppsRouter) {
         self.view = view
@@ -53,20 +47,22 @@ class FreeAppPresenterImplementation: FreeAppPresenter, ModelProtocol {
         
     }
     
-    //=================================
     // MARK: - Handle apps
-    //=================================
     fileprivate func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
-        self.apps = app
         self.items = app
-        let data = DataSource<FreeAppTableViewCell, FreeAppPresenterImplementation>()
-        data.provider = items
+        let dataSource = DataSource<FreeAppTableViewCell, FreeAppPresenterImplementation>(provider: self)
+        dataSource.delegate = self
+        view?.dataSource = dataSource
         
-        view?.dataSource = data
     }
     
     fileprivate func handleAppsError(_ error: Error) {
         view?.displayBooksRetrievalError(title: "Error", message: error.localizedDescription)
+    }
+    
+    func rowDidSelected(at index: Int) {
+        guard let items = items else { return }
+        router.showDetail(for: items[index])
     }
 }

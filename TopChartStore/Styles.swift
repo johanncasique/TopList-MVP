@@ -22,6 +22,7 @@ enum Styles {
     enum Colors {
         static let white = UIColor.white
         static let background = "0B1325"
+        static let navigationBar = "0B1325"
         
     }
     

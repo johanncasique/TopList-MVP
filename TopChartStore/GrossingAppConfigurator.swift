@@ -15,8 +15,19 @@ protocol GrossingAppConfigurator {
 
 class GrossingAppConfiguratorImplementation: GrossingAppConfigurator {
     
+    var defatulSession: URLSession {
+        let config = URLSessionConfiguration.default
+        if #available(iOS 11.0, *) {
+            config.waitsForConnectivity = true
+        } else {
+            // Fallback on earlier versions
+        }
+        return URLSession(configuration: config)
+    }
+    
+    
     func configure(view: GrossingAppViewController, country: String) {
-        let apiClient = ApiClientImplementation(session: SessionManager())
+        let apiClient = ApiClientImplementation(session: defatulSession)
         let apiGateway = ApiAppsGatewayImplemantation(apiClient: apiClient)
         let useCase = GrossingAppUseCaseImplementation(apiAppsGateway: apiGateway, country: country)
         let router = GrossingAppRouterImplementation(grossingViewController: view)

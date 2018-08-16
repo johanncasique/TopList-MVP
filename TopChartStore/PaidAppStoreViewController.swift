@@ -26,6 +26,7 @@ class PaidAppsViewController: UIViewController, PaidAppView {
     var dataSource: DataSource<FreeAppTableViewCell, PaidAppPresenterImplementation>? {
         didSet {
             paidTable.dataSource = dataSource
+            paidTable.delegate = dataSource
             paidTable.reloadData()
             activity.stopAnimating()
             activity.hidesWhenStopped = true

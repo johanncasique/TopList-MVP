@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+protocol DetailAppPresenterProtocol {
+    
+    func viewDidLoad()
+}
+
+class DetailAppPresenter: DetailAppPresenterProtocol {
+    
+    fileprivate let detailAppViewProtocol: DetailAppViewProtocol
+    let appDetail: App
+    
+    init(view: DetailAppViewProtocol, app: App) {
+        self.detailAppViewProtocol = view
+        self.appDetail = app
+    }
+    
+    
+    func viewDidLoad() {
+       print(appDetail)
+    }
+}
