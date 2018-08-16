@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Side Menu View Controller-->
+        <scene sceneID="ii3-2h-4ZC">
+            <objects>
+                <viewController storyboardIdentifier="SideMenuViewController" id="zsK-NT-1CB" customClass="SideMenuViewController" customModule="TopChartStore" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="MOa-Ed-T2N"/>
+                        <viewControllerLayoutGuide type="bottom" id="Kt1-3P-9x5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E3D-FW-oBj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRN-Sf-EgW">
+                                <rect key="frame" x="0.0" y="0.0" width="250" height="667"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hzG-UK-XUj">
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="667"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.17333057522773743" green="0.084526576101779938" blue="0.31487259268760681" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="hzG-UK-XUj" secondAttribute="trailing" id="EVr-cp-fAB"/>
+                                    <constraint firstItem="hzG-UK-XUj" firstAttribute="top" secondItem="nRN-Sf-EgW" secondAttribute="top" id="N4H-9d-K7b"/>
+                                    <constraint firstAttribute="bottom" secondItem="hzG-UK-XUj" secondAttribute="bottom" id="YNE-eX-8wo"/>
+                                    <constraint firstItem="hzG-UK-XUj" firstAttribute="leading" secondItem="nRN-Sf-EgW" secondAttribute="leading" id="quR-KP-S3b"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nRN-Sf-EgW" firstAttribute="top" secondItem="E3D-FW-oBj" secondAttribute="top" id="2Iv-g1-Np4"/>
+                            <constraint firstItem="Kt1-3P-9x5" firstAttribute="top" secondItem="nRN-Sf-EgW" secondAttribute="bottom" id="RYQ-Y6-1uD"/>
+                            <constraint firstItem="nRN-Sf-EgW" firstAttribute="width" secondItem="E3D-FW-oBj" secondAttribute="width" multiplier="1:1.5" id="ZOI-zR-9bf"/>
+                            <constraint firstItem="nRN-Sf-EgW" firstAttribute="leading" secondItem="E3D-FW-oBj" secondAttribute="leading" id="sM4-Hn-CYc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evA-tk-uji" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="202.84857571214394"/>
+        </scene>
+    </scenes>
+</document>
