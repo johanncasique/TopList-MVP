@@ -60,13 +60,14 @@
 		A829826E21259DDA00156F17 /* ApiSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A829826D21259DDA00156F17 /* ApiSession.swift */; };
 		A82F430C211D9F0900BAC7FD /* FreeAppTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A82F430B211D9F0900BAC7FD /* FreeAppTableViewCell.xib */; };
 		A82F4310211DA65B00BAC7FD /* ArrayDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82F430F211DA65B00BAC7FD /* ArrayDataProvider.swift */; };
-		A82F4312211DA8FA00BAC7FD /* TableArrayDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A82F4311211DA8F900BAC7FD /* TableArrayDataSource.swift */; };
 		A834602A21217F1C009D91B4 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834602921217F1C009D91B4 /* DetailViewController.swift */; };
 		A834602C21217FA4009D91B4 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A834602B21217FA4009D91B4 /* DetailViewController.storyboard */; };
 		A834602E21219905009D91B4 /* DetailAppPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834602D21219905009D91B4 /* DetailAppPresenter.swift */; };
 		A834603021219921009D91B4 /* DetailAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834602F21219921009D91B4 /* DetailAppConfigurator.swift */; };
+		A8A0D1C82126CA0C002B873D /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0D1C72126CA0C002B873D /* TableView.swift */; };
+		A8A0D1CB2126F270002B873D /* StoryboardProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0D1CA2126F270002B873D /* StoryboardProviders.swift */; };
 		A8ACBE75211C8BA400F4AE72 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */; };
-		A8ACBE78211C8D4500F4AE72 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE77211C8D4500F4AE72 /* DataSource.swift */; };
+		A8ACBE78211C8D4500F4AE72 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE77211C8D4500F4AE72 /* TableDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,13 +127,14 @@
 		A829826D21259DDA00156F17 /* ApiSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiSession.swift; sourceTree = "<group>"; };
 		A82F430B211D9F0900BAC7FD /* FreeAppTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FreeAppTableViewCell.xib; sourceTree = "<group>"; };
 		A82F430F211DA65B00BAC7FD /* ArrayDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayDataProvider.swift; sourceTree = "<group>"; };
-		A82F4311211DA8F900BAC7FD /* TableArrayDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableArrayDataSource.swift; sourceTree = "<group>"; };
 		A834602921217F1C009D91B4 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A834602B21217FA4009D91B4 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
 		A834602D21219905009D91B4 /* DetailAppPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppPresenter.swift; sourceTree = "<group>"; };
 		A834602F21219921009D91B4 /* DetailAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppConfigurator.swift; sourceTree = "<group>"; };
+		A8A0D1C72126CA0C002B873D /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		A8A0D1CA2126F270002B873D /* StoryboardProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardProviders.swift; sourceTree = "<group>"; };
 		A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
-		A8ACBE77211C8D4500F4AE72 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		A8ACBE77211C8D4500F4AE72 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		FBC7E77EA4DB6F8A737F7A83 /* Pods_TopChartStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopChartStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -207,8 +209,8 @@
 		874867441F1429680001EB96 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				A834602821217EE9009D91B4 /* Detail */,
 				A8ACBE76211C8D2200F4AE72 /* DataSource */,
+				A834602821217EE9009D91B4 /* Detail */,
 				87722A721F2D17600050808D /* CountryList */,
 				87722A6D1F2CEAF50050808D /* GrossingAppStore */,
 				87722A671F2CE23A0050808D /* PaidAppsStore */,
@@ -253,6 +255,7 @@
 				87722A5C1F2CD11E0050808D /* ViewController */,
 				87722A591F2CD0A70050808D /* Storyboard */,
 				87E8BFE61F48BA1D007ED07D /* JCCALayer.swift */,
+				A8A0D1C72126CA0C002B873D /* TableView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 		87F07B39208A55DD003B3EA5 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				A8A0D1C92126F255002B873D /* Providers */,
 				87F07B5B208CB1AC003B3EA5 /* Gateway */,
 				87F07B3A208A5621003B3EA5 /* Entities */,
 				87F07B3B208A5635003B3EA5 /* UseCases */,
@@ -480,12 +484,19 @@
 			name = Detail;
 			sourceTree = "<group>";
 		};
+		A8A0D1C92126F255002B873D /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				A8A0D1CA2126F270002B873D /* StoryboardProviders.swift */,
+			);
+			name = Providers;
+			sourceTree = "<group>";
+		};
 		A8ACBE76211C8D2200F4AE72 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				A8ACBE77211C8D4500F4AE72 /* DataSource.swift */,
+				A8ACBE77211C8D4500F4AE72 /* TableDataSource.swift */,
 				A82F430F211DA65B00BAC7FD /* ArrayDataProvider.swift */,
-				A82F4311211DA8F900BAC7FD /* TableArrayDataSource.swift */,
 			);
 			name = DataSource;
 			sourceTree = "<group>";
@@ -576,15 +587,11 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-TopChartStore/Pods-TopChartStore-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
-				"${BUILT_PRODUCTS_DIR}/Gloss/Gloss.framework",
-				"${BUILT_PRODUCTS_DIR}/ModelMapper/Mapper.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Gloss.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Mapper.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -621,7 +628,6 @@
 				87F07B5F208CBF2B003B3EA5 /* TopFreeAppsRouter.swift in Sources */,
 				87BFE0CD1FAD036900AED0FA /* TopApps.swift in Sources */,
 				879B8B451F156CFF008505E9 /* JCNetworkError.swift in Sources */,
-				A82F4312211DA8FA00BAC7FD /* TableArrayDataSource.swift in Sources */,
 				874867341F1429140001EB96 /* FreeAppViewController.swift in Sources */,
 				87F07B5A208CAE8A003B3EA5 /* FreeAppConfigurator.swift in Sources */,
 				87722A5E1F2CD1310050808D /* JCViewController.swift in Sources */,
@@ -647,14 +653,16 @@
 				87F07B5D208CB246003B3EA5 /* AppsGateway.swift in Sources */,
 				87F07B46208B2404003B3EA5 /* ApiResponse.swift in Sources */,
 				A834603021219921009D91B4 /* DetailAppConfigurator.swift in Sources */,
+				A8A0D1C82126CA0C002B873D /* TableView.swift in Sources */,
 				87BF354920D67F890034F1B5 /* PaidAppConfigurator.swift in Sources */,
 				87BF354720D67D2D0034F1B5 /* PaidAppRouter.swift in Sources */,
 				87722A5B1F2CD0EE0050808D /* JCStoryboard.swift in Sources */,
 				87E8BFE71F48BA1D007ED07D /* JCCALayer.swift in Sources */,
 				8771D8071FADF7260082D14F /* Styles.swift in Sources */,
 				879B8B421F156C04008505E9 /* JCNetwork.swift in Sources */,
+				A8A0D1CB2126F270002B873D /* StoryboardProviders.swift in Sources */,
 				87722A791F2D1E9A0050808D /* CountryTableViewCell.swift in Sources */,
-				A8ACBE78211C8D4500F4AE72 /* DataSource.swift in Sources */,
+				A8ACBE78211C8D4500F4AE72 /* TableDataSource.swift in Sources */,
 				1E0AC4C8210917F200D6D210 /* GrossingAppConfigurator.swift in Sources */,
 				87722A741F2D179C0050808D /* CountryListViewController.swift in Sources */,
 				87BF354120D585370034F1B5 /* PaidAppStorePresenter.swift in Sources */,

@@ -35,7 +35,10 @@ class FreeAppTableViewCell: UITableViewCell, ConfigureCellProtocol {
         backView.layer.borderColor = UIColor.lightGray.cgColor
         backView.layer.shadowAlpha(with: 0.5, radius: 2, positionX: 0.3, positionY: 2.5, color: .lightGray)
         
+        
+        
         if let stringImage = appModel.artworkUrl100, let urlImage = URL(string: stringImage) {
+            //appImage.downloadFrom(url: stringImage)
             appImage.af_setImage(withURL: urlImage, placeholderImage: #imageLiteral(resourceName: "placeHolderIconApp"), imageTransition: .crossDissolve(0.2))
         }
         appImage.layer.cornerRadius = 15
@@ -48,5 +51,29 @@ class FreeAppTableViewCell: UITableViewCell, ConfigureCellProtocol {
         getButton.setTitle("GET", for: .normal)
         getButton.layer.cornerRadius = 10
         inAppPurchaseLabel.text = "Offers In-App\n Purchases"
+    }
+}
+
+extension UIImageView {
+    
+    
+    //TODO: need to handle cache
+    func downloadFrom(url: String) {
+        
+        self.image = #imageLiteral(resourceName: "placeHolderIconApp")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+                
+                guard let HTTPResponse = response as? HTTPURLResponse, HTTPResponse.statusCode == 200,
+                    let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                    let data = data, error == nil,
+                    let image = UIImage(data: data) else { return }
+                DispatchQueue.main.async {
+                    self.image = nil
+                    self.image = image
+                }
+                }.resume()
+        }
     }
 }

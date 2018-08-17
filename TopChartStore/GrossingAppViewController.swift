@@ -10,7 +10,7 @@ import UIKit
 
 let GrossingCellIdentifier = "GrossingCell"
 
-class GrossingAppViewController: UIViewController, GrossingAppView {
+class GrossingAppViewController: UIViewController, GrossingAppView, TabBarConfigurationProtocol {
     
     //MARK:
     //MARK:Variables and Iboutlets
@@ -22,13 +22,17 @@ class GrossingAppViewController: UIViewController, GrossingAppView {
     private let defaults = UserDefaults.standard
     var presenter: GrossingAppPresenter?
     var configurator = GrossingAppConfiguratorImplementation()
-    var dataSource: DataSource<FreeAppTableViewCell, GrossingAppPresenterImplementation>? {
+    var dataSource: TableDataSource<FreeAppTableViewCell, App>? {
         didSet {
-            grossingTable.dataSource = dataSource
-            grossingTable.delegate = dataSource
-            activity.stopAnimating()
-            activity.hidesWhenStopped = true
-            grossingTable.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                
+                strongSelf.grossingTable.dataSource = strongSelf.dataSource
+                strongSelf.grossingTable.delegate = strongSelf.dataSource
+                strongSelf.activity.stopAnimating()
+                strongSelf.activity.hidesWhenStopped = true
+                strongSelf.grossingTable.reloadData()
+            }
         }
     }
     
@@ -38,7 +42,9 @@ class GrossingAppViewController: UIViewController, GrossingAppView {
         super.viewDidLoad()
         
         setupViews()
+        self.tabBarItem = tabBarOption(.grossing)
         configurator.configure(view: self, country: "ve")
+        grossingTable.registerCell(withIdentifier: "FreeAppTableViewCell")
         presenter?.viewDidLoad()
         
     }

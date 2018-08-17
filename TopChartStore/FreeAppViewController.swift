@@ -10,10 +10,10 @@ import UIKit
 
 typealias Country = String
 
-class FreeAppViewController: UIViewController, FreeAppView {
+class FreeAppViewController: UIViewController, FreeAppView, TabBarConfigurationProtocol {
     
     //MARK:Variables and Iboutlets
-    @IBOutlet weak var freeTable:UITableView!
+    @IBOutlet weak var freeTable: UITableView!
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var activity: UIActivityIndicatorView!
     
@@ -22,7 +22,7 @@ class FreeAppViewController: UIViewController, FreeAppView {
         return FreeAppConfiguratorConfigurator()
     }()
     private let defaults = UserDefaults.standard
-    var dataSource: DataSource<FreeAppTableViewCell, FreeAppPresenterImplementation>? {
+    var dataSource: TableDataSource<FreeAppTableViewCell, App>? {
         didSet {
             DispatchQueue.main.async { [weak self] in 
                 guard let strongSelf = self else { return }
@@ -43,8 +43,10 @@ class FreeAppViewController: UIViewController, FreeAppView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.tabBarItem = tabBarOption(.free)
         activity.startAnimating()
         configurator.configure(freeAppViewController: self, country: "ve")
+        freeTable.registerCell(withIdentifier: "FreeAppTableViewCell")
         presenter.viewDidLoad()
     }
     
@@ -55,6 +57,7 @@ class FreeAppViewController: UIViewController, FreeAppView {
         countryNameLabel.font = Styles.Fonts.country
         countryNameLabel.textColor = Styles.Colors.white
         view.backgroundColor = Styles.Colors.background.color
+        
     }
 }
 

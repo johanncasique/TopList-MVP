@@ -12,7 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PaidCell" rowHeight="172" id="upp-2X-gVu" customClass="FreeAppTableViewCell" customModule="TopChartStore" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FreeAppTableViewCell" rowHeight="172" id="upp-2X-gVu" customClass="FreeAppTableViewCell" customModule="TopChartStore" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="upp-2X-gVu" id="WYa-VJ-Nvl">
@@ -123,7 +123,7 @@
                 <outlet property="appCompanyLabel" destination="44e-Oi-rnb" id="4Ly-Dc-Vo6"/>
                 <outlet property="appImage" destination="f4s-D6-AeN" id="DYN-fe-WtW"/>
                 <outlet property="appTitleLabel" destination="GnA-lB-n5B" id="OZX-Fv-j0Z"/>
-                <outlet property="backView" destination="WYa-VJ-Nvl" id="N1K-Yh-jjy"/>
+                <outlet property="backView" destination="Xsz-pY-hTI" id="vc3-GZ-9lI"/>
                 <outlet property="getButton" destination="iww-Jz-MPX" id="Chw-Hh-kWr"/>
                 <outlet property="inAppPurchaseLabel" destination="7cw-ce-PQG" id="77a-Md-3h0"/>
                 <outlet property="ratingNumberLabel" destination="jSV-WL-IdH" id="jM6-cu-cco"/>

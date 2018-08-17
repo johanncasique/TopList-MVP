@@ -9,7 +9,7 @@
 import Foundation
 
 protocol FreeAppView: class {
-    var dataSource: DataSource<FreeAppTableViewCell, FreeAppPresenterImplementation>? { get set }
+    var dataSource: TableDataSource<FreeAppTableViewCell, App>? { get set }
     func displayBooksRetrievalError(title: String, message: String)
 }
 
@@ -19,7 +19,7 @@ protocol FreeAppPresenter {
     func didSelect(row: Int)
 }
 
-class FreeAppPresenterImplementation: FreeAppPresenter, ModelProtocol, DataSourceDelegate {
+class FreeAppPresenterImplementation: FreeAppPresenter, DataSourceDelegate {
     fileprivate weak var view: FreeAppView?
     fileprivate let displayAppUseCase: TopAppsUseCaseProtocol
     internal let router: TopFreeAppsRouter
@@ -51,10 +51,8 @@ class FreeAppPresenterImplementation: FreeAppPresenter, ModelProtocol, DataSourc
     fileprivate func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
         self.items = app
-        let dataSource = DataSource<FreeAppTableViewCell, FreeAppPresenterImplementation>(provider: self)
-        dataSource.delegate = self
+        let dataSource = TableDataSource<FreeAppTableViewCell, App>(array: app, delegate: self)
         view?.dataSource = dataSource
-        
     }
     
     fileprivate func handleAppsError(_ error: Error) {

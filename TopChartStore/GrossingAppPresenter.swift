@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GrossingAppView: class {
-    var dataSource: DataSource<FreeAppTableViewCell, GrossingAppPresenterImplementation>? { get set }
+    var dataSource: TableDataSource<FreeAppTableViewCell, App>? { get set }
 }
 
 protocol GrossingAppPresenter {
@@ -18,7 +18,7 @@ protocol GrossingAppPresenter {
     func viewDidLoad()
 }
 
-class GrossingAppPresenterImplementation: GrossingAppPresenter, ModelProtocol, DataSourceDelegate {
+class GrossingAppPresenterImplementation: GrossingAppPresenter, DataSourceDelegate {
     
     var items: [App]?
     fileprivate weak var view: GrossingAppView?
@@ -52,16 +52,10 @@ class GrossingAppPresenterImplementation: GrossingAppPresenter, ModelProtocol, D
         router.goToDetail(app: items[index])
     }
     
-    
-    //=================================
     // MARK: - Privates
-    //=================================
     private func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
         self.items = app
-        let dataSource = DataSource<FreeAppTableViewCell, GrossingAppPresenterImplementation>(provider: self)
-        //dataSource.delegate = self
-        view?.dataSource = dataSource
+        view?.dataSource = TableDataSource<FreeAppTableViewCell, App>(array: app, delegate: self)
     }
-    
 }

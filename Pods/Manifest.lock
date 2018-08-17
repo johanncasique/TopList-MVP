@@ -1,29 +1,20 @@
 PODS:
-  - Alamofire (4.7.2)
+  - Alamofire (4.7.3)
   - AlamofireImage (3.3.1):
     - Alamofire (~> 4.5)
-  - Gloss (2.0.0-beta.1)
-  - ModelMapper (8.0.0)
 
 DEPENDENCIES:
-  - Alamofire (~> 4.5)
   - AlamofireImage (~> 3.1)
-  - Gloss (= 2.0.0-beta.1)
-  - ModelMapper
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Alamofire
     - AlamofireImage
-    - Gloss
-    - ModelMapper
 
 SPEC CHECKSUMS:
-  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   AlamofireImage: 3b35b586853abaf94ca1250f4e94cff3c21a4c0d
-  Gloss: 3224f4d6e345138475216855a32e880d9e03e6d2
-  ModelMapper: a258c5f8e1422e0e826c8265a3e89ae1b329c3a6
 
-PODFILE CHECKSUM: e27fe36b913c1595382d86f71ceee9bb20331760
+PODFILE CHECKSUM: 4a52d7e46466ee94a7d285c2220e68179b0f6f73
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ArrayDataProvider<T>: TableDataProvider {
+class ArrayDataProvider<T> {
     
     var items: [[T]] = []
     

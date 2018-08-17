@@ -7,6 +7,15 @@
 //
 import UIKit
 
+protocol ClassIdentifier {
+    static var identifier: String { get }
+}
+
+extension ClassIdentifier {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
 
 extension UIStoryboard{
     
@@ -30,8 +39,8 @@ extension UIStoryboard{
     //
     //    }
     //Esto es lo mismo que el metodo de conveniencia, pero se ha creado como una clase
-    class func storyboard(storyboard: Storyboard, bundle: Bundle? = nil) -> UIStoryboard{
-        return UIStoryboard(name: storyboard.filename, bundle: bundle)
+    class func storyboard(storyboard: Storyboard) -> UIStoryboard{
+        return UIStoryboard(name: storyboard.filename, bundle: nil)
     }
     
     

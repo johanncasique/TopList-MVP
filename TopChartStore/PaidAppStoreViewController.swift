@@ -11,7 +11,7 @@ import UIKit
 
 let PaidCellIdentifier = "PaidCell"
 
-class PaidAppsViewController: UIViewController, PaidAppView {
+class PaidAppsViewController: UIViewController, PaidAppView, TabBarConfigurationProtocol {
     
     //MARK:
     //MARK:Variables and Iboutlets
@@ -23,13 +23,17 @@ class PaidAppsViewController: UIViewController, PaidAppView {
     var configurator = PaidAppConfiguratorImplementation()
     
     private let defaults = UserDefaults.standard
-    var dataSource: DataSource<FreeAppTableViewCell, PaidAppPresenterImplementation>? {
+    var dataSource: TableDataSource<FreeAppTableViewCell, App>? {
         didSet {
-            paidTable.dataSource = dataSource
-            paidTable.delegate = dataSource
-            paidTable.reloadData()
-            activity.stopAnimating()
-            activity.hidesWhenStopped = true
+            DispatchQueue.main.async { [weak self] in
+                guard let strongSelf = self else { return }
+                strongSelf.paidTable.dataSource = strongSelf.dataSource
+                strongSelf.paidTable.delegate = strongSelf.dataSource
+                strongSelf.paidTable.reloadData()
+                strongSelf.activity.stopAnimating()
+                strongSelf.activity.hidesWhenStopped = true
+            }
+            
         }
     }
     
@@ -37,8 +41,10 @@ class PaidAppsViewController: UIViewController, PaidAppView {
     //MARK:Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarItem = tabBarOption(.paid)
         activity.startAnimating()
         configurator.configure(paidAppViewController: self, country: "ve")
+        paidTable.registerCell(withIdentifier: "FreeAppTableViewCell")
         presenter?.viewDidLoad()
     }
     

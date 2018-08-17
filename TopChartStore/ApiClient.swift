@@ -45,7 +45,8 @@ class ApiClientImplementation: ApiClient {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             
             guard let strongSelf = self else { return }
-            let task = strongSelf.session.dataTask(with: urlRequest) { data, response, error in
+            
+            strongSelf.session.dataTask(with: urlRequest) { data, response, error in
                 
                 guard let httpResponse = response as? HTTPURLResponse else {
                     completionHandler(.failure(NetworkRequestError(error: error)))
@@ -64,10 +65,7 @@ class ApiClientImplementation: ApiClient {
                 } else {
                     completionHandler(.failure(ApiError(data: data, httpUrlResponse: httpResponse)))
                 }
-            }
-            
-            task.resume()
-            
+            }.resume()
         }
     }
 }
