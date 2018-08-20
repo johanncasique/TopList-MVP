@@ -9,6 +9,7 @@
 import Foundation
 
 class GrossingAppUseCaseImplementation: TopAppsUseCaseImplementationProtocol {
+    
     var appsGateway: ApiAppsGateway
     var country: String
     
@@ -22,6 +23,8 @@ class GrossingAppUseCaseImplementation: TopAppsUseCaseImplementationProtocol {
             completionHandler(apps)
         })
     }
-}
     
-
+    func getCountry(for countryName: String) -> [CountryDO] {
+        return appsGateway.getCountry(for: countryName)
+    }
+}

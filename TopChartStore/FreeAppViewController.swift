@@ -8,9 +8,7 @@
 
 import UIKit
 
-typealias Country = String
-
-class FreeAppViewController: UIViewController, FreeAppView, TabBarConfigurationProtocol {
+class FreeAppViewController: UIViewController, FreeAppView {
     
     //MARK:Variables and Iboutlets
     @IBOutlet weak var freeTable: UITableView!
@@ -43,7 +41,7 @@ class FreeAppViewController: UIViewController, FreeAppView, TabBarConfigurationP
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.tabBarItem = tabBarOption(.free)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icSideMenu"), style: .plain, target: self, action: #selector(loadCountry))
         activity.startAnimating()
         configurator.configure(freeAppViewController: self, country: "ve")
         freeTable.registerCell(withIdentifier: "FreeAppTableViewCell")
@@ -58,6 +56,10 @@ class FreeAppViewController: UIViewController, FreeAppView, TabBarConfigurationP
         countryNameLabel.textColor = Styles.Colors.white
         view.backgroundColor = Styles.Colors.background.color
         
+    }
+    
+    @objc func loadCountry() {
+        print("loadCountry")
     }
 }
 

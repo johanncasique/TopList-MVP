@@ -9,7 +9,8 @@
 import Foundation
 
 struct Country {
-    private var countryIdentifer: (code: String, name: String)
+    
+    var countryIdentifer: (code: String, name: String)
     
     init(code: String, name: String) {
         countryIdentifer = (code, name)

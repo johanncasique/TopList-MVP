@@ -10,7 +10,7 @@ import UIKit
 
 let GrossingCellIdentifier = "GrossingCell"
 
-class GrossingAppViewController: UIViewController, GrossingAppView, TabBarConfigurationProtocol {
+class GrossingAppViewController: UIViewController, GrossingAppView {
     
     //MARK:
     //MARK:Variables and Iboutlets
@@ -42,7 +42,6 @@ class GrossingAppViewController: UIViewController, GrossingAppView, TabBarConfig
         super.viewDidLoad()
         
         setupViews()
-        self.tabBarItem = tabBarOption(.grossing)
         configurator.configure(view: self, country: "ve")
         grossingTable.registerCell(withIdentifier: "FreeAppTableViewCell")
         presenter?.viewDidLoad()

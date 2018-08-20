@@ -10,6 +10,7 @@ import Foundation
 
 protocol TopAppsUseCaseProtocol {
     func getApps(completionHandler: @escaping TopAppsGatewayCompletionHandler)
+    func getCountries() -> [CountryDO]
 }
 
 protocol TopAppsUseCaseImplementationProtocol: TopAppsUseCaseProtocol {

@@ -12,6 +12,7 @@ typealias TopAppsGatewayCompletionHandler = (_ apps: Result<ApiApps>) -> Void
 
 protocol ApiAppsGateway {
     func getApps(withRequest request: ApiRequest, completionHanlder: @escaping TopAppsGatewayCompletionHandler)
+    func getCountries() -> [CountryDO]
 }
 
 class ApiAppsGatewayImplemantation: ApiAppsGateway {
@@ -35,5 +36,19 @@ class ApiAppsGatewayImplemantation: ApiAppsGateway {
         }
     }
     
-    
+    func getCountries() -> [CountryDO] {
+        
+        var countries = [CountryDO]()
+        
+        for country in NSLocale.isoCountryCodes {
+            
+            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: country])
+            let name = NSLocale(localeIdentifier: "es_ES").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(country)"
+            
+            let dto = Country(code: country, name: name)
+            countries.append(CountryDO(dto: dto))
+
+        }
+        return countries
+    }
 }

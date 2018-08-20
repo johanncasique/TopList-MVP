@@ -13,19 +13,33 @@ protocol CountryView {
 }
 
 protocol CountryPresenter {
-    
+    var router: TopFreeAppsRouter { get }
+    func viewDidLoad()
+    func didSelect(row: Int)
 }
 
 class CountryListPresenterImplementation: CountryPresenter  {
     
-    var view: CountryView
-    var router: CountryRouter
+    fileprivate weak var view: CountryView
+    internal var router: CountryRouter
+    fileprivate var useCase: TopAppsUseCaseProtocol
     
-    init(view: CountryView, router: CountryRouter) {
+    var countries: [CountryDO]?
+    
+    
+//    fileprivate weak var view: FreeAppView?
+//    fileprivate let displayAppUseCase: TopAppsUseCaseProtocol
+//    internal let router: TopFreeAppsRouter
+    
+    init(view: CountryView, router: CountryRouter, useCase: TopAppsUseCaseProtocol) {
         self.view = view
         self.router = router
+        self.useCase
     }
     
-    
-    
+    func viewDidLoad() {
+        
+        countries = useCase.getCountry(for: "ve")
+        
+    }
 }

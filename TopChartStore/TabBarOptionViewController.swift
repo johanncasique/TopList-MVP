@@ -8,57 +8,44 @@
 
 import UIKit
 
-enum TabBarOptions {
-    case free
-    case paid
-    case grossing
-}
-
-protocol TabBarConfigurationProtocol {
-    func tabBarOption(_ option: TabBarOptions) -> UITabBarItem
-}
-
-extension TabBarConfigurationProtocol {
-    
-    func tabBarOption(_ option: TabBarOptions) -> UITabBarItem {
-        switch option {
-        case .free:
-            return UITabBarItem(title: "Free", image: #imageLiteral(resourceName: "icFree"), selectedImage: #imageLiteral(resourceName: "icFreeSelected"))
-        case .paid:
-            return UITabBarItem(title: "Paid", image: #imageLiteral(resourceName: "icPaid"), selectedImage: #imageLiteral(resourceName: "icPaid"))
-        case .grossing:
-            return UITabBarItem(title: "Grossing", image: #imageLiteral(resourceName: "icGrossing"), selectedImage: #imageLiteral(resourceName: "icGrossing"))
-        }
-    }
-}
-
 class TabBarOptionsViewController: UITabBarController {
     
     //MARK:
     //MARK:Variables and Iboutlets
-    enum ViewController {
-        case view(UIViewController)
-    }
     
     //MARK:
     //MARK:Life Cycle
     override func viewDidLoad() {
+        setupViews()
         super.viewDidLoad()
         
         for view in viewControllers! {
-        
-            if view is FreeAppViewController {
-                (view as? FreeAppViewController)?.tabBarItem = UITabBarItem(title: "Free", image: #imageLiteral(resourceName: "icFree"), selectedImage: #imageLiteral(resourceName: "icFreeSelected"))
-            }
             
+            guard let navigation = view as? UINavigationController else { break }
+            
+            switch navigation.rootViewController {
+            case let freeVC where freeVC is FreeAppViewController:
+                freeVC?.tabBarItem = UITabBarItem(title: "Free", image: #imageLiteral(resourceName: "icFree"), selectedImage: #imageLiteral(resourceName: "icFreeSelected"))
+            case let paidVC where paidVC is PaidAppsViewController:
+                paidVC?.tabBarItem = UITabBarItem(title: "Paid", image: #imageLiteral(resourceName: "icPaid"), selectedImage: #imageLiteral(resourceName: "icPaid"))
+            case let grossingVC where grossingVC is GrossingAppViewController:
+                grossingVC?.tabBarItem = UITabBarItem(title: "Grossing", image: #imageLiteral(resourceName: "icGrossing"), selectedImage: #imageLiteral(resourceName: "icGrossing"))
+            default: break
+            }
         }
         
-        setupViews()
+        
     }
     
     //MARK:
     //MARK:SetupViews
     func setupViews(){
-        tabBar.backgroundColor = Styles.Colors.navigationBar.color
+        tabBar.barTintColor = Styles.Colors.navigationBar.color
+    }
+}
+
+extension UINavigationController {
+    var rootViewController: UIViewController? {
+        return childViewControllers.first
     }
 }

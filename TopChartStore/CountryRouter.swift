@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+protocol CountryRouter {
+    func countryDidSelected()
+}
+
+class CountryRouterImplemetation: CountryRouter {
+    var countryViewController: CountryListViewController?
+    
+    init(countryViewController: CountryListViewController) {
+        self.countryViewController = countryViewController
+    }
+    
+    func countryDidSelected() {
+        
+    }
+}

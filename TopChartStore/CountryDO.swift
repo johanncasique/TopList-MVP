@@ -8,6 +8,19 @@
 
 import Foundation
 
-struct ApiCountry {
-    let countries: [Country]
+struct CountryDO {
+    
+    private let dto: Country
+    
+    init(dto: Country) {
+        self.dto = dto
+    }
+    
+    var code: String {
+        return dto.countryIdentifer.code
+    }
+    
+    var name: String {
+        return dto.countryIdentifer.name
+    }   
 }

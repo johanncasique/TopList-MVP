@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CountryTableViewCell: UITableViewCell{
+class CountryTableViewCell: UITableViewCell, ConfigureCellProtocol {
     
     //MARK:
     //MARK:Variables and Iboutlets
@@ -18,9 +18,16 @@ class CountryTableViewCell: UITableViewCell{
     
     //MARK:
     //MARK:Config Cell
-    public func configCountryCell(with countryCode: String, countryName: String){
+//    public func configCountryCell(with countryCode: String, countryName: String){
+//
+//        countryNameLabel.text = countryName
+//        countryFlagsImage.image = UIImage(named: countryCode)
+//    }
+    
+    func configureFreeCell(with appModel: CountryViewModel) {
         
-        countryNameLabel.text = countryName
-        countryFlagsImage.image = UIImage(named: countryCode)
+        countryNameLabel.text = appModel.name
+        countryFlagsImage.image = appModel.flag
+        
     }
 }

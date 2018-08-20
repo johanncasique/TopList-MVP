@@ -90,37 +90,37 @@ class CountryListViewController: UIViewController{
 
 
 
-extension CountryListViewController: UITableViewDataSource {
-    
-    
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        return countryCode.count
-    }
-    
-    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell: CountryTableViewCell = tableView.dequeueReusableCell(withIdentifier: CountryListCellIdentifier, for: indexPath) as! CountryTableViewCell
-        
-        cell.configCountryCell(with: countryCode[indexPath.row], countryName: countryName[indexPath.row])
-        
-        return cell
-    }
-}
-
-extension CountryListViewController: UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        defaults.set(countryCode[indexPath.row], forKey: Keys.defaults.countryISO)
-        defaults.set(countryName[indexPath.row], forKey: Keys.defaults.countryName)
-        dismiss(animated: true, completion: nil)
-    }
-    
-}
+//extension CountryListViewController: UITableViewDataSource {
+//    
+//    
+//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+//        
+//        return 1
+//    }
+//    
+//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        
+//        return countryCode.count
+//    }
+//    
+//    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+//        
+//        let cell: CountryTableViewCell = tableView.dequeueReusableCell(withIdentifier: CountryListCellIdentifier, for: indexPath) as! CountryTableViewCell
+//        
+//        cell.configCountryCell(with: countryCode[indexPath.row], countryName: countryName[indexPath.row])
+//        
+//        return cell
+//    }
+//}
+//
+//extension CountryListViewController: UITableViewDelegate {
+//    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        defaults.set(countryCode[indexPath.row], forKey: Keys.defaults.countryISO)
+//        defaults.set(countryName[indexPath.row], forKey: Keys.defaults.countryName)
+//        dismiss(animated: true, completion: nil)
+//    }
+//    
+//}
 
 

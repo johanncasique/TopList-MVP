@@ -11,7 +11,7 @@ import UIKit
 
 let PaidCellIdentifier = "PaidCell"
 
-class PaidAppsViewController: UIViewController, PaidAppView, TabBarConfigurationProtocol {
+class PaidAppsViewController: UIViewController, PaidAppView {
     
     //MARK:
     //MARK:Variables and Iboutlets
@@ -41,7 +41,6 @@ class PaidAppsViewController: UIViewController, PaidAppView, TabBarConfiguration
     //MARK:Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarItem = tabBarOption(.paid)
         activity.startAnimating()
         configurator.configure(paidAppViewController: self, country: "ve")
         paidTable.registerCell(withIdentifier: "FreeAppTableViewCell")

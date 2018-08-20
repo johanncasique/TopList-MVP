@@ -19,8 +19,12 @@ class TopFreeAppsUseCaseImplementation: TopAppsUseCaseImplementationProtocol {
     }
     
     func getApps(completionHandler: @escaping TopAppsGatewayCompletionHandler) {
-        self.appsGateway.getApps(withRequest: AppsApiRequest(country: country)) { (apps) in
+        appsGateway.getApps(withRequest: AppsApiRequest(country: country)) { (apps) in
             completionHandler(apps)
         }
+    }
+    
+    func getCountries() -> [CountryDO] {
+        return appsGateway.getCountries()
     }
 }

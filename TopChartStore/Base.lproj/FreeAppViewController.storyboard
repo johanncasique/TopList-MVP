@@ -16,44 +16,11 @@
             <objects>
                 <viewController storyboardIdentifier="FreeAppViewController" id="BYZ-38-t0r" customClass="FreeAppViewController" customModule="TopChartStore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Okc-28-DGr">
-                                <rect key="frame" x="0.0" y="44" width="375" height="67"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXy-Sw-s3N">
-                                        <rect key="frame" x="335" y="25" width="15" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="hnt-yF-UC1"/>
-                                            <constraint firstAttribute="width" constant="15" id="zg6-Tw-Tg2"/>
-                                        </constraints>
-                                        <state key="normal" image="Search"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jh-lN-0Tn">
-                                        <rect key="frame" x="20" y="25" width="15" height="15"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="aMO-L1-zum"/>
-                                            <constraint firstAttribute="width" constant="15" id="kPa-wP-rbK"/>
-                                        </constraints>
-                                        <state key="normal" image="icSideMenu"/>
-                                        <connections>
-                                            <action selector="openSideAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xSi-kI-cX2"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" red="0.043137254901960784" green="0.074509803921568626" blue="0.14509803921568626" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" red="0.12984204290000001" green="0.12984612579999999" blue="0.12984395030000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="67" id="0lg-CV-6Zz"/>
-                                    <constraint firstItem="8Jh-lN-0Tn" firstAttribute="top" secondItem="Okc-28-DGr" secondAttribute="top" constant="25" id="mhH-ix-zHO"/>
-                                    <constraint firstAttribute="trailing" secondItem="eXy-Sw-s3N" secondAttribute="trailing" constant="25" id="skF-ys-MeK"/>
-                                    <constraint firstItem="eXy-Sw-s3N" firstAttribute="top" secondItem="Okc-28-DGr" secondAttribute="top" constant="25" id="tUU-VV-lRj"/>
-                                    <constraint firstItem="8Jh-lN-0Tn" firstAttribute="leading" secondItem="Okc-28-DGr" secondAttribute="leading" constant="20" id="u2R-lp-Bpm"/>
-                                </constraints>
-                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="172" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mVK-vK-I2b">
-                                <rect key="frame" x="0.0" y="111" width="375" height="507"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <color key="backgroundColor" red="0.045632041990756989" green="0.076960854232311249" blue="0.14334955811500549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="cR4-U6-MvJ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="83"/>
@@ -115,18 +82,15 @@
                                 </view>
                             </tableView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="19I-7L-USC">
-                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <rect key="frame" x="169" y="290.5" width="37" height="37"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.043137254901960784" green="0.074509803921568626" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="gVe-vM-gVj" firstAttribute="top" secondItem="Okc-28-DGr" secondAttribute="bottom" constant="-47" id="KH6-vv-d31"/>
-                            <constraint firstItem="gVe-vM-gVj" firstAttribute="trailing" secondItem="Okc-28-DGr" secondAttribute="trailing" id="Lnt-MV-jwY"/>
                             <constraint firstItem="19I-7L-USC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TX8-NC-EMi"/>
-                            <constraint firstItem="Okc-28-DGr" firstAttribute="leading" secondItem="gVe-vM-gVj" secondAttribute="leading" id="YdE-M5-Jzg"/>
                             <constraint firstItem="gVe-vM-gVj" firstAttribute="trailing" secondItem="mVK-vK-I2b" secondAttribute="trailing" id="bSi-Bz-Fb2"/>
+                            <constraint firstItem="mVK-vK-I2b" firstAttribute="top" secondItem="gVe-vM-gVj" secondAttribute="top" id="e8R-h1-555"/>
                             <constraint firstItem="gVe-vM-gVj" firstAttribute="bottom" secondItem="mVK-vK-I2b" secondAttribute="bottom" id="jvt-Tc-8GE"/>
-                            <constraint firstItem="mVK-vK-I2b" firstAttribute="top" secondItem="Okc-28-DGr" secondAttribute="bottom" id="rDr-OQ-geW"/>
                             <constraint firstItem="19I-7L-USC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rGU-Nw-Zuo"/>
                             <constraint firstItem="mVK-vK-I2b" firstAttribute="leading" secondItem="gVe-vM-gVj" secondAttribute="leading" id="xZH-L2-0de"/>
                         </constraints>
@@ -152,10 +116,11 @@
         <scene sceneID="X90-RE-Dwk">
             <objects>
                 <tabBarController id="oW0-ch-ZES" customClass="TabBarOptionsViewController" customModule="TopChartStore" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="b4D-7j-i1H">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="b4D-7j-i1H">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.043137254899999998" green="0.074509803920000006" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.043137254899999998" green="0.074509803920000006" blue="0.1450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="FTT-Xd-yhn" kind="relationship" relationship="viewControllers" id="abO-6n-RVC"/>
@@ -224,9 +189,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Search" width="48" height="48"/>
         <image name="icAppStore" width="512" height="512"/>
-        <image name="icSideMenu" width="40" height="30"/>
     </resources>
     <color key="tintColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

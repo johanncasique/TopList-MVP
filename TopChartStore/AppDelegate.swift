@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         let navigationBarApperance = UINavigationBar.appearance()
-        navigationBarApperance.tintColor = Styles.Colors.navigationBar.color
+        navigationBarApperance.tintColor = Styles.Colors.white
         navigationBarApperance.barTintColor = Styles.Colors.navigationBar.color
+        
+        
         
         return true
     }
