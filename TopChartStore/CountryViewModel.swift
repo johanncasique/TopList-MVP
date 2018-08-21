@@ -12,17 +12,15 @@ typealias CountryTableData = (countryName: String, flag: UIImage)
 
 struct CountryViewModel {
     
-    //            let tempFlagImage = UIImage(named: country)
-    //            if tempFlagImage != nil {
-    //                countryCode.append(country)
-    //                countryName.append(name)
-    //            }
-    
     var name: String?
     var code: String?
     var flag: UIImage?
     
-    mutating func country(for countryDO: CountryDO) {
+    init(countryDO: CountryDO) {
+        country(for: countryDO)
+    }
+    
+    mutating private func country(for countryDO: CountryDO) {
         
         guard let flagImage = UIImage(named: countryDO.code) else { return }
         

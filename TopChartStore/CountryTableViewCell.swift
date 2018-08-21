@@ -16,18 +16,8 @@ class CountryTableViewCell: UITableViewCell, ConfigureCellProtocol {
     @IBOutlet weak var countryFlagsImage: UIImageView!
     
     
-    //MARK:
-    //MARK:Config Cell
-//    public func configCountryCell(with countryCode: String, countryName: String){
-//
-//        countryNameLabel.text = countryName
-//        countryFlagsImage.image = UIImage(named: countryCode)
-//    }
-    
     func configureFreeCell(with appModel: CountryViewModel) {
-        
         countryNameLabel.text = appModel.name
         countryFlagsImage.image = appModel.flag
-        
     }
 }

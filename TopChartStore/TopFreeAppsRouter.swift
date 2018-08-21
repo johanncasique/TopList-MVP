@@ -10,6 +10,7 @@ import UIKit
 
 protocol TopFreeAppsRouter {
     func showDetail(for app: App)
+    func showCountryList()
 }
 
 class TopFreeAppsRouterImplementation: TopFreeAppsRouter {
@@ -32,5 +33,11 @@ class TopFreeAppsRouterImplementation: TopFreeAppsRouter {
             return
         }
         navigator.pushViewController(VC, animated: true)
+    }
+    
+    func showCountryList() {
+        let countryVC: CountryListViewController = UIStoryboard.storyboard(storyboard: .CountryListViewController).instantiateViewController()
+        countryVC.delegate = freeAppViewController
+        freeAppViewController?.present(countryVC, animated: true)
     }
 }

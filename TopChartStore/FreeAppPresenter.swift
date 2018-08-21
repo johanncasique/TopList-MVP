@@ -14,8 +14,8 @@ protocol FreeAppView: class {
 }
 
 protocol FreeAppPresenter {
-    var router: TopFreeAppsRouter { get }
     func viewDidLoad()
+    func loadCountry()
     func didSelect(row: Int)
 }
 
@@ -62,5 +62,9 @@ class FreeAppPresenterImplementation: FreeAppPresenter, DataSourceDelegate {
     func rowDidSelected(at index: Int) {
         guard let items = items else { return }
         router.showDetail(for: items[index])
+    }
+    
+    func loadCountry() {
+        router.showCountryList()
     }
 }

@@ -8,75 +8,37 @@
 
 import UIKit
 
-let CountryListCellIdentifier = "CountryListCell"
+protocol CountryListViewControllerDelegate: class {
+    func countryDidSelected(withName name: String)
+}
 
-class CountryListViewController: UIViewController{
+class CountryListViewController: UIViewController, CountryView {
     
-    public enum countryKeys: String {
-        case countryISO
-    }
     
     //MARK:
     //MARK:Variables and Iboutlets
     @IBOutlet weak var countryTable: UITableView!
-    @IBOutlet weak var activity: UIActivityIndicatorView!
     
-    private var countryCode = [String]()
-    private var countryName = [String]()
+    weak var delegate: CountryListViewControllerDelegate?
+    var presenter: CountryPresenter!
+    lazy var configuration: CountryConfiguratorImplementation = {
+        return CountryConfiguratorImplementation()
+    }()
     private let defaults = UserDefaults.standard
-    
+    var dataSource: TableDataSource<CountryTableViewCell, CountryViewModel>? {
+        didSet {
+            countryTable.dataSource = dataSource
+            countryTable.delegate = dataSource
+        }
+    }
     
     //MARK:
     //MARK:Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupViews()
-    }
-    
-    //MARK:
-    //MARK:SetupViews
-    func setupViews(){
-        
-        activity.startAnimating()
-        activity.isHidden = false
-        countryTable.alpha = 0
-        DispatchQueue.global(qos: .userInitiated).async {
-             self.getCountryISO()
-        }
-       
-    }
-    
-    
-    //MARK:
-    //MARK:Get country code and name
-    private func getCountryISO(){
-        
-        for country in NSLocale.isoCountryCodes {
-            //Add country code
-            //Add country name
-            //let pre = Locale.preferredLanguages
-            ///print(pre)
-         
-           
-            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: country])
-            let name = NSLocale(localeIdentifier: "es_ES").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(country)"
-            let tempFlagImage = UIImage(named: country)
-            if tempFlagImage != nil {
-                countryCode.append(country)
-                countryName.append(name)
-            }
-        }
-        DispatchQueue.main.async {
-            
-            self.activity.stopAnimating()
-            self.activity.isHidden = true
-            UIView.animate(withDuration: 0.4, animations: {
-                self.countryTable.reloadData()
-                self.countryTable.alpha = 1
-            })
-        }
-        
+
+        configuration.configure(viewController: self)
+        presenter.viewDidLoad()
     }
     
     
@@ -86,41 +48,11 @@ class CountryListViewController: UIViewController{
         dismiss(animated: true)
     }
     
+    func countryDidSelected(withName name: String) {
+        dismiss(animated: true)
+        delegate?.countryDidSelected(withName: name)
+    }
+    
 }
-
-
-
-//extension CountryListViewController: UITableViewDataSource {
-//    
-//    
-//    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        
-//        return 1
-//    }
-//    
-//    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        
-//        return countryCode.count
-//    }
-//    
-//    internal func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-//        
-//        let cell: CountryTableViewCell = tableView.dequeueReusableCell(withIdentifier: CountryListCellIdentifier, for: indexPath) as! CountryTableViewCell
-//        
-//        cell.configCountryCell(with: countryCode[indexPath.row], countryName: countryName[indexPath.row])
-//        
-//        return cell
-//    }
-//}
-//
-//extension CountryListViewController: UITableViewDelegate {
-//    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        defaults.set(countryCode[indexPath.row], forKey: Keys.defaults.countryISO)
-//        defaults.set(countryName[indexPath.row], forKey: Keys.defaults.countryName)
-//        dismiss(animated: true, completion: nil)
-//    }
-//    
-//}
 
 

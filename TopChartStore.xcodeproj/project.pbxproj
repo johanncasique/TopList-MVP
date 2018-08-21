@@ -73,6 +73,8 @@
 		A834603021219921009D91B4 /* DetailAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A834602F21219921009D91B4 /* DetailAppConfigurator.swift */; };
 		A8A0D1C82126CA0C002B873D /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0D1C72126CA0C002B873D /* TableView.swift */; };
 		A8A0D1CB2126F270002B873D /* StoryboardProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0D1CA2126F270002B873D /* StoryboardProviders.swift */; };
+		A8A3B4BB212C0C6F00729AE4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A3B4BA212C0C6F00729AE4 /* BaseViewController.swift */; };
+		A8A3B4BD212C26F000729AE4 /* CountryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A3B4BC212C26F000729AE4 /* CountryConfigurator.swift */; };
 		A8ACBE75211C8BA400F4AE72 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */; };
 		A8ACBE78211C8D4500F4AE72 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE77211C8D4500F4AE72 /* TableDataSource.swift */; };
 /* End PBXBuildFile section */
@@ -147,6 +149,8 @@
 		A834602F21219921009D91B4 /* DetailAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAppConfigurator.swift; sourceTree = "<group>"; };
 		A8A0D1C72126CA0C002B873D /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		A8A0D1CA2126F270002B873D /* StoryboardProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardProviders.swift; sourceTree = "<group>"; };
+		A8A3B4BA212C0C6F00729AE4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A8A3B4BC212C26F000729AE4 /* CountryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryConfigurator.swift; sourceTree = "<group>"; };
 		A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
 		A8ACBE77211C8D4500F4AE72 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		FBC7E77EA4DB6F8A737F7A83 /* Pods_TopChartStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopChartStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -232,6 +236,7 @@
 				87722A641F2CDC180050808D /* TabBar */,
 				87722A5F1F2CD1A90050808D /* SideMenu */,
 				879B8B491F157BBB008505E9 /* Cell */,
+				A8A3B4BA212C0C6F00729AE4 /* BaseViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -337,9 +342,10 @@
 				A833DB24212AEC44006DFAD9 /* ViewModel */,
 				87722A771F2D1E680050808D /* CountryCell */,
 				87722A731F2D179C0050808D /* CountryListViewController.swift */,
-				87722A751F2D1AAB0050808D /* CountryListViewController.storyboard */,
 				A833DB18212AD4DA006DFAD9 /* CountryPresenter.swift */,
+				87722A751F2D1AAB0050808D /* CountryListViewController.storyboard */,
 				A833DB22212AE76F006DFAD9 /* CountryRouter.swift */,
+				A8A3B4BC212C26F000729AE4 /* CountryConfigurator.swift */,
 			);
 			name = CountryList;
 			sourceTree = "<group>";
@@ -660,6 +666,7 @@
 				874867341F1429140001EB96 /* FreeAppViewController.swift in Sources */,
 				87F07B5A208CAE8A003B3EA5 /* FreeAppConfigurator.swift in Sources */,
 				A833DB1F212AD8DF006DFAD9 /* CountryGateway.swift in Sources */,
+				A8A3B4BD212C26F000729AE4 /* CountryConfigurator.swift in Sources */,
 				87722A5E1F2CD1310050808D /* JCViewController.swift in Sources */,
 				87E8BFE51F48B3E8007ED07D /* SwiftyStarRatingView.swift in Sources */,
 				87F07B3F208A59CF003B3EA5 /* TopFreeUseCase.swift in Sources */,
@@ -709,6 +716,7 @@
 				87722A611F2CD1C80050808D /* SideMenuViewController.swift in Sources */,
 				A82F4310211DA65B00BAC7FD /* ArrayDataProvider.swift in Sources */,
 				87722A661F2CDC360050808D /* TabBarOptionViewController.swift in Sources */,
+				A8A3B4BB212C0C6F00729AE4 /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

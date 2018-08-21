@@ -23,7 +23,8 @@ class PaidAppUseCaseImplementation: TopAppsUseCaseImplementationProtocol {
         }
     }
     
-    func getCountry(for countryName: String) -> [CountryDO] {
-        return appsGateway.getCountry(for: countryName)
+    func getCountries() -> [CountryDO] {
+        return appsGateway.getCountries()
     }
+    
 }

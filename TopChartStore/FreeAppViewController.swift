@@ -8,12 +8,13 @@
 
 import UIKit
 
-class FreeAppViewController: UIViewController, FreeAppView {
+class FreeAppViewController: BaseViewController, FreeAppView {
     
     //MARK:Variables and Iboutlets
     @IBOutlet weak var freeTable: UITableView!
     @IBOutlet weak var countryNameLabel: UILabel!
     @IBOutlet weak var activity: UIActivityIndicatorView!
+    
     
     var presenter: FreeAppPresenter!
     lazy var configurator: FreeAppConfiguratorConfigurator = {
@@ -41,7 +42,7 @@ class FreeAppViewController: UIViewController, FreeAppView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "icSideMenu"), style: .plain, target: self, action: #selector(loadCountry))
+        configBarButton()
         activity.startAnimating()
         configurator.configure(freeAppViewController: self, country: "ve")
         freeTable.registerCell(withIdentifier: "FreeAppTableViewCell")
@@ -58,9 +59,14 @@ class FreeAppViewController: UIViewController, FreeAppView {
         
     }
     
-    @objc func loadCountry() {
-        print("loadCountry")
+    override func loadCountryFunc() {
+        presenter.loadCountry()
     }
+    
+    override func searchAppFunc() {
+        print("search")
+    }
+   
 }
 
 extension FreeAppViewController: DataSourceDelegate {
@@ -68,3 +74,12 @@ extension FreeAppViewController: DataSourceDelegate {
         presenter.didSelect(row: index)
     }
 }
+
+extension FreeAppViewController: CountryListViewControllerDelegate {
+    func countryDidSelected(withName name: String) {
+        
+        configurator.configure(freeAppViewController: self, country: name.lowercased())
+        presenter.viewDidLoad()
+    }
+}
+

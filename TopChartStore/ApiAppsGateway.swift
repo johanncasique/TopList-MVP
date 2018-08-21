@@ -49,6 +49,7 @@ class ApiAppsGatewayImplemantation: ApiAppsGateway {
             countries.append(CountryDO(dto: dto))
 
         }
+        
         return countries
     }
 }

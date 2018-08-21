@@ -32,7 +32,7 @@ class ApiClientImplementation: ApiClient {
     let session: URLSession
     
     init(session: URLSession) {
-        self.session = session
+        self.session = session    
     }
     
     func execute<T>(request: ApiRequest, completionHandler: @escaping (Result<ApiResponse<T>>) -> Void) where T : InitializableWithData {
