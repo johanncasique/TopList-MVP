@@ -9,13 +9,11 @@
 import UIKit
 
 protocol CountryListViewControllerDelegate: class {
-    func countryDidSelected(withName name: String)
+    func countryDidSelected(withModel model: CountryViewModel)
 }
 
 class CountryListViewController: UIViewController, CountryView {
     
-    
-    //MARK:
     //MARK:Variables and Iboutlets
     @IBOutlet weak var countryTable: UITableView!
     
@@ -29,30 +27,26 @@ class CountryListViewController: UIViewController, CountryView {
         didSet {
             countryTable.dataSource = dataSource
             countryTable.delegate = dataSource
+            countryTable.reloadData()
         }
     }
     
-    //MARK:
     //MARK:Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         configuration.configure(viewController: self)
         presenter.viewDidLoad()
     }
     
-    
-    //MARK:
     //MARK:Close View
     @IBAction func closeViewAction(_ sender: UIButton){
         dismiss(animated: true)
     }
     
-    func countryDidSelected(withName name: String) {
+    func countryDidSelected(withModel model: CountryViewModel) {
+        delegate?.countryDidSelected(withModel: model)
         dismiss(animated: true)
-        delegate?.countryDidSelected(withName: name)
     }
     
 }
-
-

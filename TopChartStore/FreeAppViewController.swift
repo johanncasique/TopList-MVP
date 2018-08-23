@@ -33,6 +33,15 @@ class FreeAppViewController: BaseViewController, FreeAppView {
             }
         }
     }
+    var countryName: String {
+        get {
+            return countryNameLabel.text!
+        }
+        set {
+            countryNameLabel.text = newValue
+        }
+    }
+    
     
     func displayBooksRetrievalError(title: String, message: String) {
         
@@ -43,9 +52,17 @@ class FreeAppViewController: BaseViewController, FreeAppView {
         super.viewDidLoad()
         
         configBarButton()
-        activity.startAnimating()
-        configurator.configure(freeAppViewController: self, country: "ve")
         freeTable.registerCell(withIdentifier: "FreeAppTableViewCell")
+        loadData("ve")
+        
+    }
+    
+    // MARK: - loadData
+    func loadData(_ country: String) {
+        dataSource?.emptyDataSource()
+        freeTable.reloadData()
+        activity.startAnimating()
+        configurator.configure(freeAppViewController: self, country: country)
         presenter.viewDidLoad()
     }
     
@@ -72,14 +89,6 @@ class FreeAppViewController: BaseViewController, FreeAppView {
 extension FreeAppViewController: DataSourceDelegate {
     func rowDidSelected(at index: Int) {
         presenter.didSelect(row: index)
-    }
-}
-
-extension FreeAppViewController: CountryListViewControllerDelegate {
-    func countryDidSelected(withName name: String) {
-        
-        configurator.configure(freeAppViewController: self, country: name.lowercased())
-        presenter.viewDidLoad()
     }
 }
 

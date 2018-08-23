@@ -10,6 +10,8 @@ import Foundation
 
 protocol FreeAppView: class {
     var dataSource: TableDataSource<FreeAppTableViewCell, App>? { get set }
+    var countryName: String { get set }
+    func loadData(_ countryName: String)
     func displayBooksRetrievalError(title: String, message: String)
 }
 
@@ -66,5 +68,14 @@ class FreeAppPresenterImplementation: FreeAppPresenter, DataSourceDelegate {
     
     func loadCountry() {
         router.showCountryList()
+    }
+}
+
+extension FreeAppPresenterImplementation: CountryListViewControllerDelegate {
+    func countryDidSelected(withModel model: CountryViewModel) {
+        guard let countryCode = model.code, let name = model.name else { return }
+        view?.countryName = name
+        view?.loadData(countryCode)
+    
     }
 }

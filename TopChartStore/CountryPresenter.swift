@@ -14,7 +14,7 @@ protocol CountryDelegate {
 
 protocol CountryView: class {
     var dataSource: TableDataSource<CountryTableViewCell, CountryViewModel>? { get set}
-    func countryDidSelected(withName name: String)
+    func countryDidSelected(withModel model: CountryViewModel)
 }
 
 protocol CountryPresenter {
@@ -37,14 +37,16 @@ class CountryListPresenterImplementation: CountryPresenter, DataSourceDelegate  
     
     func viewDidLoad() {
         
-        countries = useCase.getCountries().map { CountryViewModel(countryDO: $0) }.filter { $0.flag != nil }
-        guard let countries = countries else { return }
-        view?.dataSource = TableDataSource<CountryTableViewCell, CountryViewModel>(array: countries, delegate: self)
+        useCase.getCountries(completionHandler: { [weak self] (countries) in
+            guard let strongSelf = self else { return }
+            strongSelf.countries = countries
+            strongSelf.view?.dataSource = TableDataSource<CountryTableViewCell, CountryViewModel>(array: countries, delegate: self)
+        })
     }
     
     func rowDidSelected(at index: Int) {
         
         guard let model = countries?[index] else { return }
-        view?.countryDidSelected(withName: model.code!)
+        view?.countryDidSelected(withModel: model)
     }
 }

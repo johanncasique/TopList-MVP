@@ -37,7 +37,7 @@ class TopFreeAppsRouterImplementation: TopFreeAppsRouter {
     
     func showCountryList() {
         let countryVC: CountryListViewController = UIStoryboard.storyboard(storyboard: .CountryListViewController).instantiateViewController()
-        countryVC.delegate = freeAppViewController
+        countryVC.delegate = freeAppViewController?.presenter
         freeAppViewController?.present(countryVC, animated: true)
     }
 }

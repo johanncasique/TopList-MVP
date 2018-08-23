@@ -49,5 +49,9 @@ class ArrayDataProvider<T> {
         
         items[index.section][index.row] = value
     }
+    
+    func delete() {
+        items.removeAll()
+    }
 
 }

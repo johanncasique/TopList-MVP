@@ -23,8 +23,10 @@ class PaidAppUseCaseImplementation: TopAppsUseCaseImplementationProtocol {
         }
     }
     
-    func getCountries() -> [CountryDO] {
-        return appsGateway.getCountries()
+    func getCountries(completionHandler: @escaping ([CountryViewModel]) -> Void) {
+        appsGateway.getCountries { (countries) in
+            completionHandler(countries.map { CountryViewModel(countryDO: $0) }.filter { $0.flag != nil })
+        }
     }
     
 }

@@ -42,6 +42,10 @@ class TableDataSource<Cell: UITableViewCell, T>: NSObject, UITableViewDataSource
         
     }
     
+    func emptyDataSource() {
+        items.delete()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return items.numberOfSection()
     }

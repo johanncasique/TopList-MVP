@@ -9,10 +9,11 @@
 import Foundation
 
 typealias TopAppsGatewayCompletionHandler = (_ apps: Result<ApiApps>) -> Void
+typealias CountriesCompletionHandler = (_ countries: [CountryDO]) -> Void
 
 protocol ApiAppsGateway {
     func getApps(withRequest request: ApiRequest, completionHanlder: @escaping TopAppsGatewayCompletionHandler)
-    func getCountries() -> [CountryDO]
+    func getCountries(completionHandler: @escaping CountriesCompletionHandler)
 }
 
 class ApiAppsGatewayImplemantation: ApiAppsGateway {
@@ -36,20 +37,24 @@ class ApiAppsGatewayImplemantation: ApiAppsGateway {
         }
     }
     
-    func getCountries() -> [CountryDO] {
+    func getCountries(completionHandler: @escaping CountriesCompletionHandler) {
         
         var countries = [CountryDO]()
         
-        for country in NSLocale.isoCountryCodes {
+        DispatchQueue.global(qos: .userInitiated).async {
+            for country in NSLocale.isoCountryCodes {
+                
+                let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: country])
+                let name = NSLocale(localeIdentifier: "es_ES").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(country)"
+                
+                let dto = Country(code: country, name: name)
+                countries.append(CountryDO(dto: dto))
+            }
+            countries = countries.sorted { $0.name < $1.name }
             
-            let id = NSLocale.localeIdentifier(fromComponents: [NSLocale.Key.countryCode.rawValue: country])
-            let name = NSLocale(localeIdentifier: "es_ES").displayName(forKey: NSLocale.Key.identifier, value: id) ?? "Country not found for code: \(country)"
-            
-            let dto = Country(code: country, name: name)
-            countries.append(CountryDO(dto: dto))
-
+            DispatchQueue.main.sync {
+                completionHandler(countries)
+            }
         }
-        
-        return countries
     }
 }
