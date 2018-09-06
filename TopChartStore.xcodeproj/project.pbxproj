@@ -78,6 +78,12 @@
 		A8A3B4BD212C26F000729AE4 /* CountryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A3B4BC212C26F000729AE4 /* CountryConfigurator.swift */; };
 		A8ACBE75211C8BA400F4AE72 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */; };
 		A8ACBE78211C8D4500F4AE72 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE77211C8D4500F4AE72 /* TableDataSource.swift */; };
+		A8BB31A92141538D006CEF15 /* RatingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB31A82141538D006CEF15 /* RatingUseCase.swift */; };
+		A8BB31AB214154D0006CEF15 /* RatingGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB31AA214154D0006CEF15 /* RatingGateway.swift */; };
+		A8BB31AD2141567A006CEF15 /* RatingDO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB31AC2141567A006CEF15 /* RatingDO.swift */; };
+		A8BB31AF214156B3006CEF15 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB31AE214156B3006CEF15 /* Rating.swift */; };
+		A8BB31B121417411006CEF15 /* RatingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB31B021417411006CEF15 /* RatingRequest.swift */; };
+		A8BB31B3214177FB006CEF15 /* FreeAppTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB31B2214177FB006CEF15 /* FreeAppTableViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +161,12 @@
 		A8A3B4BC212C26F000729AE4 /* CountryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryConfigurator.swift; sourceTree = "<group>"; };
 		A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
 		A8ACBE77211C8D4500F4AE72 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
+		A8BB31A82141538D006CEF15 /* RatingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingUseCase.swift; sourceTree = "<group>"; };
+		A8BB31AA214154D0006CEF15 /* RatingGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingGateway.swift; sourceTree = "<group>"; };
+		A8BB31AC2141567A006CEF15 /* RatingDO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingDO.swift; sourceTree = "<group>"; };
+		A8BB31AE214156B3006CEF15 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
+		A8BB31B021417411006CEF15 /* RatingRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingRequest.swift; sourceTree = "<group>"; };
+		A8BB31B2214177FB006CEF15 /* FreeAppTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeAppTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		FBC7E77EA4DB6F8A737F7A83 /* Pods_TopChartStore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TopChartStore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -399,6 +411,7 @@
 			children = (
 				879B8B4B1F157BD6008505E9 /* FreeAppTableViewCell.swift */,
 				A82F430B211D9F0900BAC7FD /* FreeAppTableViewCell.xib */,
+				A8BB31B2214177FB006CEF15 /* FreeAppTableViewCellViewModel.swift */,
 			);
 			name = FreeAppCell;
 			sourceTree = "<group>";
@@ -421,6 +434,7 @@
 				87BFE0CC1FAD036900AED0FA /* TopApps.swift */,
 				A833DB1C212AD777006DFAD9 /* Country.swift */,
 				1E0825BD2131C207001783BF /* DetailApp.swift */,
+				A8BB31AE214156B3006CEF15 /* Rating.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -433,6 +447,7 @@
 				87BF354C20D6AAE90034F1B5 /* GrossingAppUseCase.swift */,
 				A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */,
 				A833DB1A212AD65E006DFAD9 /* CountryUseCase.swift */,
+				A8BB31A82141538D006CEF15 /* RatingUseCase.swift */,
 			);
 			name = UseCases;
 			sourceTree = "<group>";
@@ -463,6 +478,7 @@
 			children = (
 				87F07B4C208B52CE003B3EA5 /* ApiApps.swift */,
 				A833DB20212ADD28006DFAD9 /* CountryDO.swift */,
+				A8BB31AC2141567A006CEF15 /* RatingDO.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -471,6 +487,7 @@
 			isa = PBXGroup;
 			children = (
 				87F07B48208B3042003B3EA5 /* ApiAppsGateway.swift */,
+				A8BB31AA214154D0006CEF15 /* RatingGateway.swift */,
 			);
 			name = Gateways;
 			sourceTree = "<group>";
@@ -481,6 +498,7 @@
 				87F07B4A208B3196003B3EA5 /* AppApiRequest.swift */,
 				87BF354420D5B0CB0034F1B5 /* PadApiRequest.swift */,
 				87BF354E20D6AB850034F1B5 /* GrossingApiRequest.swift */,
+				A8BB31B021417411006CEF15 /* RatingRequest.swift */,
 			);
 			name = Request;
 			sourceTree = "<group>";
@@ -661,6 +679,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8BB31B3214177FB006CEF15 /* FreeAppTableViewCellViewModel.swift in Sources */,
 				8771D8091FADFAAA0082D14F /* UIColor+Hex.swift in Sources */,
 				87722A691F2CE26B0050808D /* PaidAppStoreViewController.swift in Sources */,
 				87F07B5F208CBF2B003B3EA5 /* TopFreeAppsRouter.swift in Sources */,
@@ -673,6 +692,7 @@
 				87722A5E1F2CD1310050808D /* JCViewController.swift in Sources */,
 				87E8BFE51F48B3E8007ED07D /* SwiftyStarRatingView.swift in Sources */,
 				87F07B3F208A59CF003B3EA5 /* TopFreeUseCase.swift in Sources */,
+				A8BB31AF214156B3006CEF15 /* Rating.swift in Sources */,
 				87F07B4B208B3196003B3EA5 /* AppApiRequest.swift in Sources */,
 				8771D8041FADE7AC0082D14F /* Keys.swift in Sources */,
 				1E0825BE2131C207001783BF /* DetailApp.swift in Sources */,
@@ -692,11 +712,14 @@
 				A829826E21259DDA00156F17 /* ApiSession.swift in Sources */,
 				A833DB23212AE76F006DFAD9 /* CountryRouter.swift in Sources */,
 				87BF354320D593130034F1B5 /* PaidAppUseCase.swift in Sources */,
+				A8BB31AD2141567A006CEF15 /* RatingDO.swift in Sources */,
 				87F07B4D208B52CE003B3EA5 /* ApiApps.swift in Sources */,
 				A834602A21217F1C009D91B4 /* DetailViewController.swift in Sources */,
 				87F07B5D208CB246003B3EA5 /* AppsGateway.swift in Sources */,
+				A8BB31A92141538D006CEF15 /* RatingUseCase.swift in Sources */,
 				87F07B46208B2404003B3EA5 /* ApiResponse.swift in Sources */,
 				A833DB26212AEC54006DFAD9 /* CountryViewModel.swift in Sources */,
+				A8BB31B121417411006CEF15 /* RatingRequest.swift in Sources */,
 				A833DB1D212AD777006DFAD9 /* Country.swift in Sources */,
 				A834603021219921009D91B4 /* DetailAppConfigurator.swift in Sources */,
 				A8A0D1C82126CA0C002B873D /* TableView.swift in Sources */,
@@ -707,6 +730,7 @@
 				A833DB21212ADD28006DFAD9 /* CountryDO.swift in Sources */,
 				8771D8071FADF7260082D14F /* Styles.swift in Sources */,
 				879B8B421F156C04008505E9 /* JCNetwork.swift in Sources */,
+				A8BB31AB214154D0006CEF15 /* RatingGateway.swift in Sources */,
 				A8A0D1CB2126F270002B873D /* StoryboardProviders.swift in Sources */,
 				87722A791F2D1E9A0050808D /* CountryTableViewCell.swift in Sources */,
 				A8ACBE78211C8D4500F4AE72 /* TableDataSource.swift in Sources */,

@@ -28,31 +28,39 @@ class FreeAppTableViewCell: UITableViewCell, ConfigureCellProtocol {
     
     //MARK:
     //MARK:Configure Cell
-    func configureFreeCell(with appModel: App){
+    func configureFreeCell(with appModel: FreeAppTableViewCellViewModel){
+        
+        setupView()
+        
+        if let imageURL = appModel.iconImageURL {
+            appImage.af_setImage(withURL: imageURL, placeholderImage: #imageLiteral(resourceName: "placeHolderIconApp"), imageTransition: .crossDissolve(0.2))
+        }
+        
+        appTitleLabel.text = appModel.name
+        appCompanyLabel.text = appModel.companyName
+        appModel.getRating(completion: { rating in
+            self.ratingNumberLabel.text = rating
+        })
+        getButton.setTitle("GET", for: .normal)
+        
+        inAppPurchaseLabel.text = "Offers In-App\n Purchases"
+    }
+    
+    private func setupView() {
+        appImage.layer.cornerRadius = 15
+        appImage.layer.borderColor = UIColor.gray.cgColor
+        appImage.layer.borderWidth = 0.3
+        appImage.clipsToBounds = true
         
         backView.layer.cornerRadius = 10
         backView.layer.borderWidth = 0.1
         backView.layer.borderColor = UIColor.lightGray.cgColor
         backView.layer.shadowAlpha(with: 0.5, radius: 2, positionX: 0.3, positionY: 2.5, color: .lightGray)
         
-        
-        
-        if let stringImage = appModel.artworkUrl100, let urlImage = URL(string: stringImage) {
-            //appImage.downloadFrom(url: stringImage)
-            appImage.af_setImage(withURL: urlImage, placeholderImage: #imageLiteral(resourceName: "placeHolderIconApp"), imageTransition: .crossDissolve(0.2))
-        }
-        appImage.layer.cornerRadius = 15
-        appImage.layer.borderColor = UIColor.gray.cgColor
-        appImage.layer.borderWidth = 0.3
-        appImage.clipsToBounds = true
-        appTitleLabel.text = appModel.name
-        //appCompanyLabel.text = appModel.company
-        ratingNumberLabel.text = "4.5"
-        getButton.setTitle("GET", for: .normal)
         getButton.layer.cornerRadius = 10
-        inAppPurchaseLabel.text = "Offers In-App\n Purchases"
     }
 }
+
 
 extension UIImageView {
     

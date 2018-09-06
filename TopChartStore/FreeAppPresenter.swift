@@ -9,7 +9,7 @@
 import Foundation
 
 protocol FreeAppView: class {
-    var dataSource: TableDataSource<FreeAppTableViewCell, App>? { get set }
+    var dataSource: TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>? { get set }
     var countryName: String { get set }
     func loadData(_ countryName: String)
     func displayBooksRetrievalError(title: String, message: String)
@@ -53,7 +53,7 @@ class FreeAppPresenterImplementation: FreeAppPresenter, DataSourceDelegate {
     fileprivate func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
         self.items = app
-        let dataSource = TableDataSource<FreeAppTableViewCell, App>(array: app, delegate: self)
+        let dataSource = TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>(array: FreeAppTableViewCellViewModel(model: app), delegate: self)
         view?.dataSource = dataSource
     }
     

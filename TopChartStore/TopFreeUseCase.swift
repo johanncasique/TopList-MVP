@@ -10,8 +10,6 @@ import Foundation
 
 class TopFreeAppsUseCaseImplementation: TopAppsUseCaseImplementationProtocol {
     
-    
-    
     var appsGateway: ApiAppsGateway
     var country: String
     

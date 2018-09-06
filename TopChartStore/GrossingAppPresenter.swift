@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GrossingAppView: class {
-    var dataSource: TableDataSource<FreeAppTableViewCell, App>? { get set }
+    var dataSource: TableDataSource<FreeAppTableViewCell, >? { get set }
 }
 
 protocol GrossingAppPresenter {

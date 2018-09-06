@@ -9,7 +9,7 @@
 import Foundation
 
 private struct results {
-    var arra
+    //var arra
 }
 
 

@@ -17,3 +17,12 @@ protocol TopAppsUseCaseImplementationProtocol: TopAppsUseCaseProtocol {
     var appsGateway: ApiAppsGateway { get }
     var country: String { get }
 }
+
+protocol RatingUseCaseProtocol {
+    func getRating(completionHandler: @escaping RatingCompletionHandler)
+}
+
+protocol RatingUseCaseProtocolImplementation: RatingUseCaseProtocol {
+    var ratingGateway: RatingGateway { get }
+    var idApp: String { get }
+}

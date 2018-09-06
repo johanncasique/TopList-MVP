@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-//let AppleURL = "https://itunes.apple.com/"
+let DetailAppleURL = "https://itunes.apple.com/"
 let AppleURL = "https://rss.itunes.apple.com/api/v1/"
 
 enum Query {
@@ -17,6 +17,7 @@ enum Query {
     static let FreeApp = "ios-apps/top-free/all/200/explicit.json"
     static let paidApp = "/ios-apps/top-paid/all/200/explicit.json"
     static let grossingApp = "/ios-apps/top-grossing/all/200/explicit.json"
+    static let rating = "lookup?id="
 }
 
 class JCQueryNetwork {
