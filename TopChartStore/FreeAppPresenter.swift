@@ -15,7 +15,7 @@ protocol FreeAppView: class {
     func displayBooksRetrievalError(title: String, message: String)
 }
 
-protocol FreeAppPresenter {
+protocol FreeAppPresenter: CountryListViewControllerDelegate {
     func viewDidLoad()
     func loadCountry()
     func didSelect(row: Int)
@@ -76,6 +76,5 @@ extension FreeAppPresenterImplementation: CountryListViewControllerDelegate {
         guard let countryCode = model.code, let name = model.name else { return }
         view?.countryName = name
         view?.loadData(countryCode)
-    
     }
 }

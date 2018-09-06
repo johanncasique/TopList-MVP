@@ -51,7 +51,7 @@ class FreeAppViewController: BaseViewController, FreeAppView {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        configBarButton()
+        configBarButton(.country)
         freeTable.registerCell(withIdentifier: "FreeAppTableViewCell")
         loadData("ve")
         

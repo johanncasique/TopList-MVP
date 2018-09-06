@@ -73,4 +73,9 @@ class TableDataSource<Cell: UITableViewCell, T>: NSObject, UITableViewDataSource
     func updateItem(at index: IndexPath, value: T) {
         items.updateItem(at: index, value: value)
     }
+    
+    func updateDataSource(withArray array: [T]) {
+        items.delete()
+        items.items = [array]
+    }
 }

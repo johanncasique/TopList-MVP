@@ -15,10 +15,13 @@ protocol CountryDelegate {
 protocol CountryView: class {
     var dataSource: TableDataSource<CountryTableViewCell, CountryViewModel>? { get set}
     func countryDidSelected(withModel model: CountryViewModel)
+    func reloadData()
+    func searchBarEmpty() -> Bool
 }
 
 protocol CountryPresenter {
     func viewDidLoad()
+    func filterContentForSearchText(_ searchText: String)
 }
 
 class CountryListPresenterImplementation: CountryPresenter, DataSourceDelegate  {
@@ -28,6 +31,7 @@ class CountryListPresenterImplementation: CountryPresenter, DataSourceDelegate  
     fileprivate var useCase: TopAppsUseCaseProtocol
     
     var countries: [CountryViewModel]?
+    var filteredCountries: [CountryViewModel]?
     
     init(view: CountryView, router: CountryRouter, useCase: TopAppsUseCaseProtocol) {
         self.view = view
@@ -45,8 +49,28 @@ class CountryListPresenterImplementation: CountryPresenter, DataSourceDelegate  
     }
     
     func rowDidSelected(at index: Int) {
-        
-        guard let model = countries?[index] else { return }
-        view?.countryDidSelected(withModel: model)
+        guard let strongView = view else { return }
+        if !strongView.searchBarEmpty() {
+            guard let model = filteredCountries?[index] else { return }
+            view?.countryDidSelected(withModel: model)
+        } else {
+            guard let model = countries?[index] else { return }
+            view?.countryDidSelected(withModel: model)
+        }
     }
+    
+    func filterContentForSearchText(_ searchText: String) {
+        guard let strongView = view else { return }
+        if strongView.searchBarEmpty() {
+            guard let countries = countries else { return }
+            view?.dataSource?.updateDataSource(withArray: countries)
+        } else {
+            filteredCountries = countries?.filter({ (country: CountryViewModel) -> Bool in
+                return country.name?.lowercased().contains(searchText.lowercased()) ?? false
+            })
+            view?.dataSource?.updateDataSource(withArray: filteredCountries!)
+        }
+        view?.reloadData()
+    }
+    
 }

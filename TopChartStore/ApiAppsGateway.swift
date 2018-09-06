@@ -29,7 +29,7 @@ class ApiAppsGatewayImplemantation: ApiAppsGateway {
         apiClient.execute(request: request) { (result: Result<ApiResponse<ApiApps>>) in
             switch result {
             case let .success(response):
-                print(response)
+                print(response.httpUrlResponse.debugDescription)
                 completionHanlder(.success(response.entity))
             case let .failure(error):
                 completionHanlder(.failure(error))

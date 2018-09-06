@@ -12,11 +12,13 @@ enum Styles {
     
     enum Text {
         static let country: CGFloat = 40
+        static let countrySearch: CGFloat = 25
     }
     
     
     enum Fonts {
         static let country = UIFont.boldSystemFont(ofSize: Styles.Text.country)
+        static let countrySearch = UIFont.boldSystemFont(ofSize: Styles.Text.countrySearch)
     }
     
     enum Colors {

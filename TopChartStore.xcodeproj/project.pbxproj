@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E0825BE2131C207001783BF /* DetailApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0825BD2131C207001783BF /* DetailApp.swift */; };
 		1E0AC4C62109129200D6D210 /* GrossingAppImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0AC4C52109129200D6D210 /* GrossingAppImplementation.swift */; };
 		1E0AC4C8210917F200D6D210 /* GrossingAppConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E0AC4C7210917F200D6D210 /* GrossingAppConfigurator.swift */; };
 		60DCC228FC1D8988850B157F /* Pods_TopChartStore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBC7E77EA4DB6F8A737F7A83 /* Pods_TopChartStore.framework */; };
@@ -81,6 +82,7 @@
 
 /* Begin PBXFileReference section */
 		06733EB5F4730C4634579C3C /* Pods-TopChartStore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopChartStore.release.xcconfig"; path = "Pods/Target Support Files/Pods-TopChartStore/Pods-TopChartStore.release.xcconfig"; sourceTree = "<group>"; };
+		1E0825BD2131C207001783BF /* DetailApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailApp.swift; sourceTree = "<group>"; };
 		1E0AC4C52109129200D6D210 /* GrossingAppImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrossingAppImplementation.swift; sourceTree = "<group>"; };
 		1E0AC4C7210917F200D6D210 /* GrossingAppConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrossingAppConfigurator.swift; sourceTree = "<group>"; };
 		80D1CC23E99EAD2F2301668F /* Pods-TopChartStore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TopChartStore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TopChartStore/Pods-TopChartStore.debug.xcconfig"; sourceTree = "<group>"; };
@@ -418,6 +420,7 @@
 			children = (
 				87BFE0CC1FAD036900AED0FA /* TopApps.swift */,
 				A833DB1C212AD777006DFAD9 /* Country.swift */,
+				1E0825BD2131C207001783BF /* DetailApp.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -672,6 +675,7 @@
 				87F07B3F208A59CF003B3EA5 /* TopFreeUseCase.swift in Sources */,
 				87F07B4B208B3196003B3EA5 /* AppApiRequest.swift in Sources */,
 				8771D8041FADE7AC0082D14F /* Keys.swift in Sources */,
+				1E0825BE2131C207001783BF /* DetailApp.swift in Sources */,
 				87F07B61208CC071003B3EA5 /* FreeAppPresenter.swift in Sources */,
 				87722A6F1F2CEB440050808D /* GrossingAppViewController.swift in Sources */,
 				A833DB19212AD4DA006DFAD9 /* CountryPresenter.swift in Sources */,
@@ -843,6 +847,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TopChartStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcasique.TopChartStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -856,6 +861,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TopChartStore/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jcasique.TopChartStore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
