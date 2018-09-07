@@ -12,6 +12,8 @@ import AlamofireImage
 class FreeAppTableViewCellViewModel: ApiSession {
     
     private var modelApp: App
+    var ratingUseCase: RatingUseCase!
+    
     
     init(model: App) {
         self.modelApp = model
@@ -42,7 +44,8 @@ class FreeAppTableViewCellViewModel: ApiSession {
         
         let apiClient = ApiClientImplementation(session: defaultSession)
         let apiAppsGateway = RatingGatewayImplementation(client: apiClient)
-        let ratingUseCase = RatingUseCase(gateway: apiAppsGateway, idApp: modelApp.artistId ?? "")
+        
+        ratingUseCase = RatingUseCase(gateway: apiAppsGateway, idApp: modelApp.id ?? "")
         
         ratingUseCase.getRating { result in
             switch result {
@@ -53,20 +56,5 @@ class FreeAppTableViewCellViewModel: ApiSession {
                 print(error)
             }
         }
-        
     }
-    
-    
-    
-    
-//    let apiClient =  ApiClientImplementation(session: defaultSession)
-//    let apiAppsGateway = ApiAppsGatewayImplemantation(apiClient: apiClient)
-//    let displayAppsUseCase = TopFreeAppsUseCaseImplementation(appsGateway: apiAppsGateway, country: country)
-//    let router = TopFreeAppsRouterImplementation(freeAppViewController: freeAppViewController)
-//
-//    let presenter = FreeAppPresenterImplementation(view: freeAppViewController,
-//                                                   displayAppUseCase: displayAppsUseCase,
-//                                                   router: router)
-//    freeAppViewController.presenter = presenter
-    
 }

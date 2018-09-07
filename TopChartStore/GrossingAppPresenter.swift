@@ -9,7 +9,7 @@
 import Foundation
 
 protocol GrossingAppView: class {
-    var dataSource: TableDataSource<FreeAppTableViewCell, >? { get set }
+    var dataSource: TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>? { get set }
 }
 
 protocol GrossingAppPresenter {
@@ -56,6 +56,8 @@ class GrossingAppPresenterImplementation: GrossingAppPresenter, DataSourceDelega
     private func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
         self.items = app
-        view?.dataSource = TableDataSource<FreeAppTableViewCell, App>(array: app, delegate: self)
+        let models = self.items!.map { FreeAppTableViewCellViewModel(model: $0) }
+        
+        view?.dataSource = TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>(array: models, delegate: self)
     }
 }

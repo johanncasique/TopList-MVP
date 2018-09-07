@@ -53,7 +53,12 @@ class FreeAppPresenterImplementation: FreeAppPresenter, DataSourceDelegate {
     fileprivate func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
         self.items = app
-        let dataSource = TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>(array: FreeAppTableViewCellViewModel(model: app), delegate: self)
+        var modelArr = [FreeAppTableViewCellViewModel]()
+        for model in items! {
+            let viewModel = FreeAppTableViewCellViewModel(model: model)
+            modelArr.append(viewModel)
+        }
+        let dataSource = TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>(array: modelArr, delegate: self)
         view?.dataSource = dataSource
     }
     

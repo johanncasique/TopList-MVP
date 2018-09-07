@@ -22,7 +22,7 @@ class GrossingAppViewController: UIViewController, GrossingAppView {
     private let defaults = UserDefaults.standard
     var presenter: GrossingAppPresenter?
     var configurator = GrossingAppConfiguratorImplementation()
-    var dataSource: TableDataSource<FreeAppTableViewCell, App>? {
+    var dataSource: TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>? {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 guard let strongSelf = self else { return }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PaidAppView: class {
-    var dataSource: TableDataSource<FreeAppTableViewCell, App>? { get set }
+    var dataSource: TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>? { get set }
 }
 
 protocol PaidAppPresenter {
@@ -52,7 +52,8 @@ class PaidAppPresenterImplementation: PaidAppPresenter, DataSourceDelegate {
     private func handleApps(_ apps: ApiApps) {
         guard let app = apps.result else { return }
         self.items = app
-        view?.dataSource = TableDataSource<FreeAppTableViewCell, App>(array: app, delegate: self)
+        let models = items!.map { FreeAppTableViewCellViewModel(model: $0) }
+        view?.dataSource = TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>(array: models, delegate: self)
     }
     
     func rowDidSelected(at index: Int) {

@@ -28,10 +28,8 @@ class RatingGatewayImplementation: RatingGateway {
             
             switch response {
             case .success(let rating):
-                print(rating)
                 completion(.success(rating.entity))
             case.failure(let error):
-                print(error)
                 completion(.failure(error))
             }
             

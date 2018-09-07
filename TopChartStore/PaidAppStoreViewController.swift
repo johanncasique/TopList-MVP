@@ -23,7 +23,7 @@ class PaidAppsViewController: UIViewController, PaidAppView {
     var configurator = PaidAppConfiguratorImplementation()
     
     private let defaults = UserDefaults.standard
-    var dataSource: TableDataSource<FreeAppTableViewCell, App>? {
+    var dataSource: TableDataSource<FreeAppTableViewCell, FreeAppTableViewCellViewModel>? {
         didSet {
             DispatchQueue.main.async { [weak self] in
                 guard let strongSelf = self else { return }
