@@ -5,6 +5,6 @@ struct RatingFeed: Codable {
 }
 
 struct Rating: Codable {
-    let averageUserRating: Int
-    let userRatingCount: Int
+    let averageUserRating: Float?
+    let userRatingCount: Int?
 }

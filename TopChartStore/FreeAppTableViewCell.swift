@@ -40,9 +40,11 @@ class FreeAppTableViewCell: UITableViewCell, ConfigureCellProtocol {
         appCompanyLabel.text = appModel.companyName
         ratingNumberLabel.text = "?"
         appModel.getRating(completion: { rating in
-            DispatchQueue.main.async {
-                self.ratingNumberLabel.text = rating
-            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute: {
+                DispatchQueue.main.async {
+                    self.ratingNumberLabel.text = rating
+                }
+            })
         })
         getButton.setTitle("GET", for: .normal)
         

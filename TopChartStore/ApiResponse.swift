@@ -34,7 +34,7 @@ struct ApiParseError: Error {
     static let code = 999
     
     let error: Error
-    let httpUrlResponse: HTTPURLResponse
+    let httpUrlResponse: HTTPURLResponse?
     let data: Data?
     
     var localizedDescription: String {
@@ -44,10 +44,10 @@ struct ApiParseError: Error {
 
 struct ApiResponse<T: InitializableWithData> {
     let entity: T
-    let httpUrlResponse: HTTPURLResponse
+    let httpUrlResponse: HTTPURLResponse?
     let data: Data?
     
-    init(data: Data?, httpUrlResponse: HTTPURLResponse) throws {
+    init(data: Data?, httpUrlResponse: HTTPURLResponse?) throws {
         do {
             self.entity = try T(data: data)
             self.httpUrlResponse = httpUrlResponse

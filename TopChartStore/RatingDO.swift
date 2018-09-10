@@ -17,20 +17,27 @@ struct RatingDO: InitializableWithData {
             NSError.createParseError()
         }
         
-        let jsonObject = try? JSONDecoder().decode(RatingFeed.self, from: data)
-        guard let first = jsonObject?.results?.first else {
-            throw
-            NSError.createParseError()
+        do {
+            let jsonObject = try JSONDecoder().decode(RatingFeed.self, from: data)
+            
+            guard let first = jsonObject.results?.first else {
+                throw
+                    NSError.createParseError()
+            }
+            rating = first
+        } catch let error {
+            print(error)
+            throw NSError.createParseError()
         }
-
-        rating = first
     }
     
     var userRating: String {
-        return String(rating.averageUserRating)
+        guard let userRating = rating.averageUserRating else { return "" }
+        return String(userRating)
     }
 
     var ratingCount: String {
-        return String(rating.userRatingCount)
+        guard let ratingCount = rating.userRatingCount else { return "" }
+        return String(ratingCount)
     }
 }
