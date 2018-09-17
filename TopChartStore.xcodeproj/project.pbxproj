@@ -76,6 +76,7 @@
 		A8A0D1CB2126F270002B873D /* StoryboardProviders.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A0D1CA2126F270002B873D /* StoryboardProviders.swift */; };
 		A8A3B4BB212C0C6F00729AE4 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A3B4BA212C0C6F00729AE4 /* BaseViewController.swift */; };
 		A8A3B4BD212C26F000729AE4 /* CountryConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A3B4BC212C26F000729AE4 /* CountryConfigurator.swift */; };
+		A8AB5B05214FC841000715F4 /* DiscardableStringCacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8AB5B04214FC841000715F4 /* DiscardableStringCacheItem.swift */; };
 		A8ACBE75211C8BA400F4AE72 /* UseCaseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */; };
 		A8ACBE78211C8D4500F4AE72 /* TableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8ACBE77211C8D4500F4AE72 /* TableDataSource.swift */; };
 		A8BB31A92141538D006CEF15 /* RatingUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BB31A82141538D006CEF15 /* RatingUseCase.swift */; };
@@ -159,6 +160,7 @@
 		A8A0D1CA2126F270002B873D /* StoryboardProviders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardProviders.swift; sourceTree = "<group>"; };
 		A8A3B4BA212C0C6F00729AE4 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A8A3B4BC212C26F000729AE4 /* CountryConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryConfigurator.swift; sourceTree = "<group>"; };
+		A8AB5B04214FC841000715F4 /* DiscardableStringCacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscardableStringCacheItem.swift; sourceTree = "<group>"; };
 		A8ACBE74211C8BA400F4AE72 /* UseCaseProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseProtocol.swift; sourceTree = "<group>"; };
 		A8ACBE77211C8D4500F4AE72 /* TableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDataSource.swift; sourceTree = "<group>"; };
 		A8BB31A82141538D006CEF15 /* RatingUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingUseCase.swift; sourceTree = "<group>"; };
@@ -211,6 +213,7 @@
 		874867301F1429140001EB96 /* TopChartStore */ = {
 			isa = PBXGroup;
 			children = (
+				A8AB5B03214FC816000715F4 /* Utils */,
 				87F07B40208A5C91003B3EA5 /* EntityGateway */,
 				87F07B39208A55DD003B3EA5 /* Core */,
 				8771D8051FADF70C0082D14F /* Views */,
@@ -548,6 +551,14 @@
 			name = Providers;
 			sourceTree = "<group>";
 		};
+		A8AB5B03214FC816000715F4 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				A8AB5B04214FC841000715F4 /* DiscardableStringCacheItem.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
 		A8ACBE76211C8D2200F4AE72 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,6 +692,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8AB5B05214FC841000715F4 /* DiscardableStringCacheItem.swift in Sources */,
 				A8BB31B3214177FB006CEF15 /* FreeAppTableViewCellViewModel.swift in Sources */,
 				8771D8091FADFAAA0082D14F /* UIColor+Hex.swift in Sources */,
 				87722A691F2CE26B0050808D /* PaidAppStoreViewController.swift in Sources */,

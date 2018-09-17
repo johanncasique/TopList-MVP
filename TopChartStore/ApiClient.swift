@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import PromiseKit
+import UIKit
 
 
 enum ApiHTTPMethod: String {
@@ -25,6 +25,7 @@ protocol ApiRequest {
 
 protocol ApiClient {
     func execute<T>(request: ApiRequest, completionHandler: @escaping (_ result: Result<ApiResponse<T>>) -> Void)
+    func executedCached<T>(request: ApiRequest, completionHandler: @escaping (_ result: Result<ApiResponse<T>>) -> Void)
 }
 
 
@@ -45,33 +46,6 @@ class ApiClientImplementation: ApiClient {
             return
         }
         
-        var fetchData = session.dataTask(.promise, with: urlRequest).compactMap {
-            return try ApiResponse<T>(data: $0.data, httpUrlResponse: $0.response as! HTTPURLResponse)
-        }
-        
-        func fecth() -> Promise<(data: Data, response: URLResponse)> {
-            return session.dataTask(.promise, with: urlRequest)
-        }
-//
-//        firstly {
-//            fetchData
-//            }.done { result in
-//                completionHandler(.success(result))
-//            }.catch { error in
-//                completionHandler(.failure(error))
-//        }
-
-
-//        firstly {
-//            fecth()
-//            }.compactMap { data, response in
-//              try ApiResponse<T>(data: data, httpUrlResponse: response as! HTTPURLResponse)
-//            }.done { result in
-//                completionHandler(.success(result))
-//            }.catch { error in
-//                print(error)
-//                completionHandler(.failure(error))
-//        }
         
         if let dataFromCache = ratingCache.object(forKey: urlRequest.absoluteString as NSString) {
             let data = Data(referencing: dataFromCache)
@@ -109,5 +83,70 @@ class ApiClientImplementation: ApiClient {
             }
 
             }.resume()
+    }
+    
+    func executedCached<T>(request: ApiRequest, completionHandler: @escaping ((Result<ApiResponse<T>>) -> Void)) where T : InitializableWithData {
+       
+        let cache = CacheText().loadText(urlString: request.url) { (result) in
+            
+        }
+    }
+}
+
+
+
+class CacheText {
+    
+    static let stringCache = NSCache<NSString, DiscardableStringCacheItem>()
+    var shouldUseEmptyString = true
+    
+    private var urlStringForChecking: String?
+    private var emptyString: String?
+    
+    
+    func loadText<T>(urlString: String, completion: ((Result<ApiResponse<T>>) -> ())? = nil) {
+        
+        self.urlStringForChecking = urlString
+        let urlKey = urlString as NSString
+        
+        if let cachedText = CacheText.stringCache.object(forKey: urlKey) {
+            do {
+                let response = try ApiResponse<T>(data: cachedText.data, httpUrlResponse: nil)
+                completion?(.success(response))
+            } catch {
+                completion?(.failure(error))
+            }
+            return
+        }
+        
+        guard let url = URL(string: urlString) else {
+            if shouldUseEmptyString {
+                
+            }
+            return
+        }
+        
+        
+        
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion?(.failure(NetworkRequestError(error: error)))
+                return
+            }
+            let succesRange = 200...299
+            
+            if succesRange.contains(httpResponse.statusCode) {
+                do {
+                    let cacheItem = DiscardableStringCacheItem(text: data!)
+                    CacheText.stringCache.setObject(cacheItem, forKey: urlKey)
+                    let response = try ApiResponse<T>(data: data, httpUrlResponse: httpResponse)
+                    completion?(.success(response))
+                } catch {
+                    completion?(.failure(error))
+                }
+            } else {
+                completion?(.failure(ApiError(data: data, httpUrlResponse: httpResponse)))
+            }
+        }.resume()
     }
 }
