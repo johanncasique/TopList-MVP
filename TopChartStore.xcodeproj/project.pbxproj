@@ -602,6 +602,7 @@
 				TargetAttributes = {
 					8748672D1F1429140001EB96 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = N2JV3GA9RV;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -884,6 +885,7 @@
 			baseConfigurationReference = 80D1CC23E99EAD2F2301668F /* Pods-TopChartStore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N2JV3GA9RV;
 				INFOPLIST_FILE = TopChartStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -898,6 +900,7 @@
 			baseConfigurationReference = 06733EB5F4730C4634579C3C /* Pods-TopChartStore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = N2JV3GA9RV;
 				INFOPLIST_FILE = TopChartStore/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

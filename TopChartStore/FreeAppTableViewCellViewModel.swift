@@ -13,7 +13,7 @@ class FreeAppTableViewCellViewModel: ApiSession {
     
     private var modelApp: App
     var ratingUseCase: RatingUseCase!
-    
+    var ratingCache = NSCache<NSString, NSData>()
     
     init(model: App) {
         self.modelApp = model
@@ -42,7 +42,7 @@ class FreeAppTableViewCellViewModel: ApiSession {
     
     func getRating(completion: @escaping (_ rating: String) -> Void) {
         
-        let apiClient = ApiClientImplementation(session: defaultSession)
+        let apiClient = ApiClientImplementation(session: defaultSession, ratingCache: ratingCache)
         let apiAppsGateway = RatingGatewayImplementation(client: apiClient)
         
         ratingUseCase = RatingUseCase(gateway: apiAppsGateway, idApp: modelApp.id ?? "")

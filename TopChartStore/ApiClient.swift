@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import UIKit
+
 
 
 enum ApiHTTPMethod: String {
@@ -25,17 +25,18 @@ protocol ApiRequest {
 
 protocol ApiClient {
     func execute<T>(request: ApiRequest, completionHandler: @escaping (_ result: Result<ApiResponse<T>>) -> Void)
-    func executedCached<T>(request: ApiRequest, completionHandler: @escaping (_ result: Result<ApiResponse<T>>) -> Void)
+    //func executedCached<T>(request: ApiRequest, completionHandler: @escaping (_ result: Result<ApiResponse<T>>) -> Void)
 }
 
 
 class ApiClientImplementation: ApiClient {
     
     let session: URLSession
-    let ratingCache = NSCache<NSString, NSData>()
+    let ratingCache: NSCache<NSString, NSData>?
     
-    init(session: URLSession) {
-        self.session = session    
+    init(session: URLSession, ratingCache: NSCache<NSString, NSData>? = nil) {
+        self.session = session
+        self.ratingCache = ratingCache
     }
     
     func execute<T>(request: ApiRequest, completionHandler: @escaping (Result<ApiResponse<T>>) -> Void) where T : InitializableWithData {
@@ -47,7 +48,8 @@ class ApiClientImplementation: ApiClient {
         }
         
         
-        if let dataFromCache = ratingCache.object(forKey: urlRequest.absoluteString as NSString) {
+        if let cache = ratingCache, let dataFromCache = cache.object(forKey: urlRequest.absoluteString as NSString) {
+            print("GET FROM CACHE")
             let data = Data(referencing: dataFromCache)
             do {
                 let response = try ApiResponse<T>(data: data, httpUrlResponse: nil)
@@ -71,7 +73,10 @@ class ApiClientImplementation: ApiClient {
                 do {
                     let dataCache = NSData(data: data!)
                     let urlCache = urlRequest.absoluteString as NSString
-                    self.ratingCache.setObject(dataCache, forKey: urlCache)
+                    if let cache = self.ratingCache {
+                        print("STORE IN CACHE")
+                        cache.setObject(dataCache, forKey: urlCache)
+                    }
                     let response = try ApiResponse<T>(data: data, httpUrlResponse: httpResponse)
 
                     completionHandler(.success(response))
@@ -85,12 +90,12 @@ class ApiClientImplementation: ApiClient {
             }.resume()
     }
     
-    func executedCached<T>(request: ApiRequest, completionHandler: @escaping ((Result<ApiResponse<T>>) -> Void)) where T : InitializableWithData {
-       
-        let cache = CacheText().loadText(urlString: request.url) { (result) in
-            
-        }
-    }
+//    func executedCached<T>(request: ApiRequest, completionHandler: @escaping ((Result<ApiResponse<T>>) -> Void)) where T : InitializableWithData {
+//
+//        let cache: = CacheText().loadText(urlString: request.url) { (result) in
+//
+//        }
+//    }
 }
 
 
